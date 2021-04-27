@@ -1,0 +1,51 @@
+/*  =========
+	 GENERAL
+  	========= */
+.centered {
+	text-align: center;
+}
+
+.italique {
+	font-style: italic;
+}
+
+.margetop45 {
+	margin-top: 45px;
+}
+
+/*  ==========
+	 COULEURS
+  	========== */
+
+.bleu {
+	color: #3577f2;
+}
+
+/*  =================
+	 GRANDES PARTIES
+  	================= */
+
+#presentation {
+	background-color: #000000;
+	color: #eeeeee;
+}
+
+#education {
+
+}
+
+#experiences {
+
+}
+
+#skills {
+
+}
+
+#projects {
+
+}
+
+#contests {
+
+}
