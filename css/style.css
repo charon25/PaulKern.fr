@@ -1,16 +1,27 @@
 /*  =========
 	 GENERAL
   	========= */
-.centered {
-	text-align: center;
-}
 
 .italique {
 	font-style: italic;
 }
 
+.center-image-vert {
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*  ==========
+	 COULEURS
+  	========== */
+
 .margetop45 {
 	margin-top: 45px;
+}
+
+.margebot45 {
+	margin-bottom: 45px;
 }
 
 /*  ==========
@@ -19,6 +30,10 @@
 
 .bleu {
 	color: #3577f2;
+}
+
+.gris {
+	color: #aaaaaa;
 }
 
 /*  =================
@@ -31,7 +46,8 @@
 }
 
 #education {
-
+	background-color: #000000;
+	color: #eeeeee;
 }
 
 #experiences {
