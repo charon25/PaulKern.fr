@@ -82,7 +82,7 @@
 		</div>
 		<div class="row">
 			<div class="text-center col-sm-6">
-				<img src="img/logo_cordon.svg" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
+				<img src="img/logo_cordon.png" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
 				<p class="margetop25"><span class="bleu">Juillet 2017</span><br>
 				<span class="fw-bold">Cordon CMS</span><br>
 				Stage ouvrier</p>
@@ -99,6 +99,22 @@
 			<div class="text-center col-sm-12">
 				<h2 class="margebot45 margetop25">Expériences extra-professionnelles</h2>
 			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-6 bordure-right">
+				<a href="https://charon25.itch.io/spalt"><img src="img/img_spalt.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=150></a>
+				<p class="margetop25"><span class="bleu">Mars 2021</span><br>
+				<span class="fw-bold">MiniJam 76</span><br>
+				Jeu réalisé de A à Z en 72h en Python<br>
+				<a href="https://charon25.itch.io/spalt">Page du jeu sur itch.io</a></p>
+			</div>
+			<div class="text-center col-sm-6 bordure-left">
+				<a href="https://www.sauas.fr/"><img src="img/img_sauas.png" class="img-thumbnail-mod-height" alt="Logo SAUAS" height=150></a>
+				<p class="margetop25"><span class="bleu">Juin - Octobre 2019 — Septembre - Novembre 2020</span><br>
+				<span class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</span><br>
+				Réalisation du site Web de l'association<br><a href="https://www.sauas.fr/">sauas.fr</a></p>
+			</div>
+			<div class="margebot25"></div>
 		</div>
 	</div>
 </section>
