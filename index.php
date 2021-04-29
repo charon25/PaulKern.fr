@@ -121,7 +121,81 @@
 
 <section id="skills">
 	<div class="container">
-		compétences
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="margebot45 margetop25">Compétences</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="">Langues</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-4">
+				<img src="img/flags/flag_fr.svg" alt="Français" height="65" class="img-thumbnail-mod-height">
+				<p class="bleu">Langue maternelle</p>
+			</div>
+			<div class="text-center col-sm-4">
+				<img src="img/flags/flag_en.svg" alt="Anglais" height="65" class="img-thumbnail-mod-height">
+				<p class="bleu">Courant - C1 (TOEIC : 990/990)</p>
+			</div>
+			<div class="text-center col-sm-4">
+				<img src="img/flags/flag_de.svg" alt="Allemand" height="65" class="img-thumbnail-mod-height">
+				<p class="bleu">Bases - A2</p>
+			</div>
+			<div class="text-center col-sm-4">
+				<img src="img/flags/flag_kr.svg" alt="Coréen" height="65" class="img-thumbnail-mod-height">
+				<p class="bleu">Notions - A1</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="">Langages de programmation</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class="margebot25">Maîtrisés</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-2">
+				<img src="img/logo_python.svg" alt="Python" height="65">
+				<p class="bleu">Python 3</p>
+			</div>
+			<div class="text-center col-sm-2">
+				<img src="img/logo_vb.svg" alt="VB.NET" height="65">
+				<p class="bleu">Visual Basic .NET</p>
+			</div>
+			<div class="margebot25"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class=" margebot25">Niveau intérmédiaire</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-2">
+				<img src="img/logo_cpp.svg" alt="C++" height="65">
+				<p class="bleu">C++</p>
+			</div>
+			<div class="text-center col-sm-2">
+				<img src="img/logo_vhdl.png" alt="VHDL" height="65">
+				<p class="bleu">VHDL</p>
+			</div>
+			<div class="margebot25"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class=" margebot25">Débutant</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="">Logiciels & OS</h3>
+			</div>
+		</div>
 	</div>
 </section>
 
