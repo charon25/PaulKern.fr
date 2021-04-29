@@ -7,7 +7,7 @@
 }
 
 .justif {
-	text-align: justify;
+	text-align: justify !important; 
 }
 
 .center-image-vert {
@@ -24,6 +24,33 @@
 	max-width: 100%;
 }
 
+/*  ==========
+	 BORDURES
+  	========== */
+
+@media (min-width: 574px) {
+	.bordure-top {
+		border-top: #bbbbbb 1px solid;
+		padding-top: 10px;
+	}
+
+	.bordure-bot {
+		border-bottom: #bbbbbb 1px solid;
+		padding-bottom: 10px;
+	}
+
+	.bordure-left {
+		border-left: #bbbbbb 1px solid;
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+
+	.bordure-right {
+		border-right: #bbbbbb 1px solid;
+		padding-right: 10px;	padding-top: 10px;
+	}
+}
+
 /*  ========
 	 MARGES
   	======== */
@@ -38,6 +65,10 @@
 
 .margebot45 {
 	margin-bottom: 45px;
+}
+
+.margebot25 {
+	margin-bottom: 25px;
 }
 
 /*  ==========
@@ -62,11 +93,16 @@
 }
 
 #education {
-	background-color: #000000;
+	background-color: #222; /*TODO : change*/
 	color: #eeeeee;
 }
 
-#experiences {
+#experiences-pro {
+	background-color: #000; /*TODO : change*/
+	color: #eeeeee;
+}
+
+#experiences-perso {
 
 }
 

@@ -34,67 +34,72 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="margebot45">Formation</h2>
+				<h2 class="margebot45 margetop25">Formation</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 text-center">
+			<div class="col-sm-6 text-center bordure-right">
 				<img src="img/logo_insa.svg" class="img-thumbnail-mod-height" alt="Logo INSA Strasbourg" height=60>
 				<p class="margetop25"><span class="bleu">2016 - 2021</span><br>
 				<span class="fw-bold">INSA Strasbourg</span><br>
 				Diplôme d'Ingénieur en Génie Electrique</p>
 			</div>
-			<div class="col-sm-6 text-center">
+			<div class="col-sm-6 text-center bordure-left">
 				<img src="img/logo_saint_michel.png" class="img-thumbnail-mod-height" alt="Logo Saint-Michel" height=60>
 				<p class="margetop25"><span class="bleu">2016</span><br>
 				<span class="fw-bold">Lycée Saint-Michel des Batignolles</span><br>
 				Baccalauréat Général S - Spé Maths - Mention Très Bien</p>
 			</div>
+			<div class="margebot45"></div>
 		</div>
-		<!--<div class="row">
-			<div class="text-center col-sm-8 offset-2">
-				<h2>Formation</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-2 text-center center-image-vert">
-				<img src="img/logo_insa.svg" class="img-thumbnail" alt="Logo INSA Strasbourg">
-			</div>
-			<div class="col-sm-8">
-				<p style="margin-top: 10px"><span class="bleu">2016 - 2021</span> — INSA Strasbourg — Diplôme d'Ingénieur Génie Electrique</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-3 gris">
-				<p>
-					Electronique numérique<br>
-					Electronique analogique<br>
-					Programmation FPGA en VHDL
-				</p>
-			</div>
-			<div class="col-sm-3 gris">
-				<p>
-					Traitement du signal<br>
-					Systèmes Temps Réel<br>
-					Big Data & Machine Learning
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-2 text-center center-image-vert">
-				<img src="img/logo_saint_michel.png" class="img-thumbnail" alt="Logo Saint-Michel">
-			</div>
-			<div class="col-sm-10">
-				<p style="margin-top: 10px"><span class="bleu">2016</span> — Lycée Saint-Michel des Batignolles, Paris — Baccalauréat Général S - Spé Math - Mention Très Bien</p>
-			</div>
-		</div>-->
 	</div>
 </section>
 
-<section id="experiences">
+<section id="experiences-pro">
 	<div class="container">
-		expériences
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="margebot45 margetop25">Expériences professionnelles</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-6 bordure-right">
+				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
+				<p class="margetop25"><span class="bleu">Février - Août 2021</span><br>
+				<span class="fw-bold">Vox Care</span><br>
+				Stage de fin d'études</p>
+				<p class="justif gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
+				Plusieurs sujets abordés : reconnaissance vocale, débruitage d'un signal, détection Bluetooth...</p>
+			</div>
+			<div class="text-center col-sm-6 bordure-left">
+				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
+				<p class="margetop25"><span class="bleu">Juin - Août 2019</span><br>
+				<span class="fw-bold">Korea Polytechnic University</span><br>
+				Stage de découverte culturelle</p>
+				<p class="justif gris">Self-learning en Arduino et programmation Web.</p>
+			</div>
+			<div class="margebot25"></div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-6">
+				<img src="img/logo_cordon.svg" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
+				<p class="margetop25"><span class="bleu">Juillet 2017</span><br>
+				<span class="fw-bold">Cordon CMS</span><br>
+				Stage ouvrier</p>
+				<p class="justif gris">Traitement des télés</p>
+			</div>
+			<div class="margebot45"></div>
+		</div>
+	</div>
+</section>
+
+<section id="experiences-perso">
+	<div class="container">
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="margebot45 margetop25">Expériences extra-professionnelles</h2>
+			</div>
+		</div>
 	</div>
 </section>
 
