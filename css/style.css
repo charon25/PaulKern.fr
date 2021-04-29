@@ -6,15 +6,31 @@
 	font-style: italic;
 }
 
+.justif {
+	text-align: justify;
+}
+
 .center-image-vert {
 	display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-/*  ==========
-	 COULEURS
-  	========== */
+.img-thumbnail-mod-height {
+	padding: .25rem;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
+	border-radius: .25rem;
+	max-width: 100%;
+}
+
+/*  ========
+	 MARGES
+  	======== */
+
+.margetop25 {
+	margin-top: 25px;
+}
 
 .margetop45 {
 	margin-top: 45px;
