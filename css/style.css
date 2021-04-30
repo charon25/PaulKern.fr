@@ -79,6 +79,10 @@ body {
 	 IMAGES
   	======== */
 
+#profil-pic {
+	border-radius: 10%;
+}
+
 .img-thumbnail-mod-height {
 	padding: .25rem;
 	background-color: #fff;
@@ -227,4 +231,13 @@ body {
 
 .odd-section {
 	background-color: #9cde9b; /*#d5d5d5*/
+}
+
+/*  ==============
+	 ESPACE ADMIN
+  	============== */
+
+.form-connexion {
+	border: 1px solid #034494;
+	padding: 20px;
 }

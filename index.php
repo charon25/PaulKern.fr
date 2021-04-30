@@ -28,7 +28,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-3 text-center">
-				<img src="img/photo_profil.jpg" width="200" height="200" class="img-thumbnail-mod-height margebot25" alt="Photo profil">
+				<img id="profil-pic" src="img/photo_profil.jpg" width="200" height="200" class="img-thumbnail-mod-height margebot25" alt="Photo profil">
 			</div>
 			<div class="col-sm-9">
 				<p class="justif">Je m'appelle Paul Kern, j'ai 21 ans et je suis actuellement en dernière année d'études en <span class="bleu">Génie Electrique</span> à l'INSA Strasbourg, spécialité <span class="bleu italique">Systèmes Embarqués & Internet des Objets</span>.</p>
@@ -66,7 +66,7 @@
 				<span class="fw-bold">Lycée Saint-Michel des Batignolles</span><br>
 				Baccalauréat Général S - Spé Maths - Mention Très Bien</p>
 			</div>
-			<div class="margebot45"></div>
+			<div class="margebot25"></div>
 		</div>
 	</div>
 </section>

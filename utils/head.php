@@ -1,4 +1,4 @@
-<?php function print_head($title) { ?>
+<?php function print_head(string $title, string $start_dir = "") { ?>
 
 <head>
 	<title>Paul Kern | <?php echo $title; ?></title>
@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $start_dir; ?>css/style.css">
 
 	<link rel="icon" href="icon.ico">
 	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
