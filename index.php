@@ -8,6 +8,7 @@
 
 	<!-- Polices -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -22,6 +23,10 @@
 </head>
 <body>
 
+<header>
+	<?php include('menu.php'); ?>
+</header>
+
 <section id="presentation-first">
 	<div class="container">
 		<div class="row">
@@ -33,6 +38,7 @@
 		</div>
 	</div>
 </section>
+<section id="presentation">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
