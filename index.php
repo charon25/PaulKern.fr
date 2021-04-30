@@ -23,6 +23,7 @@
 </head>
 <body>
 
+
 <?php include('header.php'); ?>
 
 <section id="presentation-first" class="first-section">
@@ -37,6 +38,7 @@
 		</div>
 	</div>
 </section>
+
 <section id="presentation" class="even-section">
 	<div class="container">
 		<div class="row">
@@ -326,3 +328,9 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+	// Remove every element with class "no-js"
+	Array.from(document.getElementsByClassName("no-js")).forEach(element => element.remove());
+</script>
