@@ -196,6 +196,11 @@
 				<h3 class="">Logiciels & OS</h3>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="">Autres compétences</h3>
+			</div>
+		</div>
 	</div>
 </section>
 
