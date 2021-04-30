@@ -2,6 +2,10 @@
 	 GENERAL
   	========= */
 
+body {
+	font-family: "Roboto";
+}
+
 .italique {
 	font-style: italic;
 }
@@ -61,6 +65,26 @@
 		padding-right: 30px;
 		padding-top: 10px;
 	}
+
+	.hr {
+		display: none;
+	}
+}
+
+@media (max-width: 574px) {
+	.bordure-telephone {
+		border-bottom: #bbbbbb 1px solid;
+		margin-bottom: 25px;
+	}
+
+}
+
+/*  ========
+	 TITRES
+  	======== */
+
+.titre-principal {
+	font-family: "Lora", serif;
 }
 
 .titre {
@@ -92,60 +116,69 @@
 	margin-bottom: 25px;
 }
 
+.logo {
+	margin-bottom: 15px;
+}
+
 /*  ==========
 	 COULEURS
   	========== */
 
 .bleu {
-	color: #429ae8;
+	color: #034494;
 	font-weight: bold;
 }
 
 .bleu-big {
-	color: #429ae8;
+	color: #034494;
 	font-weight: bold;
 	font-size: 1.2rem;
 }
 
 .gris {
-	color: #aaaaaa;
+	color: #555;
 }
 
 /*  =================
 	 GRANDES PARTIES
   	================= */
 
+#presentation-first {
+	background-color: #d5d5d5;
+	color: #222;
+}
+
 #presentation {
-	background-color: #000000;
-	color: #eeeeee;
+	background-color: #fff;
+	color: #222;
 }
 
 #education {
-	background-color: #222; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #d5d5d5; /*TODO : change*/
+	color: #222;
 }
 
 #experiences-pro {
-	background-color: #000; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #fff; /*TODO : change*/
+	color: #222;
 }
 
 #experiences-perso {
-	background-color: #222; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #d5d5d5; /*TODO : change*/
+	color: #222;
 }
 
 #skills {
-	background-color: #000; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #fff; /*TODO : change*/
+	color: #222;
 }
 
 #projects {
-	background-color: #222; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #d5d5d5; /*TODO : change*/
+	color: #222;
 }
 
 #contests {
-	background-color: #000; /*TODO : change*/
-	color: #eeeeee;
+	background-color: #fff; /*TODO : change*/
+	color: #222;
 }
