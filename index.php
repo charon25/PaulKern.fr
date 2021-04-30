@@ -101,8 +101,8 @@
 				Stage ouvrier</p>
 				<p class="justif gris">Traitement des télés</p>
 			</div>
-			<div class="margebot25"></div>
 		</div>
+		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<a class="btn btn-primary bouton" href="exp_pro">Voir toutes les expériences</a>
@@ -228,7 +228,14 @@
 				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
 				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div>
-			<div class="margebot25"></div>
+		</div>
+		<div class="margebot25"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a class="btn btn-primary bouton" href="projects_sco">Voir toutes les projets scolaires</a>
+			</div>
+		</div>		
+		<div class="margebot45"></div>
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Personnels</h3>
@@ -247,8 +254,14 @@
 				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
 				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div>
-			<div class="margebot25"></div>
-	</div>
+		</div>
+		<div class="margebot25"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a class="btn btn-primary bouton" href="projects_perso">Voir toutes les projets personnels</a>
+			</div>
+		</div>
+		<div class="margebot25"></div>
 </section>
 
 <section id="experiences-perso" class="odd-section">
