@@ -107,8 +107,8 @@
 			<div class="col-sm-12 text-center">
 				<a class="btn btn-primary bouton" href="exp_pro">Voir toutes les expériences</a>
 			</div>
+			<div class="margebot25"></div>
 		</div>
-		<div class="margebot25"></div>
 	</div>
 </section>
 
@@ -284,6 +284,12 @@
 				<p class="margetop25"><span class="bleu-big">Juin - Octobre 2019 & Septembre - Novembre 2020</span><br>
 				<span class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</span><br>
 				Réalisation du site Web de l'association<br><a href="https://www.sauas.fr/">sauas.fr</a></p>
+			</div>
+		</div>
+		<div class="margebot25"></div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a class="btn btn-primary bouton" href="exp_extra">Voir toutes les expériences</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>
