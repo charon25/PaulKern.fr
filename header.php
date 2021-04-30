@@ -4,6 +4,7 @@
 		<div class="row text-center">
 			<div class="col-sm-12">
 				<ul class="list-inline menu">
+					<li class="list-inline-item menu-item"><a href="index" class="menu-lien"><i class="fas fa-home fa-1x"></i></a></li>
 					<li class="list-inline-item menu-item"><a href="#presentation" class="menu-lien">Qui suis-je ?</a></li>
 					<li class="list-inline-item menu-item"><a href="#education" class="menu-lien">Formation</a></li>
 					<li class="list-inline-item menu-item"><a href="#experiences-pro" class="menu-lien">Expériences pro.</a></li>
