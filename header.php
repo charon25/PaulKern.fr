@@ -11,8 +11,8 @@
 						<li class="list-inline-item menu-item"><a href="#experiences-pro" class="menu-lien">Expériences pro.</a></li>
 						<li class="list-inline-item menu-item"><a href="#skills" class="menu-lien">Compétences</a></li>
 						<li class="list-inline-item menu-item"><a href="#projects" class="menu-lien">Projets</a></li>
-						<li class="list-inline-item menu-item"><a href="#experiences-perso" class="menu-lien">Expérience extra-pro.</a></li>
-						<li class="list-inline-item menu-item"><a href="#contests" class="menu-lien">Compétition</a></li>
+						<li class="list-inline-item menu-item"><a href="#experiences-perso" class="menu-lien">Expériences extra-pro.</a></li>
+						<li class="list-inline-item menu-item"><a href="#contests" class="menu-lien">Compétitions</a></li>
 					</ul>
 				</div>
 			</div>
