@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<?php include('head.php'); print_head("Expériences professionnelles"); ?>
+<?php include('utils/head.php'); print_head("Expériences professionnelles"); ?>
 
 <body>
 
-<?php include('header.php'); ?>
+<?php include('utils/header.php'); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -69,7 +69,7 @@
 
 
 
-<?php include('footer.php'); ?>
+<?php include('utils/footer.php'); ?>
 
 </body>
 </html>

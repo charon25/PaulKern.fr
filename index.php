@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<?php include('head.php'); print_head("Page d'accueil"); ?>
+<?php include('utils/head.php'); print_head("Page d'accueil"); ?>
 <body>
 
 
-<?php include('header.php'); ?>
+<?php include('utils/header.php'); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -304,7 +304,7 @@
 	</div>
 </section>
 
-<?php include('footer.php'); ?>
+<?php include('utils/footer.php'); ?>
 
 </body>
 </html>
