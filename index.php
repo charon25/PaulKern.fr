@@ -102,7 +102,7 @@
 				<p class="margetop25"><span class="bleu-big">Février - Août 2021</span><br>
 				<span class="fw-bold">Vox Care</span><br>
 				Stage de fin d'études</p>
-				<p class="txt-gauche gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
+				<p class="justif gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
 				Plusieurs sujets abordés : reconnaissance vocale, débruitage d'un signal, détection Bluetooth...</p>
 			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left bordure-right">
@@ -110,14 +110,14 @@
 				<p class="margetop25"><span class="bleu-big">Juin - Août 2019</span><br>
 				<span class="fw-bold">Korea Polytechnic University</span><br>
 				Stage de découverte culturelle</p>
-				<p class="txt-gauche gris">Self-learning en Arduino et programmation Web.</p>
+				<p class="justif gris">Self-learning en Arduino et programmation Web.</p>
 			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
 				<p class="margetop25"><span class="bleu-big">Juillet 2017</span><br>
 				<span class="fw-bold">Cordon CMS</span><br>
 				Stage ouvrier</p>
-				<p class="txt-gauche gris">Traitement des télés</p>
+				<p class="justif gris">Traitement des télés</p>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -231,20 +231,20 @@
 			<div class="text-center col-sm-4 bordure-right" style="padding-left: 10px">
 				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
-				<span class="fw-bold">Station météo connectée</span><br>
-				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
+				<span class="fw-bold">Station météo connectée</span></p>
+				<p class="justif gris">Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
 			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left bordure-right">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
-				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
+				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
-				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
+				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div>
 			<div class="margebot25"></div>
 		<div class="row">
@@ -256,14 +256,14 @@
 			<div class="text-center col-sm-6 bordure-right">
 				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
-				<span class="fw-bold">Station météo connectée</span><br>
-				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
+				<span class="fw-bold">Station météo connectée</span><br></p>
+				<p class="justif gris">Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
 			</div><hr class="hr">
 			<div class="text-center col-sm-6 bordure-left">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
-				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
+				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div>
 			<div class="margebot25"></div>
 	</div>

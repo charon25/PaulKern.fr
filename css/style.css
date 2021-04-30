@@ -218,7 +218,7 @@ body {
   	================= */
 
 .first-section {
-	background-color: #aaa;
+	background-color: #81de7f /*#aaa;*/
 }
 
 .even-section {
@@ -226,5 +226,5 @@ body {
 }
 
 .odd-section {
-	background-color: #d5d5d5;
+	background-color: #9cde9b; /*#d5d5d5*/
 }
