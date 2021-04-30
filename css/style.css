@@ -4,6 +4,7 @@
 
 body {
 	font-family: "Roboto";
+	color: #222;
 }
 
 .italique {
@@ -22,6 +23,12 @@ body {
 	display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.bouton {
+	text-transform: uppercase;
+	background-color: #034494;
+	border-color: #034494;
 }
 
 /*  ======
@@ -149,6 +156,11 @@ body {
 	margin-top: 25px;
 }
 
+.titre > a {
+	color: #222;
+	text-decoration: none;
+}
+
 .sous-titre {
 	margin-bottom: 25px;
 }
@@ -200,42 +212,10 @@ body {
 	 GRANDES PARTIES
   	================= */
 
-#presentation-first {
-	background-color: #d5d5d5;
-	color: #222;
-}
-
-#presentation {
+.even-section {
 	background-color: #fff;
-	color: #222;
 }
 
-#education {
-	background-color: #d5d5d5; /*TODO : change*/
-	color: #222;
-}
-
-#experiences-pro {
-	background-color: #fff; /*TODO : change*/
-	color: #222;
-}
-
-#experiences-perso {
-	background-color: #d5d5d5; /*TODO : change*/
-	color: #222;
-}
-
-#skills {
-	background-color: #fff; /*TODO : change*/
-	color: #222;
-}
-
-#projects {
-	background-color: #d5d5d5; /*TODO : change*/
-	color: #222;
-}
-
-#contests {
-	background-color: #fff; /*TODO : change*/
-	color: #222;
+.odd-section {
+	background-color: #d5d5d5;
 }

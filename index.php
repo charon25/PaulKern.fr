@@ -25,18 +25,19 @@
 
 <?php include('header.php'); ?>
 
-<section id="presentation-first">
+<section id="presentation-first" class="odd-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Paul Kern</h1>
 				<h3 class="titre-principal">Etudiant en Génie Electrique à l'INSA Strasbourg</h3>
-				<a href="files/CV_KERN_PAUL.pdf" class="btn btn-primary margetop25 margebot45">Télécharger mon CV</a>
+				<a href="files/CV_KERN_PAUL.pdf" class="btn btn-primary bouton margetop25">Télécharger mon CV</a>
+				<div class="margebot45"></div>
 			</div>
 		</div>
 	</div>
 </section>
-<section id="presentation">
+<section id="presentation" class="even-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
@@ -61,11 +62,9 @@
 			<div class="margebot25"></div>
 		</div>
 	</div>
-<section>
-	
 </section>
 
-<section id="education">
+<section id="education" class="odd-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -90,11 +89,11 @@
 	</div>
 </section>
 
-<section id="experiences-pro">
+<section id="experiences-pro" class="even-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="titre">Expériences professionnelles</h2>
+				<h2 class="titre"><a href="exp_pro">Expériences professionnelles</a></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -122,10 +121,16 @@
 			</div>
 			<div class="margebot25"></div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a class="btn btn-primary bouton" href="exp_pro">Voir toutes les expériences</a>
+			</div>
+		</div>
+		<div class="margebot25"></div>
 	</div>
 </section>
 
-<section id="experiences-perso">
+<section id="experiences-perso" class="odd-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -151,7 +156,7 @@
 	</div>
 </section>
 
-<section id="skills">
+<section id="skills" class="even-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -236,7 +241,7 @@
 	</div>
 </section>
 
-<section id="projects">
+<section id="projects" class="odd-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -290,7 +295,7 @@
 	</div>
 </section>
 
-<section id="contests">
+<section id="contests" class="even-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
