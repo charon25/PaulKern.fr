@@ -23,9 +23,7 @@
 </head>
 <body>
 
-<header>
-	<?php include('menu.php'); ?>
-</header>
+<?php include('header.php'); ?>
 
 <section id="presentation-first">
 	<div class="container">
@@ -318,6 +316,8 @@
 		</div>
 	</div>
 </section>
+
+<?php include('footer.php'); ?>
 
 </body>
 </html>
