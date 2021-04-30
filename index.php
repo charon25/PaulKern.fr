@@ -298,17 +298,17 @@
 			</div>
 		</div>
 		<div class="row text-center">
-			<div class="col-sm-3">
+			<div class="col-sm-2 bordure-right">
 				<p class="bleu-big">Avril 2021</p>
 				<p class="fw-bold">Google Code Jam</p>
 				<p>Round 2</p>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-2 bordure-right bordure-left">
 				<p class="bleu-big">Février 2021</p>
 				<p class="fw-bold">Google Hash Code</p>
-				<p>3000<sup>e</sup>/10000 - Top <span class="bleu">30 %</span></p>
+				<p>3000<sup>e</sup>/10000<br>Top <span class="bleu">30 %</span></p>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-2 bordure-left">
 				<p class="bleu-big">Avril 2021</p>
 				<p class="fw-bold">Google Code Jam</p>
 				<p>Round 2</p>
