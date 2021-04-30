@@ -25,7 +25,7 @@
 
 <?php include('header.php'); ?>
 
-<section id="presentation-first" class="odd-section">
+<section id="presentation-first" class="first-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
@@ -130,33 +130,7 @@
 	</div>
 </section>
 
-<section id="experiences-perso" class="odd-section">
-	<div class="container">
-		<div class="row">
-			<div class="text-center col-sm-12">
-				<h2 class="titre">Expériences extra-professionnelles</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="text-center col-sm-6 bordure-right">
-				<a href="https://charon25.itch.io/spalt"><img src="img/img_spalt.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=150></a>
-				<p class="margetop25"><span class="bleu-big">Mars 2021</span><br>
-				<span class="fw-bold">MiniJam 76</span><br>
-				Jeu réalisé de A à Z en 72h en Python<br>
-				<a href="https://charon25.itch.io/spalt">Page du jeu sur itch.io</a></p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-6 bordure-left">
-				<a href="https://www.sauas.fr/"><img src="img/img_sauas.png" class="img-thumbnail-mod-height" alt="Logo SAUAS" height=150></a>
-				<p class="margetop25"><span class="bleu-big">Juin - Octobre 2019 & Septembre - Novembre 2020</span><br>
-				<span class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</span><br>
-				Réalisation du site Web de l'association<br><a href="https://www.sauas.fr/">sauas.fr</a></p>
-			</div>
-			<div class="margebot25"></div>
-		</div>
-	</div>
-</section>
-
-<section id="skills" class="even-section">
+<section id="skills" class="odd-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -241,7 +215,7 @@
 	</div>
 </section>
 
-<section id="projects" class="odd-section">
+<section id="projects" class="even-section">
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
@@ -292,6 +266,32 @@
 				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
 			</div>
 			<div class="margebot25"></div>
+	</div>
+</section>
+
+<section id="experiences-perso" class="odd-section">
+	<div class="container">
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="titre">Expériences extra-professionnelles</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-6 bordure-right">
+				<a href="https://charon25.itch.io/spalt"><img src="img/img_spalt.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=150></a>
+				<p class="margetop25"><span class="bleu-big">Mars 2021</span><br>
+				<span class="fw-bold">MiniJam 76</span><br>
+				Jeu réalisé de A à Z en 72h en Python<br>
+				<a href="https://charon25.itch.io/spalt">Page du jeu sur itch.io</a></p>
+			</div><hr class="hr">
+			<div class="text-center col-sm-6 bordure-left">
+				<a href="https://www.sauas.fr/"><img src="img/img_sauas.png" class="img-thumbnail-mod-height" alt="Logo SAUAS" height=150></a>
+				<p class="margetop25"><span class="bleu-big">Juin - Octobre 2019 & Septembre - Novembre 2020</span><br>
+				<span class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</span><br>
+				Réalisation du site Web de l'association<br><a href="https://www.sauas.fr/">sauas.fr</a></p>
+			</div>
+			<div class="margebot25"></div>
+		</div>
 	</div>
 </section>
 
