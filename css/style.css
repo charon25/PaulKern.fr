@@ -39,6 +39,16 @@ body {
 	max-width: 100%;
 }
 
+.icone {
+	color: #034494;
+	padding-right: 30px;
+}
+
+.icone:hover {
+	color: #022754;
+	padding-right: 30px;
+}
+
 /*  ==========
 	 BORDURES
   	========== */

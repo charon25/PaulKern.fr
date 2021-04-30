@@ -15,6 +15,10 @@
 	<link rel="icon" href="icon.ico">
 	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
 
+	<!-- Icônes -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -32,7 +36,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h2 class="titre">À propos de moi</h2>
+				<h2 class="titre">Qui suis-je ?</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -43,6 +47,12 @@
 				<p class="justif">Je m'appelle Paul Kern, j'ai 21 ans et je suis actuellement en dernière année d'études en <span class="bleu">Génie Electrique</span> à l'INSA Strasbourg, spécialité <span class="bleu italique">Systèmes Embarqués & Internet des Objets</span>.</p>
 				<p class="justif">Ayant bientôt terminé mon stage de fin d'études chez <a href="https://www.vox.care">Vox Care</a>, je suis à la recherche de mon premier emploi dans le domaine de l'électronique embarquée, si possible dans les technologies spatiales.</p><br>
 				<p class="justif">Hors des cours, je suis passionné par les mathématiques, la programmation et les jeux vidéos : mes différents projets, tant personnels que scolaires, peuvent donner des exemples de ce que je sais faire.</p>
+				<div class="text-center">
+					<a href="mailto:paul.kern.fr@gmail.com" target="_blank"><i class="fas fa-envelope fa-4x icone"></i></a>
+					<a href="https://fr.linkedin.com/in/paul-kern" target="_blank"><i class="fab fa-linkedin fa-4x icone"></i></a>
+					<a href="https://github.com/charon25" target="_blank"><i class="fab fa-github fa-4x icone"></i></a>
+					<a href="https://charon25.itch.io"target="_blank"><i class="fab fa-itch-io fa-4x icone"></i></a>
+				</div>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -240,13 +250,13 @@
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
 				<span class="fw-bold">Station météo connectée</span><br>
 				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
-			</div>
+			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left bordure-right">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
 				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
 				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
-			</div>
+			</div><hr class="hr">
 			<div class="text-center col-sm-4 bordure-left">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
@@ -265,7 +275,7 @@
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
 				<span class="fw-bold">Station météo connectée</span><br>
 				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
-			</div>
+			</div><hr class="hr">
 			<div class="text-center col-sm-6 bordure-left">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
