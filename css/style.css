@@ -10,6 +10,10 @@
 	text-align: justify !important; 
 }
 
+.txt-gauche {
+	text-align: left;
+}
+
 .center-image-vert {
 	display: flex;
     align-items: center;
@@ -48,15 +52,24 @@
 
 	.bordure-left {
 		border-left: #bbbbbb 1px solid;
-		padding-left: 10px;
+		padding-left: 30px;
 		padding-top: 10px;
 	}
 
 	.bordure-right {
 		border-right: #bbbbbb 1px solid;
-		padding-right: 10px;
+		padding-right: 30px;
 		padding-top: 10px;
 	}
+}
+
+.titre {
+	margin-bottom: 45px;
+	margin-top: 25px;
+}
+
+.sous-titre {
+	margin-bottom: 25px;
 }
 
 /*  ========
@@ -84,7 +97,14 @@
   	========== */
 
 .bleu {
-	color: #3577f2;
+	color: #429ae8;
+	font-weight: bold;
+}
+
+.bleu-big {
+	color: #429ae8;
+	font-weight: bold;
+	font-size: 1.2rem;
 }
 
 .gris {
@@ -121,9 +141,11 @@
 }
 
 #projects {
-
+	background-color: #222; /*TODO : change*/
+	color: #eeeeee;
 }
 
 #contests {
-
+	background-color: #000; /*TODO : change*/
+	color: #eeeeee;
 }

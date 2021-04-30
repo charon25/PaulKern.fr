@@ -34,19 +34,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="margebot45 margetop25">Formation</h2>
+				<h2 class="titre">Formation</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6 text-center bordure-right">
 				<img src="img/logo_insa.svg" class="img-thumbnail-mod-height" alt="Logo INSA Strasbourg" height=60>
-				<p class="margetop25"><span class="bleu">2016 - 2021</span><br>
+				<p class="margetop25"><span class="bleu-big">2016 - 2021</span><br>
 				<span class="fw-bold">INSA Strasbourg</span><br>
 				Diplôme d'Ingénieur en Génie Electrique</p>
 			</div>
 			<div class="col-sm-6 text-center bordure-left">
 				<img src="img/logo_saint_michel.png" class="img-thumbnail-mod-height" alt="Logo Saint-Michel" height=60>
-				<p class="margetop25"><span class="bleu">2016</span><br>
+				<p class="margetop25"><span class="bleu-big">2016</span><br>
 				<span class="fw-bold">Lycée Saint-Michel des Batignolles</span><br>
 				Baccalauréat Général S - Spé Maths - Mention Très Bien</p>
 			</div>
@@ -59,36 +59,33 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="margebot45 margetop25">Expériences professionnelles</h2>
+				<h2 class="titre">Expériences professionnelles</h2>
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-6 bordure-right">
+			<div class="text-center col-sm-4 bordure-right">
 				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
-				<p class="margetop25"><span class="bleu">Février - Août 2021</span><br>
+				<p class="margetop25"><span class="bleu-big">Février - Août 2021</span><br>
 				<span class="fw-bold">Vox Care</span><br>
 				Stage de fin d'études</p>
-				<p class="justif gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
+				<p class="txt-gauche gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
 				Plusieurs sujets abordés : reconnaissance vocale, débruitage d'un signal, détection Bluetooth...</p>
 			</div>
-			<div class="text-center col-sm-6 bordure-left">
+			<div class="text-center col-sm-4 bordure-left bordure-right">
 				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu">Juin - Août 2019</span><br>
+				<p class="margetop25"><span class="bleu-big">Juin - Août 2019</span><br>
 				<span class="fw-bold">Korea Polytechnic University</span><br>
 				Stage de découverte culturelle</p>
-				<p class="justif gris">Self-learning en Arduino et programmation Web.</p>
+				<p class="txt-gauche gris">Self-learning en Arduino et programmation Web.</p>
 			</div>
-			<div class="margebot25"></div>
-		</div>
-		<div class="row">
-			<div class="text-center col-sm-6">
-				<img src="img/logo_cordon.png" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
-				<p class="margetop25"><span class="bleu">Juillet 2017</span><br>
+			<div class="text-center col-sm-4 bordure-left">
+				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
+				<p class="margetop25"><span class="bleu-big">Juillet 2017</span><br>
 				<span class="fw-bold">Cordon CMS</span><br>
 				Stage ouvrier</p>
-				<p class="justif gris">Traitement des télés</p>
+				<p class="txt-gauche gris">Traitement des télés</p>
 			</div>
-			<div class="margebot45"></div>
+			<div class="margebot25"></div>
 		</div>
 	</div>
 </section>
@@ -97,20 +94,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="margebot45 margetop25">Expériences extra-professionnelles</h2>
+				<h2 class="titre">Expériences extra-professionnelles</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="text-center col-sm-6 bordure-right">
 				<a href="https://charon25.itch.io/spalt"><img src="img/img_spalt.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=150></a>
-				<p class="margetop25"><span class="bleu">Mars 2021</span><br>
+				<p class="margetop25"><span class="bleu-big">Mars 2021</span><br>
 				<span class="fw-bold">MiniJam 76</span><br>
 				Jeu réalisé de A à Z en 72h en Python<br>
 				<a href="https://charon25.itch.io/spalt">Page du jeu sur itch.io</a></p>
 			</div>
 			<div class="text-center col-sm-6 bordure-left">
 				<a href="https://www.sauas.fr/"><img src="img/img_sauas.png" class="img-thumbnail-mod-height" alt="Logo SAUAS" height=150></a>
-				<p class="margetop25"><span class="bleu">Juin - Octobre 2019 — Septembre - Novembre 2020</span><br>
+				<p class="margetop25"><span class="bleu-big">Juin - Octobre 2019 & Septembre - Novembre 2020</span><br>
 				<span class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</span><br>
 				Réalisation du site Web de l'association<br><a href="https://www.sauas.fr/">sauas.fr</a></p>
 			</div>
@@ -123,12 +120,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="margebot45 margetop25">Compétences</h2>
+				<h2 class="titre">Compétences</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="">Langues</h3>
+				<h3 class="sous-titre">Langues</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -151,12 +148,12 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="">Langages de programmation</h3>
+				<h3 class="sous-titre">Langages de programmation</h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="margebot25">Maîtrisés</h4>
+				<h4 class="sous-titre">Maîtrisés</h4>
 			</div>
 		</div>
 		<div class="row">
@@ -172,7 +169,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class=" margebot25">Niveau intérmédiaire</h4>
+				<h4 class="sous-titre">Niveau intérmédiaire</h4>
 			</div>
 		</div>
 		<div class="row">
@@ -188,17 +185,17 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class=" margebot25">Débutant</h4>
+				<h4 class="sous-titre">Débutant</h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="">Logiciels & OS</h3>
+				<h3 class="sous-titre">Logiciels & OS</h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="">Autres compétences</h3>
+				<h3 class="sous-titre">Autres compétences</h3>
 			</div>
 		</div>
 	</div>
@@ -206,13 +203,82 @@
 
 <section id="projects">
 	<div class="container">
-		projets
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="titre">Projets</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="sous-titre">Scolaires</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-4 bordure-right" style="padding-left: 10px">
+				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
+				<span class="fw-bold">Station météo connectée</span><br>
+				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
+			</div>
+			<div class="text-center col-sm-4 bordure-left bordure-right">
+				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
+				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+			</div>
+			<div class="text-center col-sm-4 bordure-left">
+				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
+				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+			</div>
+			<div class="margebot25"></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="sous-titre">Personnels</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="text-center col-sm-6 bordure-right">
+				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
+				<span class="fw-bold">Station météo connectée</span><br>
+				Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
+			</div>
+			<div class="text-center col-sm-6 bordure-left">
+				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
+				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
+				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span><br>
+				Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
+			</div>
+			<div class="margebot25"></div>
 	</div>
 </section>
 
 <section id="contests">
 	<div class="container">
-		concours
+		<div class="row">
+			<div class="text-center col-sm-12">
+				<h2 class="titre">Compétitions</h2>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-sm-3">
+				<p class="bleu-big">Avril 2021</p>
+				<p class="fw-bold">Google Code Jam</p>
+				<p>Round 2</p>
+			</div>
+			<div class="col-sm-3">
+				<p class="bleu-big">Février 2021</p>
+				<p class="fw-bold">Google Hash Code</p>
+				<p>3000<sup>e</sup>/10000 - Top <span class="bleu">30 %</span></p>
+			</div>
+			<div class="col-sm-3">
+				<p class="bleu-big">Avril 2021</p>
+				<p class="fw-bold">Google Code Jam</p>
+				<p>Round 2</p>
+			</div>
+		</div>
 	</div>
 </section>
 
