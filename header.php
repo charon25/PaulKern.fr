@@ -1,3 +1,4 @@
+<?php  ?>
 <header>
 
 	<div id="menu" class="container">
