@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head("Expériences professionnelles"); ?>
+<?php include('utils/head.php'); print_head("Projets personnels"); ?>
 
 <body>
 
