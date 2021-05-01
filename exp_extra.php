@@ -57,3 +57,5 @@
 
 </body>
 </html>
+
+<script type="text/javascript" src="js/no_js.js"></script>
