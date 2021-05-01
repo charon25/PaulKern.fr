@@ -20,7 +20,7 @@
 <body>
 
 
-<?php include('../utils/header.php'); ?>
+<?php include('../utils/header.php'); print_header("../"); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
