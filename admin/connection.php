@@ -9,8 +9,8 @@
 	$connected = FALSE;
 	$bad_password = FALSE;
 	if (isset($_POST['connect'])) {
-		$hashed_password = file_get_contents('password.config'); # "motdepasse"
-		if (hash('sha256', $_POST['password']) == $hashed_password) {
+		$hashed_password = file_get_contents('password.config');
+		if (password_verify($_POST['password'], $hashed_password)) {
 			$_SESSION['login'] = 'true';
 			$connected = TRUE;
 		} else {
@@ -30,7 +30,7 @@
 <html>
 <?php 
 	if ($connected) {
-		echo '<meta http-equiv = "refresh" content = "2; url = admin.php" />';
+		echo '<meta http-equiv = "refresh" content = "2; url = admin" />';
 	}
 	include('../utils/head.php');
 	print_head("Connexion à l'espace administrateur", "../");
