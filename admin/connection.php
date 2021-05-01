@@ -79,17 +79,5 @@
 </html>
 
 
-<script type="text/javascript">
-	// Remove every element with class "no-js"
-	Array.from(document.getElementsByClassName("no-js")).forEach(element => element.remove());
-	// Fix footer at bottom of page
-	var footer = document.getElementById("footer");
-	if (screen.width >= 764) {
-		footer.style.position = "fixed";
-		footer.style.bottom = 0;
-		footer.style.left = 0;
-		footer.style.right = 0;
-	} else {
-		footer.remove();
-	}
-</script>
+<script type="text/javascript" src="../js/no_js.js"></script>
+<script type="text/javascript" src="../js/footer.js"></script>
