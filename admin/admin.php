@@ -1,15 +1,6 @@
 <?php 
 
-	session_start();
-
- ?>
-
-<?php 
-
-	if (!isset($_SESSION['login']) || $_SESSION['login'] != 'true') {
-		require('not_connected.php');
-		exit();
-	}
+	require('check_connection.php');
 
  ?>
 

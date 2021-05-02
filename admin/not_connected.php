@@ -1,10 +1,9 @@
-<?php  ?>
 <!DOCTYPE html>
 <html>
 <?php
 	include('../utils/head.php');
 	print_head("Accès non-autorisé", "../");
-?>
+ ?>
 <body>
 
 <?php include('../utils/header.php'); print_header("../"); ?>
