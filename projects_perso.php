@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head("Projets personnels"); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Projets personnels")); ?>
 
 <body>
 
@@ -59,7 +59,7 @@
 
 
 
-<?php include('utils/footer.php'); ?>
+<?php include('utils/footer.php'); print_footer(); ?>
 
 </body>
 </html>

@@ -33,12 +33,12 @@
 		echo '<meta http-equiv = "refresh" content = "2; url = admin" />';
 	}
 	include('../utils/head.php');
-	print_head("Connexion à l'espace administrateur", "../");
+	print_head(array('title' => "Connexion à l'espace administrateur", 'start_dir' => "../"));
 ?>
 <body>
 
 
-<?php include('../utils/header.php'); print_header("../"); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -74,7 +74,7 @@
 	</div>
 </section>
 
-<?php include('../utils/footer.php'); ?>
+<?php include('../utils/footer.php'); print_footer(array('start_dir' => "../")); ?>
 </body>
 </html>
 

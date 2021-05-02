@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head("Page d'accueil"); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Page d'accueil")); ?>
 <body>
 
 
@@ -323,7 +323,7 @@
 	</div>
 </section>
 
-<?php include('utils/footer.php'); ?>
+<?php include('utils/footer.php'); print_footer(); ?>
 
 </body>
 </html>

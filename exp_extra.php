@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head("Expériences extra-professionnelles"); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Expériences extra-professionnelles")); ?>
 
 <body>
 
@@ -53,7 +53,7 @@
 
 
 
-<?php include('utils/footer.php'); ?>
+<?php include('utils/footer.php'); print_footer();?>
 
 </body>
 </html>
