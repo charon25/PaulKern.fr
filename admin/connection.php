@@ -52,12 +52,11 @@
 </section>
 
 <section id="connection">
-	<div class="container">
+	<div class="container admin-element">
 		<div class="row text-center">
-			<div class="margetop45"></div>
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<form method="post" action="#" class="form-connexion">
+				<form method="post" action="#">
 					<p class="fw-bold">Mot de passe : <input type="password" name="password"></p>
 					<?php 
 						if ($bad_password) {

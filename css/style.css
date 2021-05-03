@@ -243,16 +243,6 @@ body {
 	 ESPACE ADMIN
   	============== */
 
-.form-connexion {
-	border: 1px solid #034494;
-	padding: 20px;
-}
-
-.admin-menu {
-	border: 1px solid #034494;
-	padding: 20px;
-}
-
 .admin-menu-item {
 	color: #034494;
 	text-decoration: none;
@@ -268,4 +258,10 @@ body {
 	background-color: #dfdfdf;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.admin-element {
+	border: 1px solid #034494;
+	padding: 20px;
+	margin-top: 25px;
 }

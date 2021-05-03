@@ -25,8 +25,7 @@
 </section>
 
 <section id="admin-menu">
-	<div class="margetop25"></div>
-	<div class="container admin-menu">
+	<div class="container admin-element">
 		<div class="row text-center">
 			<div class="col-sm-3">
 				<a href="general" class="admin-menu-item"><i class="fas fa-address-card fa-3x"></i><p class="admin-menu-item-text">Général</p></a>
