@@ -1,3 +1,17 @@
+<?php 
+
+require('utils/bdd.php');
+require('utils/markdown.php');
+require('utils/constants.php');
+
+
+$request = $bdd->query('SELECT * FROM `pk_data` WHERE `type`="general"');
+$general_data = json_decode($request->fetch()['data'], TRUE);
+
+//
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <?php include('utils/head.php'); print_head(array('title' => "Page d'accueil")); ?>
@@ -31,14 +45,12 @@
 				<img id="profil-pic" src="img/photo_profil.jpg" width="200" height="200" class="img-thumbnail-mod-height margebot25" alt="Photo profil">
 			</div>
 			<div class="col-sm-9">
-				<p class="justif">Je m'appelle Paul Kern, j'ai 21 ans et je suis actuellement en dernière année d'études en <span class="bleu">Génie Electrique</span> à l'INSA Strasbourg, spécialité <span class="bleu italique">Systèmes Embarqués & Internet des Objets</span>.</p>
-				<p class="justif">Ayant bientôt terminé mon stage de fin d'études chez <a href="https://www.vox.care">Vox Care</a>, je suis à la recherche de mon premier emploi dans le domaine de l'électronique embarquée, si possible dans les technologies spatiales.</p><br>
-				<p class="justif">Hors des cours, je suis passionné par les mathématiques, la programmation et les jeux vidéos : mes différents projets, tant personnels que scolaires, peuvent donner des exemples de ce que je sais faire.</p>
+				<?php echo markdown_to_html($general_data[$GEN_PRES_TEXT]); ?>
 				<div class="text-center">
-					<a href="mailto:paul.kern.fr@gmail.com" target="_blank"><i class="fas fa-envelope fa-4x icone"></i></a>
-					<a href="https://fr.linkedin.com/in/paul-kern" target="_blank"><i class="fab fa-linkedin fa-4x icone"></i></a>
-					<a href="https://github.com/charon25" target="_blank"><i class="fab fa-github fa-4x icone"></i></a>
-					<a href="https://charon25.itch.io"target="_blank"><i class="fab fa-itch-io fa-4x icone"></i></a>
+					<a href="mailto:<?php echo $general_data[$GEN_LINK_MAIL]; ?>" target="_blank"><i class="fas fa-envelope fa-4x icone"></i></a>
+					<a href="<?php echo $general_data[$GEN_LINK_LINKEDIN]; ?>" target="_blank"><i class="fab fa-linkedin fa-4x icone"></i></a>
+					<a href="<?php echo $general_data[$GEN_LINK_GITHUB]; ?>" target="_blank"><i class="fab fa-github fa-4x icone"></i></a>
+					<a href="<?php echo $general_data[$GEN_LINK_ITCHIO]; ?>"target="_blank"><i class="fab fa-itch-io fa-4x icone"></i></a>
 				</div>
 			</div>
 			<div class="margebot25"></div>

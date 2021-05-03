@@ -3,17 +3,7 @@
 require('check_connection.php');
 require('../utils/bdd.php');
 require('../utils/markdown.php');
-
-// Constantes
-	$PREFIX = 'general';
-	$PRES_TEXT = $PREFIX . '_presentation-text';
-	$LINK_MAIL = $PREFIX . '_mail';
-	$LINK_LINKEDIN = $PREFIX . '_linkedin';
-	$LINK_GITHUB = $PREFIX . '_github';
-	$LINK_ITCHIO = $PREFIX . '_itchio';
-	$PHOTO = $PREFIX . '_photo';
-	$SUBMIT = $PREFIX . '_ok';
-//
+require('../utils/constants.php');
 
 function set_data(&$array, $key, $value) {
 	if ($_POST[$key] != '') 
@@ -31,12 +21,12 @@ function set_data_post(&$array, $key) {
 	$request = $bdd->query('SELECT * FROM `pk_data` WHERE `type`="general"');
 	$general_data = json_decode($request->fetch()['data'], TRUE);
 
-	if (isset($_POST[$SUBMIT])) {
-		set_data_post($general_data, $PRES_TEXT);
-		set_data_post($general_data, $LINK_MAIL);
-		set_data_post($general_data, $LINK_LINKEDIN);
-		set_data_post($general_data, $LINK_GITHUB);
-		set_data_post($general_data, $LINK_ITCHIO);
+	if (isset($_POST[$GEN_SUBMIT])) {
+		set_data_post($general_data, $GEN_PRES_TEXT);
+		set_data_post($general_data, $GEN_LINK_MAIL);
+		set_data_post($general_data, $GEN_LINK_LINKEDIN);
+		set_data_post($general_data, $GEN_LINK_GITHUB);
+		set_data_post($general_data, $GEN_LINK_ITCHIO);
 
 		$insert_request = $bdd->prepare('UPDATE `pk_data` SET `data`=? WHERE `type`="general"');
 		$insert_request->execute(array(json_encode($general_data)));
@@ -70,28 +60,28 @@ function set_data_post(&$array, $key) {
 			<div class="row">
 				<div class="col-sm-6 bordure-right-no-padding">
 					<p class="admin-categorie">Texte de présentation</p>
-					<p><textarea name="<?php echo $PRES_TEXT; ?>" class="form-control" rows="8" spellcheck="false"><?php echo $general_data[$PRES_TEXT] ?></textarea></p>
+					<p><textarea name="<?php echo $GEN_PRES_TEXT; ?>" class="form-control" rows="8" spellcheck="false"><?php echo $general_data[$GEN_PRES_TEXT] ?></textarea></p>
 				</div>
 				<div class="col-sm-6">
 					<p class="admin-categorie">Liens</p>
 					<p><div class="row">
 						<div class="col-sm-6 fw-bold">
-							Adresse mail : <input type="text" name="<?php echo $LINK_MAIL; ?>" value="<?php echo $general_data[$LINK_MAIL] ?>" class="form-control">
+							Adresse mail : <input type="text" name="<?php echo $GEN_LINK_MAIL; ?>" value="<?php echo $general_data[$GEN_LINK_MAIL] ?>" class="form-control">
 						</div>
 						<div class="col-sm-6 fw-bold">
-							LinkedIn : <input type="text" name="<?php echo $LINK_LINKEDIN; ?>" value="<?php echo $general_data[$LINK_LINKEDIN] ?>" class="form-control">
+							LinkedIn : <input type="text" name="<?php echo $GEN_LINK_LINKEDIN; ?>" value="<?php echo $general_data[$GEN_LINK_LINKEDIN] ?>" class="form-control">
 						</div>
 						<div class="col-sm-6 fw-bold">
-							Github : <input type="text" name="<?php echo $LINK_GITHUB; ?>" value="<?php echo $general_data[$LINK_GITHUB] ?>" class="form-control">
+							Github : <input type="text" name="<?php echo $GEN_LINK_GITHUB; ?>" value="<?php echo $general_data[$GEN_LINK_GITHUB] ?>" class="form-control">
 						</div>
 						<div class="col-sm-6 fw-bold">
-							itch.io : <input type="text" name="<?php echo $LINK_ITCHIO; ?>" value="<?php echo $general_data[$LINK_ITCHIO] ?>" class="form-control">
+							itch.io : <input type="text" name="<?php echo $GEN_LINK_ITCHIO; ?>" value="<?php echo $general_data[$GEN_LINK_ITCHIO] ?>" class="form-control">
 						</div>
 					</div></p>
-					<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $PHOTO; ?>" class="form-control-file">
+					<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control-file">
 				</div>
 			</div>
-			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $SUBMIT; ?>" class="btn btn-primary" value="Enregistrer"></p>
+			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $GEN_SUBMIT; ?>" class="btn btn-primary" value="Enregistrer"></p>
 		</form>
 	</div>
 </section>
