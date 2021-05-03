@@ -61,6 +61,10 @@ body {
 	}
 }
 
+#menu-inside {
+	border-bottom: 1px solid #ddd;
+}
+
 /*  ========
 	 FOOTER
   	======== */

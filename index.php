@@ -26,7 +26,7 @@ $general_data = json_decode($request->fetch()['data'], TRUE);
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Paul Kern</h1>
 				<h3 class="titre-principal">Etudiant en Génie Electrique à l'INSA Strasbourg</h3>
-				<a href="files/CV_KERN_PAUL.pdf" class="btn btn-primary bouton margetop25">Télécharger mon CV</a>
+				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25">Télécharger mon CV</a>
 				<div class="margebot45"></div>
 			</div>
 		</div>

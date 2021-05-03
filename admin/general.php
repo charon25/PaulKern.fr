@@ -20,9 +20,14 @@ require('../utils/functions.php');
 		set_data_post($general_data, $GEN_LINK_GITHUB);
 		set_data_post($general_data, $GEN_LINK_ITCHIO);
 
-		if (!empty($_FILES)) {
-			$photo_path = save_file($GEN_PHOTO, "../", "img/general/");
+		if (!empty($_FILES) && $_FILES[$GEN_PHOTO]['size'] > 0) {
+			$photo_path = save_file($GEN_PHOTO, "../", "img/general/", "photo");
 			set_data($general_data, $GEN_PHOTO, $photo_path);
+		}
+
+		if (!empty($_FILES) && $_FILES[$GEN_CV]['size'] > 0) {
+			$photo_path = save_file($GEN_CV, "../", "files/general/", "cv");
+			set_data($general_data, $GEN_CV, $photo_path);
 		}
 
 		$insert_request = $bdd->prepare('UPDATE `pk_data` SET `data`=? WHERE `type`="general"');
@@ -55,11 +60,11 @@ require('../utils/functions.php');
 		<p class="admin-title bleu-big">Informations générales</p>
 		<form enctype="multipart/form-data" method="post" action="#general-infos" class="form-group">
 			<div class="row">
-				<div class="col-sm-6 bordure-right-no-padding">
+				<div class="col-sm-5 bordure-right-no-padding">
 					<p class="admin-categorie">Texte de présentation</p>
 					<p><textarea name="<?php echo $GEN_PRES_TEXT; ?>" class="form-control" rows="8" spellcheck="false"><?php echo $general_data[$GEN_PRES_TEXT] ?></textarea></p>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-7">
 					<p class="admin-categorie">Liens</p>
 					<p><div class="row">
 						<div class="col-sm-6 fw-bold">
@@ -75,7 +80,14 @@ require('../utils/functions.php');
 							itch.io : <input type="text" name="<?php echo $GEN_LINK_ITCHIO; ?>" value="<?php echo $general_data[$GEN_LINK_ITCHIO] ?>" class="form-control">
 						</div>
 					</div></p>
-					<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control-file">
+					<div class="row">
+						<div class="col-sm-6">
+							<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control-file" accept="image/*">
+						</div>
+						<div class="col-sm-6">
+							<p class="admin-categorie">CV</p><input type="file" name="<?php echo $GEN_CV; ?>" class="form-control-file" accept="application/pdf">
+						</div>
+					</div>
 				</div>
 			</div>
 			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $GEN_SUBMIT; ?>" class="btn btn-primary" value="Enregistrer"></p>

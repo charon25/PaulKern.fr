@@ -8,6 +8,7 @@
 	$GEN_LINK_GITHUB = $GEN_PREFIX . '_github';
 	$GEN_LINK_ITCHIO = $GEN_PREFIX . '_itchio';
 	$GEN_PHOTO = $GEN_PREFIX . '_photo';
+	$GEN_CV = $GEN_PREFIX . '_cv';
 	$GEN_SUBMIT = $GEN_PREFIX . '_ok';
 //
 

@@ -9,15 +9,19 @@ function set_data_post(&$array, $key) {
 	set_data($array, $key, $_POST[$key]);
 }
 
-function save_file($userfile, $rel_directory, $img_directory) {
+function save_file($userfile, $rel_directory, $img_directory, $filename) {
 	$extension = pathinfo($_FILES[$userfile]['name'], PATHINFO_EXTENSION);
-	$image_name = bin2hex(random_bytes(10)) . "." . $extension;
+	$image_name = $filename . "." . $extension;
 
 	$image_path = $img_directory . $image_name;
 
 	copy($_FILES[$userfile]['tmp_name'], $rel_directory . $image_path);
 
 	return $image_path;
+}
+
+function save_file_random_name($userfile, $rel_directory, $img_directory) {
+	return save_file($userfile, $rel_directory, $img_directory, bin2hex(random_bytes(10)));
 }
 
 
