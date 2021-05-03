@@ -139,6 +139,10 @@ body {
 		padding-top: 10px;
 	}
 
+	.bordure-right-no-padding {
+		border-right: #bbbbbb 1px solid;
+	}
+
 	.hr {
 		display: none;
 	}
@@ -178,12 +182,27 @@ body {
 	 MARGES
   	======== */
 
+.margetop15 {
+	margin-top: 15px;
+}
 .margetop25 {
 	margin-top: 25px;
 }
 
 .margetop45 {
 	margin-top: 45px;
+}
+
+.margebot0 {
+	margin-bottom: 0px;
+}
+
+.margebot15 {
+	margin-bottom: 15px;
+}
+
+.margebot25 {
+	margin-bottom: 25px;
 }
 
 .margebot45 {
@@ -194,10 +213,6 @@ body {
 	.margebot45-big {
 		margin-bottom: 45px;
 	}
-}
-
-.margebot25 {
-	margin-bottom: 25px;
 }
 
 .logo {
@@ -239,6 +254,23 @@ body {
 	background-color: #9cde9b; /*#d5d5d5*/
 }
 
+/*  =========
+	 MARDOWN
+  	========= */
+
+.md-bold {
+	font-weight: bold;
+}
+
+.md-italics {
+	font-style: italic;
+}
+
+.md-highlight {
+	color: #034494;
+}
+
+
 /*  ==============
 	 ESPACE ADMIN
   	============== */
@@ -264,4 +296,15 @@ body {
 	border: 1px solid #034494;
 	padding: 20px;
 	margin-top: 25px;
+}
+
+.admin-title {
+	border-bottom: 1px solid black;
+}
+
+.admin-categorie {
+	color: #034494;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-align: center;
 }
