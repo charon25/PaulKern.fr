@@ -24,7 +24,31 @@
 	</div>
 </section>
 
-
+<section id="admin-menu">
+	<div class="margetop25"></div>
+	<div class="container admin-menu">
+		<div class="row text-center">
+			<div class="col-sm-3">
+				<a href="general" class="admin-menu-item"><i class="fas fa-address-card fa-3x"></i><p class="admin-menu-item-text">Général</p></a>
+			</div>
+			<div class="col-sm-3">
+				<a href="exp_pro" class="admin-menu-item"><i class="fas fa-briefcase fa-3x"></i><p class="admin-menu-item-text">Expériences pro.</p></a>
+			</div>
+			<div class="col-sm-3">
+				<a href="skills" class="admin-menu-item"><i class="fas fa-laptop fa-3x"></i><p class="admin-menu-item-text">Compétences</p></a>
+			</div>
+			<div class="col-sm-3">
+				<a href="projects" class="admin-menu-item"><i class="fas fa-tasks fa-3x"></i><p class="admin-menu-item-text">Projets</p></a>
+			</div>
+		</div>
+		<div class="margebot45"></div>
+		<div class="row text-center">
+			<div class="col-sm-3">
+				<a href="exp_extra" class="admin-menu-item"><i class="fas fa-hands-helping fa-3x"></i><p class="admin-menu-item-text">Expériences extra</p></a>
+			</div>
+		</div>
+	</div>
+</section>
 
 <?php include('../utils/footer.php'); print_footer(array('start_dir' => "../")); ?>
 </body>

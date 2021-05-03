@@ -241,3 +241,25 @@ body {
 	border: 1px solid #034494;
 	padding: 20px;
 }
+
+.admin-menu {
+	border: 1px solid #034494;
+	padding: 20px;
+}
+
+.admin-menu-item {
+	color: #034494;
+	text-decoration: none;
+}
+
+.admin-menu-item:hover {
+	color: #022754;
+}
+
+.admin-menu-item-text {
+	margin-top: 10px;
+	text-transform: uppercase;
+	background-color: #dfdfdf;
+	padding-left: 10px;
+	padding-right: 10px;
+}
