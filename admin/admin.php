@@ -41,7 +41,7 @@
 				<a href="projects" class="admin-menu-item"><i class="fas fa-tasks fa-3x"></i><p class="admin-menu-item-text">Projets</p></a>
 			</div>
 		</div>
-		<div class="margebot45"></div>
+		<div class="margebot45-big"></div>
 		<div class="row text-center">
 			<div class="col-sm-3">
 				<a href="exp_extra" class="admin-menu-item"><i class="fas fa-hands-helping fa-3x"></i><p class="admin-menu-item-text">Expériences extra</p></a>
