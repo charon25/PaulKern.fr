@@ -4,15 +4,7 @@ require('check_connection.php');
 require('../utils/bdd.php');
 require('../utils/markdown.php');
 require('../utils/constants.php');
-
-function set_data(&$array, $key, $value) {
-	if ($_POST[$key] != '') 
-		$array[$key] = $value;
-}
-
-function set_data_post(&$array, $key) {
-	set_data($array, $key, $_POST[$key]);
-}
+require('../utils/functions.php');
 
  ?>
 
@@ -28,6 +20,11 @@ function set_data_post(&$array, $key) {
 		set_data_post($general_data, $GEN_LINK_GITHUB);
 		set_data_post($general_data, $GEN_LINK_ITCHIO);
 
+		if (!empty($_FILES)) {
+			$photo_path = save_file($GEN_PHOTO, "../", "img/general/");
+			set_data($general_data, $GEN_PHOTO, $photo_path);
+		}
+
 		$insert_request = $bdd->prepare('UPDATE `pk_data` SET `data`=? WHERE `type`="general"');
 		$insert_request->execute(array(json_encode($general_data)));
 	}
@@ -40,7 +37,7 @@ function set_data_post(&$array, $key) {
 <body>
 
 
-<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -56,7 +53,7 @@ function set_data_post(&$array, $key) {
 <section id="general-infos">
 	<div class="container admin-element">
 		<p class="admin-title bleu-big">Informations générales</p>
-		<form method="post" action="#general-infos" class="form-group">
+		<form enctype="multipart/form-data" method="post" action="#general-infos" class="form-group">
 			<div class="row">
 				<div class="col-sm-6 bordure-right-no-padding">
 					<p class="admin-categorie">Texte de présentation</p>

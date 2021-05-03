@@ -42,7 +42,7 @@ $general_data = json_decode($request->fetch()['data'], TRUE);
 		</div>
 		<div class="row">
 			<div class="col-sm-3 text-center">
-				<img id="profil-pic" src="img/photo_profil.jpg" width="200" height="200" class="img-thumbnail-mod-height margebot25" alt="Photo profil">
+				<img id="profil-pic" src="<?php echo $general_data[$GEN_PHOTO]; ?>" width="200" height="200" class="img-thumbnail-mod-height margebot25" alt="Photo profil">
 			</div>
 			<div class="col-sm-9">
 				<?php echo markdown_to_html($general_data[$GEN_PRES_TEXT]); ?>
