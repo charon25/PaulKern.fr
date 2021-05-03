@@ -21,7 +21,7 @@
 		}
 	}
 
-	if (isset($_SESSION['login']) and $_SESSION['login'] == 'true' and isset($_SESSION['activity_time']) and (time - $_SESSION['activity_time']) < 10 * 60) {
+	if (isset($_SESSION['login']) and $_SESSION['login'] == 'true') {
 		$connected = TRUE;
 	}
 
@@ -32,6 +32,7 @@
 <html>
 <?php 
 	if ($connected) {
+		$_SESSION['activity_time'] = time();
 		echo '<meta http-equiv = "refresh" content = "2; url = admin" />';
 	}
 	include('../utils/head.php');
