@@ -11,15 +11,17 @@
 	if (isset($_POST['connect'])) {
 		$hashed_password = file_get_contents('password.config');
 		if (password_verify($_POST['password'], $hashed_password)) {
+			$_SESSION['activity_time'] = time();
 			$_SESSION['login'] = 'true';
 			$connected = TRUE;
 		} else {
 			$bad_password = TRUE;
 			$_SESSION['login'] = 'false';
+			$_SESSION['activity_time'] = 0;
 		}
 	}
 
-	if (isset($_SESSION['login']) and $_SESSION['login'] == 'true') {
+	if (isset($_SESSION['login']) and $_SESSION['login'] == 'true' and isset($_SESSION['activity_time']) and (time - $_SESSION['activity_time']) < 10 * 60) {
 		$connected = TRUE;
 	}
 
