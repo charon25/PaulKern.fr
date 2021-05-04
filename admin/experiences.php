@@ -49,14 +49,15 @@ require('../utils/functions.php');
 <body>
 
 
-<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur - Expériences</h1>
-				<div class="margebot45"></div>
+				<a target="_blank" rel="noopener noreferrer" href="cheatsheet.pdf" class="btn btn-primary margetop15">Mardown cheatsheet</a>
+				<div class="margebot25"></div>
 			</div>
 		</div>
 	</div>
