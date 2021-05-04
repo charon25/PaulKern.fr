@@ -88,8 +88,8 @@ require('../utils/functions.php');
 					<p class="admin-categorie">Type</p>
 					<p><select class="form-control" id="<?php echo $EXP_A_TYPE; ?>" name="<?php echo $EXP_A_TYPE; ?>" onchange="on_change();">
 						<option>---</option>
-						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'pro') echo 'selected="true"'; ?>>Expérience professionnelle</option>
-						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'extra') echo 'selected="true"'; ?>>Expérience extra-professionnelle</option>
+						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'pro') echo 'selected="true"'; ?> value="pro">Expérience professionnelle</option>
+						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'extra') echo 'selected="true"'; ?> value="extra">Expérience extra-professionnelle</option>
 					</select></p>
 					<p class="admin-categorie">Images</p>
 					<p class="fw-bold">Image principale : <input type="file" name="<?php echo $EXP_A_MAIN_IMG; ?>" class="form-control" accept="image/*"></p>

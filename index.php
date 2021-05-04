@@ -3,12 +3,10 @@
 require('utils/bdd.php');
 require('utils/markdown.php');
 require('utils/constants.php');
+require('utils/functions.php');
 
-
-$request = $bdd->query('SELECT * FROM `pk_data` WHERE `type`="general"');
-$general_data = json_decode($request->fetch()['data'], TRUE);
-
-//
+$general_data = get_db_data_from_key($bdd, 'general', 1)[0];
+$experiences_pro_data = get_db_data_from_key($bdd, 'pro', 3);
 
  ?>
 
@@ -18,7 +16,7 @@ $general_data = json_decode($request->fetch()['data'], TRUE);
 <body>
 
 
-<?php include('utils/header.php'); print_header(); ?>
+<?php //include('utils/header.php'); print_header(); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -91,28 +89,29 @@ $general_data = json_decode($request->fetch()['data'], TRUE);
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-4 bordure-right">
-				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
-				<p class="margetop25"><span class="bleu-big">Février - Août 2021</span><br>
-				<span class="fw-bold">Vox Care</span><br>
-				Stage de fin d'études</p>
-				<p class="justif gris">Amélioration du produit principal : Serena, un assistant vocal à destinations des établissements de santé.<br>
-				Plusieurs sujets abordés : reconnaissance vocale, débruitage d'un signal, détection Bluetooth...</p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-4 bordure-left bordure-right">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu-big">Juin - Août 2019</span><br>
-				<span class="fw-bold">Korea Polytechnic University</span><br>
-				Stage de découverte culturelle</p>
-				<p class="justif gris">Self-learning en Arduino et programmation Web.</p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-4 bordure-left">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo Cordon" height=60>
-				<p class="margetop25"><span class="bleu-big">Juillet 2017</span><br>
-				<span class="fw-bold">Cordon CMS</span><br>
-				Stage ouvrier</p>
-				<p class="justif gris">Traitement des télés</p>
-			</div>
+			<?php 
+
+				$count = count($experiences_pro_data);
+				if ($count > 0) {
+					$col_width = intdiv(12, $count);
+					foreach ($experiences_pro_data as $key => $experience) {
+						$bordures = array();
+						if ($key < $count-1) {
+							$bordures[] = 'bordure-right';
+						}
+						if ($key > 0) {
+							$bordures[] = 'bordure-left';
+						}
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_A_NAME] . '" height=60';
+						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_A_DATE_TXT] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_A_NAME] . '</span><br>';
+						echo $experience[$EXP_A_TITLE] . '</p>';
+						echo '<div class="gris">' . markdown_to_html($experience[$EXP_A_SHORT_DESC]) . '</div>';
+						echo '</div><hr class="hr">';
+					}
+				}
+			 ?>
 		</div>
 		<div class="margebot25"></div>
 		<div class="row">

@@ -19,6 +19,10 @@ body {
 	text-align: left;
 }
 
+.txt-droite {
+	text-align: right;
+}
+
 .center-image-vert {
 	display: flex;
     align-items: center;
