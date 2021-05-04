@@ -31,7 +31,7 @@
 				<a href="general" class="admin-menu-item"><i class="fas fa-address-card fa-3x"></i><p class="admin-menu-item-text">Général</p></a>
 			</div>
 			<div class="col-sm-3">
-				<a href="exp_pro" class="admin-menu-item"><i class="fas fa-briefcase fa-3x"></i><p class="admin-menu-item-text">Expériences pro.</p></a>
+				<a href="experiences?type=pro" class="admin-menu-item"><i class="fas fa-briefcase fa-3x"></i><p class="admin-menu-item-text">Expériences pro.</p></a>
 			</div>
 			<div class="col-sm-3">
 				<a href="skills" class="admin-menu-item"><i class="fas fa-laptop fa-3x"></i><p class="admin-menu-item-text">Compétences</p></a>
@@ -43,7 +43,7 @@
 		<div class="margebot45-big"></div>
 		<div class="row text-center">
 			<div class="col-sm-3">
-				<a href="exp_extra" class="admin-menu-item"><i class="fas fa-hands-helping fa-3x"></i><p class="admin-menu-item-text">Expériences extra</p></a>
+				<a href="experiences?type=extra" class="admin-menu-item"><i class="fas fa-hands-helping fa-3x"></i><p class="admin-menu-item-text">Expériences extra</p></a>
 			</div>
 		</div>
 	</div>

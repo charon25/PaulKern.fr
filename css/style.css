@@ -313,3 +313,17 @@ body {
 	font-variant: small-caps;
 	text-align: center;
 }
+
+.resultat-positif {
+	color: #0f0;
+	margin-top: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.resultat-negatif {
+	color: #f00;
+	margin-top: 15px;
+	font-weight: bold;
+	text-align: center;
+}

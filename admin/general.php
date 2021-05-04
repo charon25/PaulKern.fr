@@ -2,7 +2,6 @@
 
 require('check_connection.php');
 require('../utils/bdd.php');
-require('../utils/markdown.php');
 require('../utils/constants.php');
 require('../utils/functions.php');
 
@@ -32,6 +31,7 @@ require('../utils/functions.php');
 
 		$insert_request = $bdd->prepare('UPDATE `pk_data` SET `data`=? WHERE `type`="general"');
 		$insert_request->execute(array(json_encode($general_data)));
+		$result = "Informations correctement enregistrées !";
 	}
 
  ?>
@@ -42,7 +42,7 @@ require('../utils/functions.php');
 <body>
 
 
-<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -82,15 +82,16 @@ require('../utils/functions.php');
 					</div></p>
 					<div class="row">
 						<div class="col-sm-6">
-							<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control-file" accept="image/*">
+							<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control" accept="image/*">
 						</div>
 						<div class="col-sm-6">
-							<p class="admin-categorie">CV</p><input type="file" name="<?php echo $GEN_CV; ?>" class="form-control-file" accept="application/pdf">
+							<p class="admin-categorie">CV</p><input type="file" name="<?php echo $GEN_CV; ?>" class="form-control" accept="application/pdf">
 						</div>
 					</div>
 				</div>
 			</div>
 			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $GEN_SUBMIT; ?>" class="btn btn-primary" value="Enregistrer"></p>
+			<?php if (isset($result)) echo "<p class=\"resultat-positif decay\">$result</p>"; ?>
 		</form>
 	</div>
 </section>
@@ -99,5 +100,5 @@ require('../utils/functions.php');
 </body>
 </html>
 
-
+<script type="text/javascript" src="../js/decay.js"></script>
 <script type="text/javascript" src="../js/no_js.js"></script>

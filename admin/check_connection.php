@@ -3,7 +3,7 @@
 	session_start();
 
 	$is_not_logged_in = !isset($_SESSION['login']) || $_SESSION['login'] != 'true';
-	$is_session_expired = !isset($_SESSION['activity_time']) || (time() - $_SESSION['activity_time']) > 10 * 60;
+	$is_session_expired = !isset($_SESSION['activity_time']) || (time() - $_SESSION['activity_time']) > 30 * 60;
 
 	if ($is_not_logged_in || $is_session_expired) {
 		require('not_connected.php');

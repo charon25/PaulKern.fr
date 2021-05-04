@@ -24,5 +24,20 @@ function save_file_random_name($userfile, $rel_directory, $img_directory) {
 	return save_file($userfile, $rel_directory, $img_directory, bin2hex(random_bytes(10)));
 }
 
+function save_multiple_files_random_name($userfile, $rel_directory, $img_directory) {
+	$image_count = count($_FILES[$userfile]['size']);
+	$output_paths = array();
+	
+	for ($i = 0 ; $i < $image_count ; $i++) {
+		$extension = pathinfo($_FILES[$userfile]['name'][$i], PATHINFO_EXTENSION);
+		$image_name = bin2hex(random_bytes(10)) . "." . $extension;
+		$image_path = $img_directory . $image_name;
+		copy($_FILES[$userfile]['tmp_name'][$i], $rel_directory . $image_path);
+		$output_paths[] = $image_path;
+	}
+
+	return $output_paths;
+}
+
 
  ?>
