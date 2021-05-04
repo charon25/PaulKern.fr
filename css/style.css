@@ -96,14 +96,14 @@ body {
 	background-color: #fff;
 	/* border: 1px solid #dee2e6; */
 	border-radius: .25rem;
-	max-width: 100%;
+	max-width: 80%;
 }
 
 .img-thumbnail-no-bg-mod-height {
 	padding: .25rem;
 	border: 1px solid #dee2e6;
 	border-radius: .25rem;
-	max-width: 100%;
+	max-width: 80%;
 }
 
 .icone {
