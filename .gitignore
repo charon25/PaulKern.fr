@@ -4,3 +4,5 @@
 .ovhconfig_
 admin/password.config
 utils/bdd.php
+img/
+files/
