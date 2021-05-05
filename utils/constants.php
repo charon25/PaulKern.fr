@@ -14,6 +14,7 @@
 	$EXP_PREFIX = 'experience_';
 	//
 	$EXP_A_PREFIX = $EXP_PREFIX . 'add_';
+	$EXP_A_ACTION = $EXP_A_PREFIX . 'action';
 	$EXP_A_DATE_TXT = $EXP_A_PREFIX . 'date_text';
 	$EXP_A_DATE_ORDER = $EXP_A_PREFIX . 'date_order';
 	$EXP_A_NAME = $EXP_A_PREFIX . 'name';
@@ -24,4 +25,7 @@
 	$EXP_A_MAIN_IMG = $EXP_A_PREFIX . 'main_image';
 	$EXP_A_SEC_IMG = $EXP_A_PREFIX . 'secondary_images';
 	$EXP_A_SUBMIT = $EXP_A_PREFIX . 'ok';
+	$EXP_A_MODIFY = $EXP_A_PREFIX . 'modify';
+	$EXP_A_DELETE = $EXP_A_PREFIX . 'delete';
+	$EXP_A_DATA = $EXP_A_PREFIX . 'data';
  ?>

@@ -54,5 +54,19 @@ function get_db_data_from_key($bdd, $key, $max_count) {
 	return $output;
 }
 
+function get_db_data_from_2_keys($bdd, $key1, $key2, $max_count) {
+	$request = $bdd->prepare('SELECT * FROM `pk_data` WHERE `type`=? OR `type`=? ORDER BY `sorter` DESC');
+	$request->execute(array($key1, $key2));
+
+	$output = [];
+	$index = 0;
+	while ($row = $request->fetch()) {
+		$output[] = json_decode($row['data'], TRUE);
+		$index++;
+		if ($index == $max_count) break;
+	}
+
+	return $output;
+}
 
  ?>

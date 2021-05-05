@@ -35,6 +35,20 @@ body {
 	border-color: #034494;
 }
 
+.hidden {
+	display: none;
+}
+
+.btn-rouge {
+	background-color: #f00 !important;
+	border-color: #f00 !important;
+}
+
+.btn-vert {
+	background-color: #0d0 !important;
+	border-color: #0d0 !important;
+}
+
 /*  ======
 	 MENU
   	====== */
@@ -330,4 +344,8 @@ body {
 	margin-top: 15px;
 	font-weight: bold;
 	text-align: center;
+}
+
+select {
+	appearance: auto !important;
 }

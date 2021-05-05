@@ -9,37 +9,48 @@ require('../utils/functions.php');
 
 <?php 
 
-	if (isset($_POST[$EXP_A_SUBMIT])) {
-		$experience_data = array(
-			$EXP_A_DATE_TXT => $_POST[$EXP_A_DATE_TXT],
-			$EXP_A_NAME => $_POST[$EXP_A_NAME],
-			$EXP_A_TITLE => $_POST[$EXP_A_TITLE],
-			$EXP_A_SHORT_DESC => $_POST[$EXP_A_SHORT_DESC],
-			$EXP_A_DESC => $_POST[$EXP_A_DESC]
-		);
+$experiences_request = $bdd->query('SELECT * FROM `pk_data` WHERE `type`="pro" OR `type`="extra" ORDER BY `sorter` DESC');
+$experiences_data = array();
+while ($experience = $experiences_request->fetch()) {
+	$experiences_data[] = $experience;
+}
 
-		if (!empty($_FILES) && $_FILES[$EXP_A_MAIN_IMG]['size'] > 0) {
-			$photo_path = save_file_random_name($EXP_A_MAIN_IMG, "../", "img/experiences/");
-			$experience_data[$EXP_A_MAIN_IMG] = $photo_path;
+ ?>
 
-			if (count($_FILES[$EXP_A_SEC_IMG]['size']) > 0 && $_FILES[$EXP_A_SEC_IMG]['size'][0] > 0) {
-				$photo_paths = save_multiple_files_random_name($EXP_A_SEC_IMG, "../", "img/experiences/");
-				$experience_data[$EXP_A_SEC_IMG] = $photo_paths;
-			}
+<?php 
 
-			$insert_request = $bdd->prepare('INSERT INTO `pk_data`(`type`, `sorter`, `data`) VALUES (?, ?, ?)');
-			$insert_request->execute(array(
-				$_POST[$EXP_A_TYPE],
-				strtotime($_POST[$EXP_A_DATE_ORDER]),
-				json_encode($experience_data)
-			));
+if (isset($_POST[$EXP_A_SUBMIT])) {
+	$experience_data = array(
+		$EXP_A_DATE_TXT => $_POST[$EXP_A_DATE_TXT],
+		$EXP_A_NAME => $_POST[$EXP_A_NAME],
+		$EXP_A_TITLE => $_POST[$EXP_A_TITLE],
+		$EXP_A_SHORT_DESC => $_POST[$EXP_A_SHORT_DESC],
+		$EXP_A_DESC => $_POST[$EXP_A_DESC]
+	);
 
-			$pos_result = 'Expérience correctement créée !';
-		} else {
-			$neg_result = 'Aucune image principale fournie !';
+	if (!empty($_FILES) && $_FILES[$EXP_A_MAIN_IMG]['size'] > 0) {
+		$photo_path = save_file_random_name($EXP_A_MAIN_IMG, "../", "img/experiences/");
+		$experience_data[$EXP_A_MAIN_IMG] = $photo_path;
+
+		if (count($_FILES[$EXP_A_SEC_IMG]['size']) > 0 && $_FILES[$EXP_A_SEC_IMG]['size'][0] > 0) {
+			$photo_paths = save_multiple_files_random_name($EXP_A_SEC_IMG, "../", "img/experiences/");
+			$experience_data[$EXP_A_SEC_IMG] = $photo_paths;
 		}
 
+		$insert_request = $bdd->prepare('INSERT INTO `pk_data`(`type`, `sorter`, `data`) VALUES (?, ?, ?)');
+		$insert_request->execute(array(
+			$_POST[$EXP_A_TYPE],
+			strtotime($_POST[$EXP_A_DATE_ORDER]),
+			json_encode($experience_data)
+		));
+
+		$pos_result = 'Expérience correctement créée !';
+	} else {
+		$neg_result = 'Aucune image principale fournie !';
 	}
+} elseif (isset($_POST[$EXP_A_MODIFY])) {
+	
+}
 
  ?>
 
@@ -65,6 +76,26 @@ require('../utils/functions.php');
 
 <section id="add-experience">
 	<div class="container admin-element">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<p class="admin-categorie">Action</p>
+				<p><select class="form-control" id="<?php echo $EXP_A_ACTION; ?>" onchange="on_action_changed();">
+					<option value="X" selected="true">---</option>
+					<?php 
+						foreach ($experiences_data as $key => $experience) {
+							$exp_json = json_decode($experience['data'], TRUE);
+							echo '<option value="' . $experience['id'] . '">' . $exp_json[$EXP_A_NAME] . ' - ' . $exp_json[$EXP_A_TITLE] . '</option>';
+						}
+					 ?>
+				</select></p>
+				<?php 
+					foreach ($experiences_data as $key => $experience) {
+						echo '<div class="hidden" id="' . $EXP_A_DATA . '-' . $experience['id'] . '">' . $experience['data'] . '</div>';
+					}
+				 ?>
+			</div>
+		</div>
 		<p class="admin-title bleu-big">Ajouter une expérience</p>
 		<form enctype="multipart/form-data" method="post" action="#add-experience" class="form-group">
 			<div class="row">
@@ -97,8 +128,10 @@ require('../utils/functions.php');
 					<p class="fw-bold">Images secondaires : <input type="file" name="<?php echo $EXP_A_SEC_IMG . '[]'; ?>" class="form-control" accept="image/*" multiple></p>
 				</div>
 			</div>
-			<!--<p class="admin-categorie margetop15">Type</p>-->
-			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $EXP_A_SUBMIT; ?>" id="<?php echo $EXP_A_SUBMIT; ?>" class="btn btn-primary" value="Ajouter" disabled></p>
+			<p class="text-center margetop15 margebot0">
+				<input type="submit" name="<?php echo $EXP_A_SUBMIT; ?>" id="<?php echo $EXP_A_SUBMIT; ?>" class="btn btn-primary btn-vert" value="Ajouter" disabled>
+				<input type="submit" name="<?php echo $EXP_A_MODIFY; ?>" id="<?php echo $EXP_A_MODIFY; ?>" class="btn btn-primary" value="Modifier">
+				<input type="submit" name="<?php echo $EXP_A_DELETE; ?>" id="<?php echo $EXP_A_DELETE; ?>" class="btn btn-primary btn-rouge" value="Supprimer" style="margin-left: 25px;"></p>
 			<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay\">$pos_result</p>"; ?>
 			<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay\">$neg_result</p>"; ?>
 		</form>
@@ -117,6 +150,42 @@ require('../utils/functions.php');
 		add_submit_button.disabled = (add_type_selector.selectedIndex == 0) || (order_date_selected.value == "");
 	}
 	on_change();
+
+	function change_buttons(add, modify_delete) {
+		document.getElementById('<?php echo $EXP_A_SUBMIT; ?>').style.display = add;
+		document.getElementById('<?php echo $EXP_A_MODIFY; ?>').style.display = modify_delete;
+		document.getElementById('<?php echo $EXP_A_DELETE; ?>').style.display = modify_delete;
+	}
+
+	function empty_fields() {
+		document.getElementsByName('<?php echo $EXP_A_DATE_TXT; ?>')[0].value = "";
+		document.getElementsByName('<?php echo $EXP_A_NAME; ?>')[0].value = "";
+		document.getElementsByName('<?php echo $EXP_A_TITLE; ?>')[0].value = "";
+		document.getElementsByName('<?php echo $EXP_A_DESC; ?>')[0].value = "";
+		document.getElementsByName('<?php echo $EXP_A_SHORT_DESC; ?>')[0].value = "";
+	}
+
+	function set_fields(id) {
+		var data = JSON.parse(document.getElementById('<?php echo $EXP_A_DATA; ?>-' + id).innerText);
+		document.getElementsByName('<?php echo $EXP_A_DATE_TXT; ?>')[0].value = data['<?php echo $EXP_A_DATE_TXT; ?>'];
+		document.getElementsByName('<?php echo $EXP_A_NAME; ?>')[0].value = data['<?php echo $EXP_A_NAME; ?>'];
+		document.getElementsByName('<?php echo $EXP_A_TITLE; ?>')[0].value = data['<?php echo $EXP_A_TITLE; ?>'];
+		document.getElementsByName('<?php echo $EXP_A_DESC; ?>')[0].value = data['<?php echo $EXP_A_DESC; ?>'];
+		document.getElementsByName('<?php echo $EXP_A_SHORT_DESC; ?>')[0].value = data['<?php echo $EXP_A_SHORT_DESC; ?>'];
+	}
+
+	function on_action_changed() {
+		var action_selector = document.getElementById('<?php echo $EXP_A_ACTION ?>');
+		var id = action_selector.selectedOptions[0].value;
+		if (id == "X") {
+			change_buttons('inline', 'none');
+			empty_fields();
+		} else {
+			change_buttons('none', 'inline');
+			set_fields(id);
+		}
+	}
+	on_action_changed();
 </script>
 <script type="text/javascript" src="../js/no_js.js"></script>
 <script type="text/javascript" src="../js/decay.js"></script>
