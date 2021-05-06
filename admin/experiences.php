@@ -58,6 +58,13 @@ if (isset($_POST[$EXP_A_SUBMIT])) {
 	$insert_request->execute(array(json_encode($experience_data), $experience_id));
 	$pos_result = "Expérience correctement modifiée !";
 	$last_modified = $experience_id;
+} elseif (isset($_POST[$EXP_A_DELETE])) {
+	$experience_id = $_POST[$EXP_A_ACTION];
+
+	$delete_request = $bdd->prepare('DELETE FROM `pk_data` WHERE id=?');
+	$delete_request->execute(array($experience_id));
+	
+	$pos_result = "Expérience correctement supprimée !";
 }
 
  ?>
@@ -148,7 +155,7 @@ while ($experience = $experiences_request->fetch()) {
 			<p class="text-center margetop15 margebot0">
 				<input type="submit" name="<?php echo $EXP_A_SUBMIT; ?>" id="<?php echo $EXP_A_SUBMIT; ?>" class="btn btn-primary btn-vert" value="Ajouter" disabled>
 				<input type="submit" name="<?php echo $EXP_A_MODIFY; ?>" id="<?php echo $EXP_A_MODIFY; ?>" class="btn btn-primary" value="Modifier">
-				<input type="submit" name="<?php echo $EXP_A_DELETE; ?>" id="<?php echo $EXP_A_DELETE; ?>" class="btn btn-primary btn-rouge" value="Supprimer" style="margin-left: 25px;"></p>
+				<input type="submit" name="<?php echo $EXP_A_DELETE; ?>" id="<?php echo $EXP_A_DELETE; ?>" class="btn btn-primary btn-rouge" value="Supprimer" style="margin-left: 25px;" onclick="return confirm('Voulez-vous réellement supprimer cette expérience ?');"></p>
 			<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay\">$pos_result</p>"; ?>
 			<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay\">$neg_result</p>"; ?>
 		</form>

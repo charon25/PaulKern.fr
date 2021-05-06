@@ -104,7 +104,7 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 							$bordures[] = 'bordure-left';
 						}
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
-						echo '<img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_A_NAME] . '" height="150">';
+						echo '<img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_A_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_A_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_A_NAME] . '</span><br>';
 						echo $experience[$EXP_A_TITLE] . '</p>';
