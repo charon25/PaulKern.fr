@@ -22,6 +22,8 @@ function markdown_to_html($string) {
 	$string = preg_replace('/<\/R>/s', '</div>', $string);
 	$string = preg_replace('/<C-(\d)>/', '<div class="col-sm-\1">', $string);
 	$string = preg_replace('/<\/C>/s', '</div>', $string);
+	// Exposant
+	$string = preg_replace('/\^(\w+)/', '<sup>\1</sup>', $string);
 
 	return $string;
 }

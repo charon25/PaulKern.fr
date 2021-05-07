@@ -9,6 +9,9 @@ $general_data = get_db_data_from_key($bdd, 'general', 1)[0];
 $experiences_pro_data = get_db_data_from_key($bdd, 'pro', 3);
 $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 
+$projects_perso_data = get_db_data_from_key($bdd, 'perso', 3);
+$projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
+
  ?>
 
 <!DOCTYPE html>
@@ -91,7 +94,6 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 		</div>
 		<div class="row">
 			<?php 
-
 				$count = count($experiences_pro_data);
 				if ($count > 0) {
 					$col_width = intdiv(12, $count);
@@ -222,7 +224,33 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-4 bordure-right" style="padding-left: 10px">
+			<?php 
+				$count = count($projects_sco_data);
+				if ($count > 0) {
+					$col_width = intdiv(12, $count);
+					foreach ($projects_sco_data as $key => $project) {
+						$bordures = array();
+						if ($key < $count-1) {
+							$bordures[] = 'bordure-right';
+						}
+						if ($key > 0) {
+							$bordures[] = 'bordure-left';
+						}
+						if ($project[$PRO_URL] != "") {
+							$lien = '<br>[<a href="' . $project[$PRO_URL] . '">Lien du projet</a>]';
+						} else {
+							$lien = '';
+						}
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
+						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . $lien . '</span><br></p>';
+						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . '</div>';
+						echo '</div><hr class="hr">';
+					}
+				}
+			 ?>
+			<!--<div class="text-center col-sm-4 bordure-right" style="padding-left: 10px">
 				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
 				<span class="fw-bold">Station météo connectée</span></p>
@@ -239,7 +267,7 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span>
 				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
 				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
-			</div>
+			</div>-->
 		</div>
 		<div class="margebot25"></div>
 		<div class="row">
@@ -254,18 +282,32 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-6 bordure-right">
-				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
-				<span class="fw-bold">Station météo connectée</span><br></p>
-				<p class="justif gris">Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-6 bordure-left">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
-				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
-			</div>
+			<?php 
+				$count = count($projects_perso_data);
+				if ($count > 0) {
+					$col_width = intdiv(12, $count);
+					foreach ($projects_perso_data as $key => $project) {
+						$bordures = array();
+						if ($key < $count-1) {
+							$bordures[] = 'bordure-right';
+						}
+						if ($key > 0) {
+							$bordures[] = 'bordure-left';
+						}
+						if ($project[$PRO_URL] != "") {
+							$lien = '<br>[<a href="' . $project[$PRO_URL] . '">Lien du projet</a>]';
+						} else {
+							$lien = '';
+						}
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
+						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . $lien . '</span><br></p>';
+						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . '</div>';
+						echo '</div><hr class="hr">';
+					}
+				}
+			 ?>
 		</div>
 		<div class="margebot25"></div>
 		<div class="row">
