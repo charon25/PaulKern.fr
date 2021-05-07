@@ -237,15 +237,15 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 							$bordures[] = 'bordure-left';
 						}
 						if ($project[$PRO_URL] != "") {
-							$lien = '<br>[<a href="' . $project[$PRO_URL] . '">Lien du projet</a>]';
+							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm">Lien du projet</a>';
 						} else {
 							$lien = '';
 						}
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . $lien . '</span><br></p>';
-						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . '</div>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
+						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
 						echo '</div><hr class="hr">';
 					}
 				}
@@ -295,15 +295,15 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 							$bordures[] = 'bordure-left';
 						}
 						if ($project[$PRO_URL] != "") {
-							$lien = '<br>[<a href="' . $project[$PRO_URL] . '">Lien du projet</a>]';
+							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm">Lien du projet</a>';
 						} else {
 							$lien = '';
 						}
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . $lien . '</span><br></p>';
-						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . '</div>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
+						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
 						echo '</div><hr class="hr">';
 					}
 				}

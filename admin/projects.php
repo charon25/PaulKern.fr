@@ -26,7 +26,7 @@ if (isset($_POST[$PRO_SUBMIT])) {
 		$insert_request = $bdd->prepare('INSERT INTO `pk_data`(`type`, `sorter`, `data`) VALUES (?, ?, ?)');
 		$insert_request->execute(array(
 			$_POST[$PRO_TYPE],
-			$_POST[$PRO_ORDER],
+			strtotime($_POST[$PRO_ORDER]),
 			json_encode($project_data)
 		));
 
@@ -126,8 +126,8 @@ while ($project = $projects_request->fetch()) {
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">
-					<p class="fw-bold">Date textuelle : <input type="text" name="<?php echo $PRO_DATE_TXT; ?>" class="form-control"></p>
-					<p class="fw-bold">Importance : <input type="number" name="<?php echo $PRO_ORDER; ?>" id="<?php echo $PRO_ORDER; ?>" class="form-control" onchange="on_change();"></p>
+					<p class="fw-bold">Date textuelle : <input type="text" name="<?php echo $PRO_ORDER; ?>" class="form-control"></p>
+					<p class="fw-bold">Date d'ordre : <input type="date" name="<?php echo $PRO_ORDER; ?>" id="<?php echo $PRO_ORDER; ?>" class="form-control" onchange="on_change();"></p>
 				</div>
 				<div class="col-sm-6">
 					<p class="fw-bold">Intitulé : <input type="text" name="<?php echo $PRO_TITLE; ?>" class="form-control"></p>

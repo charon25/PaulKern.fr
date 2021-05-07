@@ -1,3 +1,14 @@
+<?php 
+
+require('utils/bdd.php');
+require('utils/markdown.php');
+require('utils/constants.php');
+require('utils/functions.php');
+
+$projects_sco_data = get_db_data_from_key($bdd, 'sco', -1);
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <?php include('utils/head.php'); print_head(array('title' => "Projets scolaires")); ?>
@@ -17,6 +28,27 @@
 	</div>
 </section>
 
+<?php
+
+foreach ($projects_sco_data as $key => $project) {
+	if ($key%2 == 0) {echo '<section class="even-section">';}
+	else {echo '<section class="odd-section">';}
+
+	echo '<div class="container"><div class="row"><div class="margetop25"></div>';
+	echo '<div class="col-sm-3 text-center"><img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $project[$PRO_TITLE] . '"></div>';
+	echo '<div class="col-sm-9">';
+	echo '<p class="bleu-big">' . $project[$PRO_DATE_TXT] . '</p>';
+	echo '<p class="fw-bold">' . $project[$PRO_TITLE] . '</p>';
+	echo '<div class="gris">' . markdown_to_html($project[$PRO_DESC]);
+	if ($project[$PRO_URL] != '') {
+		echo '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton">Lien du projet</a>';
+	}
+	echo '</div></div><div class="margebot25"></div></div></div></section>';
+}
+
+ ?>
+
+<!--
 <section class="even-section">
 	<div class="container">
 		<div class="row">
@@ -55,7 +87,7 @@
 		</div>
 	</div>
 </section>
-
+-->
 
 
 <?php include('utils/footer.php'); print_footer()?>
