@@ -36,12 +36,12 @@ foreach ($experiences_pro_data as $key => $experience) {
 	else {echo '<section class="odd-section">';}
 
 	echo '<div class="container"><div class="row"><div class="margetop25"></div>';
-	echo '<div class="col-sm-3 text-center"><img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $experience[$EXP_A_NAME] . '"></div>';
+	echo '<div class="col-sm-3 text-center"><img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $experience[$EXP_NAME] . '"></div>';
 	echo '<div class="col-sm-9">';
-	echo '<p><span class="bleu-big">' . $experience[$EXP_A_DATE_TXT] . '</span><br>';
-	echo '<span class="fw-bold">' . $experience[$EXP_A_NAME] . '</span><br>';
-	echo $experience[$EXP_A_TITLE] . '</p>';
-	echo '<div class="gris">' . markdown_to_html($experience[$EXP_A_DESC]) . '</div>';
+	echo '<p><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
+	echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+	echo $experience[$EXP_TITLE] . '</p>';
+	echo '<div class="gris">' . markdown_to_html($experience[$EXP_DESC]) . '</div>';
 	echo '</div><div class="margebot25"></div></div></div></section>';
 
 }

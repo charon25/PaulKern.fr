@@ -10,22 +10,37 @@
 	$GEN_PHOTO = $GEN_PREFIX . 'photo';
 	$GEN_CV = $GEN_PREFIX . 'cv';
 	$GEN_SUBMIT = $GEN_PREFIX . 'ok';
+
 // Constantes page "Expériences"
-	$EXP_PREFIX = 'experience_';
-	//
-	$EXP_A_PREFIX = $EXP_PREFIX . 'add_';
-	$EXP_A_ACTION = $EXP_A_PREFIX . 'action';
-	$EXP_A_DATE_TXT = $EXP_A_PREFIX . 'date_text';
-	$EXP_A_DATE_ORDER = $EXP_A_PREFIX . 'date_order';
-	$EXP_A_NAME = $EXP_A_PREFIX . 'name';
-	$EXP_A_TITLE = $EXP_A_PREFIX . 'title';
-	$EXP_A_SHORT_DESC = $EXP_A_PREFIX . 'short_description';
-	$EXP_A_DESC = $EXP_A_PREFIX . 'description';
-	$EXP_A_TYPE = $EXP_A_PREFIX . 'type';
-	$EXP_A_MAIN_IMG = $EXP_A_PREFIX . 'main_image';
-	$EXP_A_SEC_IMG = $EXP_A_PREFIX . 'secondary_images';
-	$EXP_A_SUBMIT = $EXP_A_PREFIX . 'ok';
-	$EXP_A_MODIFY = $EXP_A_PREFIX . 'modify';
-	$EXP_A_DELETE = $EXP_A_PREFIX . 'delete';
-	$EXP_A_DATA = $EXP_A_PREFIX . 'data';
+	$EXP_PREFIX = 'experience_add_';
+	$EXP_ACTION = $EXP_PREFIX . 'action';
+	$EXP_DATE_TXT = $EXP_PREFIX . 'date_text';
+	$EXP_DATE_ORDER = $EXP_PREFIX . 'date_order';
+	$EXP_NAME = $EXP_PREFIX . 'name';
+	$EXP_TITLE = $EXP_PREFIX . 'title';
+	$EXP_SHORT_DESC = $EXP_PREFIX . 'short_description';
+	$EXP_DESC = $EXP_PREFIX . 'description';
+	$EXP_TYPE = $EXP_PREFIX . 'type';
+	$EXP_MAIN_IMG = $EXP_PREFIX . 'main_image';
+	$EXP_SUBMIT = $EXP_PREFIX . 'ok';
+	$EXP_MODIFY = $EXP_PREFIX . 'modify';
+	$EXP_DELETE = $EXP_PREFIX . 'delete';
+	$EXP_DATA = $EXP_PREFIX . 'data';
+
+// Constantes pages "Projets"
+	$PRO_PREFIX = 'projects_';
+	$PRO_ACTION = $PRO_PREFIX . 'action';
+	$PRO_DATE_TXT = $PRO_PREFIX . 'date_text';
+	$PRO_ORDER = $PRO_PREFIX . 'order';
+	$PRO_URL = $PRO_PREFIX . 'url';
+	$PRO_TITLE = $PRO_PREFIX . 'title';
+	$PRO_SHORT_DESC = $PRO_PREFIX . 'short_description';
+	$PRO_DESC = $PRO_PREFIX . 'description';
+	$PRO_TYPE = $PRO_PREFIX . 'type';
+	$PRO_MAIN_IMG = $PRO_PREFIX . 'main_image';
+	$PRO_SUBMIT = $PRO_PREFIX . 'ok';
+	$PRO_MODIFY = $PRO_PREFIX . 'modify';
+	$PRO_DELETE = $PRO_PREFIX . 'delete';
+	$PRO_DATA = $PRO_PREFIX . 'data';
+
  ?>

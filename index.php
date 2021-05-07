@@ -104,11 +104,11 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 							$bordures[] = 'bordure-left';
 						}
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
-						echo '<img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_A_NAME] . '" height="100">';
-						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_A_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_A_NAME] . '</span><br>';
-						echo $experience[$EXP_A_TITLE] . '</p>';
-						echo '<div class="gris">' . markdown_to_html($experience[$EXP_A_SHORT_DESC]) . '</div>';
+						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
+						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+						echo $experience[$EXP_TITLE] . '</p>';
+						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
 						echo '</div><hr class="hr">';
 					}
 				}
@@ -298,11 +298,11 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 							$bordures[] = 'bordure-left';
 						}
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
-						echo '<img src="' . $experience[$EXP_A_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_A_NAME] . '" height="150">';
-						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_A_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_A_NAME] . '</span><br>';
-						echo $experience[$EXP_A_TITLE] . '<br>';
-						echo '<span class="gris">' . markdown_to_html($experience[$EXP_A_SHORT_DESC]) . '</span></p>';
+						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
+						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+						echo $experience[$EXP_TITLE] . '<br>';
+						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
 						echo '</div><hr class="hr">';
 					}
 				}
