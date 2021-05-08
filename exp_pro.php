@@ -32,8 +32,8 @@ $experiences_pro_data = get_db_data_from_key($bdd, 'pro', -1);
 <?php 
 
 foreach ($experiences_pro_data as $key => $experience) {
-	if ($key%2 == 0) {echo '<section class="even-section">';}
-	else {echo '<section class="odd-section">';}
+	if ($key%2 == 0) {echo '<section class="even-section" id="exp-' . $key . '">';}
+	else {echo '<section class="odd-section" id="exp-' . $key . '">';}
 
 	echo '<div class="container"><div class="row"><div class="margetop25"></div>';
 	echo '<div class="col-sm-3 text-center"><img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $experience[$EXP_NAME] . '"></div>';

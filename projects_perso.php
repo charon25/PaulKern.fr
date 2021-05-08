@@ -31,8 +31,8 @@ $projects_perso_data = get_db_data_from_key($bdd, 'perso', -1);
 <?php 
 
 foreach ($projects_perso_data as $key => $project) {
-	if ($key%2 == 0) {echo '<section class="even-section">';}
-	else {echo '<section class="odd-section">';}
+	if ($key%2 == 0) {echo '<section class="even-section" id="pro-' . $key . '">';}
+	else {echo '<section class="odd-section" id="pro-' . $key . '">';}
 
 	echo '<div class="container"><div class="row"><div class="margetop25"></div>';
 	echo '<div class="col-sm-3 text-center"><img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $project[$PRO_TITLE] . '"></div>';

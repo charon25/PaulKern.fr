@@ -49,6 +49,16 @@ body {
 	border-color: #0d0 !important;
 }
 
+.void {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.void:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
 /*  ======
 	 MENU
   	====== */

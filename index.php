@@ -105,13 +105,13 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 						if ($key > 0) {
 							$bordures[] = 'bordure-left';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="exp_pro#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '</p>';
 						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
-						echo '</div><hr class="hr">';
+						echo '</a></div><hr class="hr">';
 					}
 				}
 			 ?>
@@ -241,12 +241,12 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 						} else {
 							$lien = '';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="projects_sco#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
 						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
-						echo '</div><hr class="hr">';
+						echo '</a></div><hr class="hr">';
 					}
 				}
 			 ?>
@@ -299,7 +299,7 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 						} else {
 							$lien = '';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="projects_perso#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
@@ -339,13 +339,13 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 						if ($key > 0) {
 							$bordures[] = 'bordure-left';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="exp_extra#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '<br>';
 						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
-						echo '</div><hr class="hr">';
+						echo '</a></div><hr class="hr">';
 					}
 				}
 			 ?>
