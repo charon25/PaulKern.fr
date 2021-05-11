@@ -52,8 +52,16 @@
 	$SKI_ORDER = $SKI_PREFIX . 'order';
 	$SKI_IMG = $SKI_PREFIX . 'image';
 	$SKI_SUBMIT = $SKI_PREFIX . 'ok';
-	$SKI_MODIFY = $SKI_PREFIX . 'modify';
 	$SKI_DELETE = $SKI_PREFIX . 'delete';
-	$SKI_DATA = $SKI_PREFIX . 'data';
+
+// Constantes page "Compétitions"
+	$CON_PREFIX = 'contests_';
+	$CON_ACTION = $CON_PREFIX . 'action';
+	$CON_NAME = $CON_PREFIX . 'name';
+	$CON_DATE_TXT = $CON_PREFIX . 'date_text';
+	$CON_ORDER = $CON_PREFIX . 'order';
+	$CON_DESC = $CON_PREFIX . 'description';
+	$CON_SUBMIT = $CON_PREFIX . 'ok';
+	$CON_DELETE = $CON_PREFIX . 'delete';
 
  ?>

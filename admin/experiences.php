@@ -61,6 +61,11 @@ if (isset($_POST[$EXP_SUBMIT])) {
 } elseif (isset($_POST[$EXP_DELETE])) {
 	$experience_id = $_POST[$EXP_ACTION];
 
+	$image_request = $bdd->prepare('SELECT `data` FROM `pk_data` WHERE `id`=?');
+	$image_request->execute(array($experience_id));
+	$image_path = json_decode($image_request->fetch()['data'], TRUE)[$EXP_MAIN_IMG];
+	unlink('../' . $image_path);
+
 	$delete_request = $bdd->prepare('DELETE FROM `pk_data` WHERE id=?');
 	$delete_request->execute(array($experience_id));
 	

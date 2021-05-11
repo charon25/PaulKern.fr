@@ -32,6 +32,18 @@ if (isset($_POST[$SKI_SUBMIT])) {
 	} else {
 		$neg_result = "Pas d'image fournie !";
 	}
+} elseif (isset($_POST[$SKI_DELETE])) {
+	$skill_id = $_POST[$SKI_ACTION];
+
+	$image_request = $bdd->prepare('SELECT `data` FROM `pk_data` WHERE `id`=?');
+	$image_request->execute(array($skill_id));
+	$image_path = json_decode($image_request->fetch()['data'], TRUE)[$SKI_IMG];
+	unlink('../' . $image_path);
+
+	$delete_request = $bdd->prepare('DELETE FROM `pk_data` WHERE `id`=?');
+	$delete_request->execute(array($skill_id));
+
+	$pos_result = 'Compétence correctement supprimée !';
 }
 
 
@@ -75,22 +87,17 @@ while ($skill = $skills_request->fetch()) {
 				<p class="admin-categorie">Action</p>
 				<form enctype="multipart/form-data" method="post" action="#add-skill" class="form-group">
 				<p><select class="form-control" id="<?php echo $SKI_ACTION; ?>" name="<?php echo $SKI_ACTION; ?>" onchange="on_action_changed();">
-					<option value="X" <?php if ($last_modified < 0) echo 'selected="true"' ?>>---</option>
+					<option value="X" selected="true">---</option>
 					<?php 
 						foreach ($skills_data as $key => $skill) {
 							$ski_json = json_decode($skill['data'], TRUE);
-							echo '<option value="' . $skill['id'] . '" ' . ($last_modified == $$skill['id'] ? 'selected="true"' : '') . '>' . $ski_json[$SKI_NAME] . '</option>';
+							echo '<option value="' . $skill['id'] . '">' . $ski_json[$SKI_NAME] . '</option>';
 						}
 					 ?>
 				</select></p>
-				<?php 
-					foreach ($skills_data as $key => $skill) {
-						echo '<div class="hidden" id="' . $SKI_DATA . '-' . $skill['id'] . '">' . $skill['data'] . '</div>';
-					}
-				 ?>
 			</div>
 		</div>
-		<p class="admin-title bleu-big" id="skill_add_title">Ajouter un Projet</p>
+		<p class="admin-title bleu-big" id="skills_add_title">Ajouter une compétence</p>
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">
@@ -148,9 +155,11 @@ while ($skill = $skills_request->fetch()) {
 		var id = action_selector.selectedOptions[0].value;
 		if (id == "X") {
 			change_buttons('inline', 'none');
+			document.getElementById('skills_add_title').innerText = 'Ajouter une compétence';
 			empty_fields();
 		} else {
 			change_buttons('none', 'inline');
+			document.getElementById('skills_add_title').innerText = 'Supprimer une compétence';
 			set_fields(id);
 		}
 	}
