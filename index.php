@@ -14,6 +14,8 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 
 $skills_data = get_db_data_from_key($bdd, 'skill', -1);
 
+$contests_data = get_db_data_from_key($bdd, 'contest', -1);
+
  ?>
 
 <!DOCTYPE html>
@@ -413,7 +415,16 @@ $skills_data = get_db_data_from_key($bdd, 'skill', -1);
 			</div>
 		</div>
 		<div class="row text-center">
-			<div class="col-sm-2 bordure-right">
+			<?php 
+				foreach ($contests_data as $key => $contest) {
+					echo '<div class="col-sm-2 bordure-right">';
+					echo '<p class="bleu-big">' . $contest[$CON_DATE_TXT] . '</p>';
+					echo '<p class="fw-bold">' . $contest[$CON_NAME] . '</p>';
+					echo '<p>' . markdown_to_html($contest[$CON_DESC]) . '</p>';
+					echo '</div>';
+				}
+			 ?>
+			<!--<div class="col-sm-2 bordure-right">
 				<p class="bleu-big">Avril 2021</p>
 				<p class="fw-bold">Google Code Jam</p>
 				<p>Round 2</p>
@@ -427,7 +438,7 @@ $skills_data = get_db_data_from_key($bdd, 'skill', -1);
 				<p class="bleu-big">Avril 2021</p>
 				<p class="fw-bold">Google Code Jam</p>
 				<p>Round 2</p>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </section>
