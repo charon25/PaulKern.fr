@@ -12,6 +12,8 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', 3);
 $projects_perso_data = get_db_data_from_key($bdd, 'perso', 3);
 $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 
+$skills_data = get_db_data_from_key($bdd, 'skill', -1);
+
  ?>
 
 <!DOCTYPE html>
@@ -167,15 +169,17 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-2">
-				<img src="img/logo_python.svg" alt="Python" height="65" class="logo">
-				<p class="bleu">Python 3</p>
-			</div>
-			<div class="text-center col-sm-2">
-				<img src="img/logo_vb.svg" alt="VB.NET" height="65" class="logo">
-				<p class="bleu">Visual Basic .NET</p>
-			</div>
-			<div class="margebot25"></div>
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'master') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
@@ -183,15 +187,17 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 			</div>
 		</div>
 		<div class="row">
-			<div class="text-center col-sm-2">
-				<img src="img/logo_cpp.svg" alt="C++" height="65" class="logo">
-				<p class="bleu">C++</p>
-			</div>
-			<div class="text-center col-sm-2">
-				<img src="img/logo_vhdl.png" alt="VHDL" height="65" class="logo">
-				<p class="bleu">VHDL</p>
-			</div>
-			<div class="margebot25"></div>
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'inter') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
@@ -199,14 +205,53 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 			</div>
 		</div>
 		<div class="row">
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'begin') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
+		</div>
+		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Logiciels & OS</h3>
 			</div>
 		</div>
 		<div class="row">
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'software') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
+		</div>
+		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Autres compétences</h3>
 			</div>
+		</div>
+		<div class="row">
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'other') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
 		</div>
 	</div>
 </section>

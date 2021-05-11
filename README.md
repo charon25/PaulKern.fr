@@ -1,6 +1,7 @@
 # TODO
 
-- [ ] Page d'ajout des compétences
+- [x] Page d'ajout des compétences
+- [ ] Page d'ajout des compétitions
 - [ ] Formulaire de contact
 - [ ] Changement du mot de passe
 - [x] Lien vers les projets/expériences
