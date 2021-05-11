@@ -1,3 +1,15 @@
+<?php 
+
+require('utils/bdd.php');
+require('utils/markdown.php');
+require('utils/constants.php');
+require('utils/functions.php');
+
+
+$experiences_extra_data = get_db_data_from_key($bdd, 'extra', -1);
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <?php include('utils/head.php'); print_head(array('title' => "Expériences extra-professionnelles")); ?>
@@ -17,41 +29,24 @@
 	</div>
 </section>
 
-<section class="even-section">
-	<div class="container">
-		<div class="row">
-			<div class="margetop25"></div>
-			<div class="col-sm-3 text-center">
-				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height margebot25 miniature" alt="Photo profil">
-			</div>
-			<div class="col-sm-9">
-				<p class="bleu-big">Juin - Octobre 2019 & Septembre - Novembre 2020</p>
-				<p class="fw-bold">Société des Amis des Universités de l'Académie de Strasbourg</p>
-				<p>Réalisation du site Web de l'association.</p>
-			</div>
-			<div class="margebot25"></div>
-		</div>
-	</div>
-</section>
+<?php 
 
-<section class="odd-section">
-	<div class="container">
-		<div class="row">
-			<div class="margetop25"></div>
-			<div class="col-sm-3 text-center">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height margebot25 miniature" alt="Photo profil">
-			</div>
-			<div class="col-sm-9">
-				<p class="bleu-big">Juin - Novembre 2018</p>
-				<p class="fw-bold">Gala INSA Strasbourg</p>
-				<p>Réalisation du site Web de l'événement.</p>
-			</div>
-			<div class="margebot25"></div>
-		</div>
-	</div>
-</section>
+foreach ($experiences_extra_data as $key => $experience) {
+	if ($key%2 == 0) {echo '<section class="even-section" id="exp-' . $key . '">';}
+	else {echo '<section class="odd-section" id="exp-' . $key . '">';}
 
+	echo '<div class="container"><div class="row"><div class="margetop25"></div>';
+	echo '<div class="col-sm-3 text-center"><img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $experience[$EXP_NAME] . '"></div>';
+	echo '<div class="col-sm-9">';
+	echo '<p><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
+	echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+	echo $experience[$EXP_TITLE] . '</p>';
+	echo '<div class="gris">' . markdown_to_html($experience[$EXP_DESC]) . '</div>';
+	echo '</div><div class="margebot25"></div></div></div></section>';
 
+}
+
+ ?>
 
 <?php include('utils/footer.php'); print_footer();?>
 

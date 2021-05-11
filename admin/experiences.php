@@ -30,9 +30,9 @@ if (isset($_POST[$EXP_SUBMIT])) {
 			json_encode($experience_data)
 		));
 
-		$pos_result = 'Expérience correctement créée !';
+		$pos_result = "Expérience correctement créée !";
 	} else {
-		$neg_result = 'Aucune image principale fournie !';
+		$neg_result = "Pas d'image fournie !";
 	}
 } elseif (isset($_POST[$EXP_MODIFY])) {
 	$experience_id = $_POST[$EXP_ACTION];
@@ -85,7 +85,7 @@ while ($experience = $experiences_request->fetch()) {
 <body>
 
 
-<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">

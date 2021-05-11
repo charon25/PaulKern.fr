@@ -48,6 +48,9 @@
 			<div class="col-sm-3">
 				<a href="projects?type=sco" class="admin-menu-item"><i class="fas fa-graduation-cap fa-3x"></i><p class="admin-menu-item-text">Projets scolaires</p></a>
 			</div>
+			<div class="col-sm-3">
+				<a href="change_pwd" class="admin-menu-item"><i class="fas fa-key fa-3x"></i><p class="admin-menu-item-text">Changer le mot de passe</p></a>
+			</div>
 		</div>
 	</div>
 </section>

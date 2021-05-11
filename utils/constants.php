@@ -27,7 +27,7 @@
 	$EXP_DELETE = $EXP_PREFIX . 'delete';
 	$EXP_DATA = $EXP_PREFIX . 'data';
 
-// Constantes pages "Projets"
+// Constantes page "Projets"
 	$PRO_PREFIX = 'projects_';
 	$PRO_ACTION = $PRO_PREFIX . 'action';
 	$PRO_DATE_TXT = $PRO_PREFIX . 'date_text';
@@ -42,5 +42,18 @@
 	$PRO_MODIFY = $PRO_PREFIX . 'modify';
 	$PRO_DELETE = $PRO_PREFIX . 'delete';
 	$PRO_DATA = $PRO_PREFIX . 'data';
+
+// Constantes page "Compétences"
+	$SKI_PREFIX = 'skills_';
+	$SKI_ACTION = $SKI_PREFIX . 'action';
+	$SKI_NAME = $SKI_PREFIX . 'name';
+	$SKI_TYPE = $SKI_PREFIX . 'type';
+	$SKI_LEVEL = $SKI_PREFIX . 'level';
+	$SKI_ORDER = $SKI_PREFIX . 'order';
+	$SKI_IMG = $SKI_PREFIX . 'image';
+	$SKI_SUBMIT = $SKI_PREFIX . 'ok';
+	$SKI_MODIFY = $SKI_PREFIX . 'modify';
+	$SKI_DELETE = $SKI_PREFIX . 'delete';
+	$SKI_DATA = $SKI_PREFIX . 'data';
 
  ?>

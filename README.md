@@ -4,4 +4,6 @@
 - [ ] Formulaire de contact
 - [ ] Changement du mot de passe
 - [x] Lien vers les projets/expériences
-- [ ] Page expérience extra
+- [x] Page expérience extra
+- [ ] Icône
+- [ ] Balise *meta* et informations de référencement
