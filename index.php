@@ -52,7 +52,7 @@ if (isset($_POST[$MAIL_SUBMIT])) {
 				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25 width200">Télécharger mon CV</a>
 			</div>
 			<div class="col-sm-4">
-				<a href="#" class="btn btn-primary bouton margetop25 width200" onclick="show_hide_contact_form();">Me contacter</a>
+				<a class="btn btn-primary bouton margetop25 width200" onclick="show_hide_contact_form();">Me contacter</a>
 			</div>
 			<div class="margebot45"></div>
 		</div>
@@ -483,7 +483,15 @@ if (isset($_POST[$MAIL_SUBMIT])) {
 
 <script type="text/javascript">
 	function show_hide_contact_form() {
+		var contact_section = document.getElementById('contact');
+		console.log(contact_section.style.display)
+		if (contact_section.style.display != 'none') {
+			contact_section.style.display = 'none';
+		} else {
+			contact_section.style.display = 'block';
+		}
 		console.log("ici");
 	}
+	show_hide_contact_form();
 </script>
 <script type="text/javascript" src="js/no_js.js"></script>
