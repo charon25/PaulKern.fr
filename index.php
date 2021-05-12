@@ -1,5 +1,7 @@
 <?php 
 
+require('utils/visits.php');
+
 require('utils/bdd.php');
 require('utils/markdown.php');
 require('utils/constants.php');
@@ -21,11 +23,11 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 <?php 
 
 
-require('path/to/PHPMailer/src/Exception.php');
-require('path/to/PHPMailer/src/PHPMailer.php');
+// require('path/to/PHPMailer/src/Exception.php');
+// require('path/to/PHPMailer/src/PHPMailer.php');
 
 if (isset($_POST[$MAIL_SUBMIT])) {
-	
+
 }
 
  ?>
@@ -61,7 +63,9 @@ if (isset($_POST[$MAIL_SUBMIT])) {
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h2 class="titre">Formulaire de contact</h2>
+				<h2 class="margetop25">Formulaire de contact</h2>
+				<p class="gris">Aucune information entrée ici ne sera stockée sur le site.</p>
+				<div class="margebot45"></div>
 			</div>
 		</div>
 		<div class="row">

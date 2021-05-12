@@ -339,6 +339,11 @@ body {
 	margin-top: 25px;
 }
 
+.admin-element-menu {
+	border: 1px solid #034494;
+	padding: 20px;
+}
+
 .admin-title {
 	border-bottom: 1px solid black;
 }
@@ -377,4 +382,8 @@ select {
 .back-button-alone {
 	background-color: #034494 !important;
 	border-color: #034494 !important;
+}
+
+#visits-counter {
+	font-family: "Roboto Mono";
 }

@@ -1,5 +1,7 @@
 <?php 
 
+require('utils/visits.php');
+
 require('utils/bdd.php');
 require('utils/markdown.php');
 require('utils/constants.php');

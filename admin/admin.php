@@ -4,6 +4,17 @@
 
  ?>
 
+<?php 
+
+require('../utils/bdd.php');
+
+$FIRST_ID = 1;
+$visits_request = $bdd->query('SELECT `id` FROM `pk_visits` ORDER BY `id` DESC LIMIT 1');
+$last_id = $visits_request->fetch()['id'];
+$visits_count = $last_id - $FIRST_ID + 1;
+
+ ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -24,8 +35,19 @@
 	</div>
 </section>
 
+<section id="visits-counter">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 margetop15 admin-visites">
+				<p>Nombre de visites du site : <span class="fw-bold"><?php echo $visits_count; ?></span></p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="admin-menu">
-	<div class="container admin-element">
+	<div class="container admin-element-menu">
 		<div class="row text-center">
 			<div class="col-sm-3">
 				<a href="general" class="admin-menu-item"><i class="fas fa-address-card fa-3x"></i><p class="admin-menu-item-text">Général</p></a>
