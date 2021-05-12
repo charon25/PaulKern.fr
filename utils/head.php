@@ -17,7 +17,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo $args['start_dir']; ?>css/style.css">
 
-	<link rel="icon" href="icon.ico">
+	<link rel="icon" href="img/icon.ico">
 	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
 
 	<!-- Icônes -->

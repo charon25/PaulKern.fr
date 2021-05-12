@@ -2,9 +2,9 @@
 
 - [x] Page d'ajout des compétences
 - [x] Page d'ajout des compétitions
-- [ ] Formulaire de contact
+- [x] Formulaire de contact
 - [x] Changement du mot de passe
-- [ ] Compteur de visite
+- [x] Compteur de visite
 - [x] Lien vers les projets/expériences
 - [x] Page expérience extra
 - [ ] Icône
