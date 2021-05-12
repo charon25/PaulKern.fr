@@ -49,6 +49,7 @@ require('../utils/functions.php');
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur - Général</h1>
+				<a href="admin" class="btn btn-primary margetop15 back-button">← Retour</a>
 				<a target="_blank" rel="noopener noreferrer" href="cheatsheet.pdf" class="btn btn-primary margetop15">Mardown cheatsheet</a>
 				<div class="margebot25"></div>
 			</div>

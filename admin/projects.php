@@ -127,7 +127,7 @@ while ($project = $projects_request->fetch()) {
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">
-					<p class="fw-bold">Date textuelle : <input type="text" name="<?php echo $PRO_ORDER; ?>" class="form-control"></p>
+					<p class="fw-bold">Date textuelle : <input type="text" name="<?php echo $PRO_DATE_TXT; ?>" class="form-control"></p>
 					<p class="fw-bold">Date d'ordre : <input type="date" name="<?php echo $PRO_ORDER; ?>" id="<?php echo $PRO_ORDER; ?>" class="form-control" onchange="on_change();"></p>
 				</div>
 				<div class="col-sm-6">
@@ -204,9 +204,11 @@ while ($project = $projects_request->fetch()) {
 		var id = action_selector.selectedOptions[0].value;
 		if (id == "X") {
 			change_buttons('inline', 'none');
+			document.getElementById('project_add_title').innerText = 'Ajouter un projet';
 			empty_fields();
 		} else {
 			change_buttons('none', 'inline');
+			document.getElementById('project_add_title').innerText = 'Modifier un projet';
 			set_fields(id);
 		}
 	}
