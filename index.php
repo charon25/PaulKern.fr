@@ -18,13 +18,25 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 
  ?>
 
+<?php 
+
+
+require('path/to/PHPMailer/src/Exception.php');
+require('path/to/PHPMailer/src/PHPMailer.php');
+
+if (isset($_POST[$MAIL_SUBMIT])) {
+	
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <?php include('utils/head.php'); print_head(array('title' => "Page d'accueil")); ?>
 <body>
 
 
-<?php //include('utils/header.php'); print_header(); ?>
+<?php include('utils/header.php'); print_header(); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -32,9 +44,41 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Paul Kern</h1>
 				<h3 class="titre-principal">Etudiant en Génie Electrique à l'INSA Strasbourg</h3>
-				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25">Télécharger mon CV</a>
-				<div class="margebot45"></div>
 			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-4 txt-droite">
+				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25 width200">Télécharger mon CV</a>
+			</div>
+			<div class="col-sm-4">
+				<a href="#" class="btn btn-primary bouton margetop25 width200" onclick="show_hide_contact_form();">Me contacter</a>
+			</div>
+			<div class="margebot45"></div>
+		</div>
+	</div>
+</section>
+
+<section id="contact" class="gray-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="titre">Formulaire de contact</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<form method="post" action="#contact">
+					<p class="fw-bold">Nom : <input type="text" name="<?php echo $MAIL_NAME ?>" class="form-control"></p>
+					<p class="fw-bold">Organisme : <input type="text" name="<?php echo $MAIL_ORG ?>" class="form-control"></p>
+					<p class="fw-bold">Adresse e-mail : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control"></p>
+					<p class="fw-bold">Objet : <input type="text" name="<?php echo $MAIL_OBJECT ?>" class="form-control"></p>
+					<p class="fw-bold">Message : <textarea name="<?php echo $MAIL_MESSAGE; ?>" class="form-control" rows=10></textarea></p>
+					<div class="text-center">
+						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
+					</div>
+				</form>
+			</div>
+			<div class="margebot25"></div>
 		</div>
 	</div>
 </section>
@@ -424,21 +468,6 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 					echo '</div>';
 				}
 			 ?>
-			<!--<div class="col-sm-2 bordure-right">
-				<p class="bleu-big">Avril 2021</p>
-				<p class="fw-bold">Google Code Jam</p>
-				<p>Round 2</p>
-			</div>
-			<div class="col-sm-2 bordure-right bordure-left">
-				<p class="bleu-big">Février 2021</p>
-				<p class="fw-bold">Google Hash Code</p>
-				<p>3000<sup>e</sup>/10000<br>Top <span class="bleu">30 %</span></p>
-			</div>
-			<div class="col-sm-2 bordure-left">
-				<p class="bleu-big">Avril 2021</p>
-				<p class="fw-bold">Google Code Jam</p>
-				<p>Round 2</p>
-			</div>-->
 		</div>
 	</div>
 </section>
@@ -448,4 +477,9 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 </body>
 </html>
 
+<script type="text/javascript">
+	function show_hide_contact_form() {
+		console.log("ici");
+	}
+</script>
 <script type="text/javascript" src="js/no_js.js"></script>

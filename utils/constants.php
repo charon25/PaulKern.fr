@@ -64,4 +64,13 @@
 	$CON_SUBMIT = $CON_PREFIX . 'ok';
 	$CON_DELETE = $CON_PREFIX . 'delete';
 
+// Constantes formulaire contact
+	$MAIL_PREFIX = 'contact_';
+	$MAIL_NAME = $MAIL_PREFIX . 'name';
+	$MAIL_ORG = $MAIL_PREFIX . 'company';
+	$MAIL_EMAIL = $MAIL_PREFIX . 'email';
+	$MAIL_OBJECT = $MAIL_PREFIX . 'object';
+	$MAIL_MESSAGE = $MAIL_PREFIX . 'message';
+	$MAIL_SUBMIT = $MAIL_PREFIX . 'ok';
+
  ?>

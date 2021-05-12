@@ -59,6 +59,10 @@ body {
 	text-decoration: inherit;
 }
 
+.width200 {
+	width: 200px;
+}
+
 /*  ======
 	 MENU
   	====== */
@@ -275,7 +279,7 @@ body {
   	================= */
 
 .first-section {
-	background-color: #81de7f /*#aaa;*/
+	background-color: #81de7f;
 }
 
 .even-section {
@@ -283,7 +287,11 @@ body {
 }
 
 .odd-section {
-	background-color: #9cde9b; /*#d5d5d5*/
+	background-color: #9cde9b;
+}
+
+.gray-section {
+	background-color: #ddd;
 }
 
 /*  =========
