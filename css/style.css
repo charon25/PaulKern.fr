@@ -362,6 +362,11 @@ select {
 
 .back-button {
 	margin-right: 15px;
-	background-color: #034494;
-	border-color: #034494;
+	background-color: #034494 !important;
+	border-color: #034494 !important;
+}
+
+.back-button-alone {
+	background-color: #034494 !important;
+	border-color: #034494 !important;
 }
