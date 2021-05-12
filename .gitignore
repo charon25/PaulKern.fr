@@ -4,3 +4,4 @@
 .ovhconfig_
 admin/password.config
 utils/bdd.php
+bot/

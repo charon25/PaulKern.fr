@@ -49,16 +49,16 @@ if (isset($_POST['change'])) {
 	<div class="container admin-element">
 		<form method="post" action="#add-skill" class="form-group">
 			<p class="admin-title bleu-big" id="experience_add_title">Changer le mot de passe</p>
-			<div class="row text-center">
+			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
-					<p>Mot de passe actuel : <input type="password" name="old_password" class="form-control"></p>
-					<p>Nouveau mot de passe : <input type="password" name="new_password" class="form-control"></p>
-					<p>Confirmation : <input type="password" name="new_password_confirm" class="form-control"></p>
+					<p class="fw-bold">Mot de passe actuel : <input type="password" name="old_password" class="form-control"></p>
+					<p class="fw-bold">Nouveau mot de passe : <input type="password" name="new_password" class="form-control"></p>
+					<p class="fw-bold">Confirmation : <input type="password" name="new_password_confirm" class="form-control"></p>
 					<div class="margetop25"></div>
 					<input type="submit" class="btn btn-primary bouton" name="change" value="Changer le mot de passe">
-					<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay\">$pos_result</p>"; ?>
-					<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay\">$neg_result</p>"; ?>
+					<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay text-center\">$pos_result</p>"; ?>
+					<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay text-center\">$neg_result</p>"; ?>
 				</div>
 			</div>			
 		</form>
