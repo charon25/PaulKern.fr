@@ -23,11 +23,55 @@ $contests_data = get_db_data_from_key($bdd, 'contest', -1);
 <?php 
 
 
-// require('path/to/PHPMailer/src/Exception.php');
-// require('path/to/PHPMailer/src/PHPMailer.php');
+include('phpmailer/PHPMailer.php');
+include('phpmailer/Exception.php');
+include('phpmailer/SMTP.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+$was_sent = FALSE;
 if (isset($_POST[$MAIL_SUBMIT])) {
+	if ($_POST[$MAIL_NAME] != '' && $_POST[$MAIL_EMAIL] != '' && $_POST[$MAIL_MESSAGE] != '') {
+		$mail_body = '<h3>Formulaire de contact utilisé par <' . $_POST[$MAIL_NAME] . '> (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
+		$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
+		$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
 
+		$mail = new PhpMailer(TRUE);
+		$mail->CharSet = 'UTF-8';
+    	$mail->setFrom('contact@paulkern.fr', 'paulkern.fr');
+    	$mail->addAddress('paul.kern.fr@gmail.com');
+    	$mail->isHTML(true);
+    	$mail->Subject = '[paulkern.fr] <' . $_POST[$MAIL_OBJECT] . '>';
+    	$mail->Body = $mail_body;
+    	if ($mail->send()) {
+			$pos_result = "Message correctement envoyé !";
+			$was_sent = TRUE;
+    	} else {
+			$neg_result = "Une erreur est survenue pendant l'envoi du message, veuillez réessayer s'il vous plait. Si cette erreur persiste, envoyez directement votre message à l'adresse 'paul.kern.fr@gmail.com'.";
+			$was_sent = FALSE;
+    	}
+	} else {
+		$was_sent = FALSE;
+		$neg_result = "Vous n'avez pas rempli un des champs obligatoires.";
+	}
+}
+
+if (!$was_sent) {
+	$mail_values = array(
+		$MAIL_NAME => isset($_POST[$MAIL_NAME]) ? $_POST[$MAIL_NAME] : "",
+		$MAIL_ORG => isset($_POST[$MAIL_ORG]) ? $_POST[$MAIL_ORG] : "",
+		$MAIL_EMAIL => isset($_POST[$MAIL_EMAIL]) ? $_POST[$MAIL_EMAIL] : "",
+		$MAIL_OBJECT => isset($_POST[$MAIL_OBJECT]) ? $_POST[$MAIL_OBJECT] : "",
+		$MAIL_MESSAGE => isset($_POST[$MAIL_MESSAGE]) ? $_POST[$MAIL_MESSAGE] : ""
+	);
+} else {
+	$mail_values = array(
+		$MAIL_NAME => "",
+		$MAIL_ORG => "",
+		$MAIL_EMAIL => "",
+		$MAIL_OBJECT => "",
+		$MAIL_MESSAGE => "",
+	);
 }
 
  ?>
@@ -72,15 +116,17 @@ if (isset($_POST[$MAIL_SUBMIT])) {
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
 				<form method="post" action="#contact">
-					<p class="fw-bold">Nom : <input type="text" name="<?php echo $MAIL_NAME ?>" class="form-control"></p>
-					<p class="fw-bold">Organisme : <input type="text" name="<?php echo $MAIL_ORG ?>" class="form-control"></p>
-					<p class="fw-bold">Adresse e-mail : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control"></p>
-					<p class="fw-bold">Objet : <input type="text" name="<?php echo $MAIL_OBJECT ?>" class="form-control"></p>
-					<p class="fw-bold">Message : <textarea name="<?php echo $MAIL_MESSAGE; ?>" class="form-control" rows=10></textarea></p>
+					<p class="fw-bold">Nom <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_NAME ?>" class="form-control" value="<?php echo $mail_values[$MAIL_NAME]; ?>"></p>
+					<p class="fw-bold">Organisme : <input type="text" name="<?php echo $MAIL_ORG ?>" class="form-control" value="<?php echo $mail_values[$MAIL_ORG]; ?>"></p>
+					<p class="fw-bold">Adresse e-mail <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control" value="<?php echo $mail_values[$MAIL_EMAIL]; ?>"></p>
+					<p class="fw-bold">Objet : <input type="text" name="<?php echo $MAIL_OBJECT ?>" class="form-control" value="<?php echo $mail_values[$MAIL_OBJECT]; ?>"></p>
+					<p class="fw-bold">Message <span class="asterisque">*</span> : <textarea name="<?php echo $MAIL_MESSAGE; ?>" class="form-control" rows=10><?php echo $mail_values[$MAIL_MESSAGE]; ?></textarea></p>
 					<div class="text-center">
 						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
 					</div>
 				</form>
+				<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay\">$pos_result</p>"; ?>
+				<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay\">$neg_result</p>"; ?>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -494,4 +540,6 @@ if (isset($_POST[$MAIL_SUBMIT])) {
 	}
 	show_hide_contact_form();
 </script>
+
 <script type="text/javascript" src="js/no_js.js"></script>
+<script type="text/javascript" src="js/decay.js"></script>
