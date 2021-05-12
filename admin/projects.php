@@ -92,6 +92,7 @@ while ($project = $projects_request->fetch()) {
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur - Projets</h1>
+				<a href="admin" class="btn btn-primary margetop15 back-button">← Retour</a>
 				<a target="_blank" rel="noopener noreferrer" href="cheatsheet.pdf" class="btn btn-primary margetop15">Mardown cheatsheet</a>
 				<div class="margebot25"></div>
 			</div>
@@ -101,28 +102,28 @@ while ($project = $projects_request->fetch()) {
 
 <section id="add-project">
 	<div class="container admin-element">
-		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<p class="admin-categorie">Action</p>
-				<form enctype="multipart/form-data" method="post" action="#add-project" class="form-group">
-				<p><select class="form-control" id="<?php echo $PRO_ACTION; ?>" name="<?php echo $PRO_ACTION; ?>" onchange="on_action_changed();">
-					<option value="X" <?php if ($last_modified < 0) echo 'selected="true"' ?>>---</option>
+		<form enctype="multipart/form-data" method="post" action="#add-project" class="form-group">
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<p class="admin-categorie">Action</p>
+					<p><select class="form-control" id="<?php echo $PRO_ACTION; ?>" name="<?php echo $PRO_ACTION; ?>" onchange="on_action_changed();">
+						<option value="X" <?php if ($last_modified < 0) echo 'selected="true"' ?>>---</option>
+						<?php 
+							foreach ($projects_data as $key => $project) {
+								$pro_json = json_decode($project['data'], TRUE);
+								echo '<option value="' . $project['id'] . '" ' . ($last_modified == $project['id'] ? 'selected="true"' : '') . '>' . $pro_json[$PRO_TITLE] . ' - ' . $pro_json[$PRO_DATE_TXT] . '</option>';
+							}
+						 ?>
+					</select></p>
 					<?php 
 						foreach ($projects_data as $key => $project) {
-							$pro_json = json_decode($project['data'], TRUE);
-							echo '<option value="' . $project['id'] . '" ' . ($last_modified == $project['id'] ? 'selected="true"' : '') . '>' . $pro_json[$PRO_TITLE] . ' - ' . $pro_json[$PRO_DATE_TXT] . '</option>';
+							echo '<div class="hidden" id="' . $PRO_DATA . '-' . $project['id'] . '">' . $project['data'] . '</div>';
 						}
 					 ?>
-				</select></p>
-				<?php 
-					foreach ($projects_data as $key => $project) {
-						echo '<div class="hidden" id="' . $PRO_DATA . '-' . $project['id'] . '">' . $project['data'] . '</div>';
-					}
-				 ?>
+				</div>
 			</div>
-		</div>
-		<p class="admin-title bleu-big" id="project_add_title">Ajouter un Projet</p>
+			<p class="admin-title bleu-big" id="project_add_title">Ajouter un Projet</p>
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">

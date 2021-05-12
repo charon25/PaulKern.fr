@@ -97,6 +97,7 @@ while ($experience = $experiences_request->fetch()) {
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur - Expériences</h1>
+				<a href="admin" class="btn btn-primary margetop15 back-button">← Retour</a>
 				<a target="_blank" rel="noopener noreferrer" href="cheatsheet.pdf" class="btn btn-primary margetop15">Mardown cheatsheet</a>
 				<div class="margebot25"></div>
 			</div>
@@ -106,28 +107,28 @@ while ($experience = $experiences_request->fetch()) {
 
 <section id="add-experience">
 	<div class="container admin-element">
-		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<p class="admin-categorie">Action</p>
-				<form enctype="multipart/form-data" method="post" action="#add-experience" class="form-group">
-				<p><select class="form-control" id="<?php echo $EXP_ACTION; ?>" name="<?php echo $EXP_ACTION; ?>" onchange="on_action_changed();">
-					<option value="X" <?php if ($last_modified < 0) echo 'selected="true"' ?>>---</option>
+		<form enctype="multipart/form-data" method="post" action="#add-experience" class="form-group">
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<p class="admin-categorie">Action</p>
+					<p><select class="form-control" id="<?php echo $EXP_ACTION; ?>" name="<?php echo $EXP_ACTION; ?>" onchange="on_action_changed();">
+						<option value="X" <?php if ($last_modified < 0) echo 'selected="true"' ?>>---</option>
+						<?php 
+							foreach ($experiences_data as $key => $experience) {
+								$exp_json = json_decode($experience['data'], TRUE);
+								echo '<option value="' . $experience['id'] . '" ' . ($last_modified == $experience['id'] ? 'selected="true"' : '') . '>' . $exp_json[$EXP_NAME] . ' - ' . $exp_json[$EXP_TITLE] . '</option>';
+							}
+						 ?>
+					</select></p>
 					<?php 
 						foreach ($experiences_data as $key => $experience) {
-							$exp_json = json_decode($experience['data'], TRUE);
-							echo '<option value="' . $experience['id'] . '" ' . ($last_modified == $experience['id'] ? 'selected="true"' : '') . '>' . $exp_json[$EXP_NAME] . ' - ' . $exp_json[$EXP_TITLE] . '</option>';
+							echo '<div class="hidden" id="' . $EXP_DATA . '-' . $experience['id'] . '">' . $experience['data'] . '</div>';
 						}
 					 ?>
-				</select></p>
-				<?php 
-					foreach ($experiences_data as $key => $experience) {
-						echo '<div class="hidden" id="' . $EXP_DATA . '-' . $experience['id'] . '">' . $experience['data'] . '</div>';
-					}
-				 ?>
+				</div>
 			</div>
-		</div>
-		<p class="admin-title bleu-big" id="experience_add_title">Ajouter une expérience</p>
+			<p class="admin-title bleu-big" id="experience_add_title">Ajouter une expérience</p>
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">

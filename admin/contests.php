@@ -60,6 +60,7 @@ while ($contest = $contests_request->fetch()) {
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur - Compétitions</h1>
+				<a href="admin" class="btn btn-primary margetop15 back-button">← Retour</a>
 				<a target="_blank" rel="noopener noreferrer" href="cheatsheet.pdf" class="btn btn-primary margetop15">Mardown cheatsheet</a>
 				<div class="margebot25"></div>
 			</div>
@@ -69,23 +70,23 @@ while ($contest = $contests_request->fetch()) {
 
 <section id="add-contest">
 	<div class="container admin-element">
-		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-				<p class="admin-categorie">Action</p>
-				<form enctype="multipart/form-data" method="post" action="#add-contest" class="form-group">
-				<p><select class="form-control" id="<?php echo $CON_ACTION; ?>" name="<?php echo $CON_ACTION; ?>" onchange="on_action_changed();">
-					<option value="X" selected="true">---</option>
-					<?php 
-						foreach ($contests_data as $key => $contest) {
-							$con_json = json_decode($contest['data'], TRUE);
-							echo '<option value="' . $contest['id'] . '">' . $con_json[$CON_NAME] . '</option>';
-						}
-					 ?>
-				</select></p>
+		<form enctype="multipart/form-data" method="post" action="#add-contest" class="form-group">
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<p class="admin-categorie">Action</p>
+					<p><select class="form-control" id="<?php echo $CON_ACTION; ?>" name="<?php echo $CON_ACTION; ?>" onchange="on_action_changed();">
+						<option value="X" selected="true">---</option>
+						<?php 
+							foreach ($contests_data as $key => $contest) {
+								$con_json = json_decode($contest['data'], TRUE);
+								echo '<option value="' . $contest['id'] . '">' . $con_json[$CON_NAME] . '</option>';
+							}
+						 ?>
+					</select></p>
+				</div>
 			</div>
-		</div>
-		<p class="admin-title bleu-big" id="contests_add_title">Ajouter une compétition</p>
+			<p class="admin-title bleu-big" id="contests_add_title">Ajouter une compétition</p>
 			<div class="row">
 				<p class="admin-categorie">Informations générales</p>
 				<div class="col-sm-6 bordure-right-no-padding">

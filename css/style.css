@@ -359,3 +359,9 @@ body {
 select {
 	appearance: auto !important;
 }
+
+.back-button {
+	margin-right: 15px;
+	background-color: #034494;
+	border-color: #034494;
+}

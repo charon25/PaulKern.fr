@@ -4,6 +4,7 @@
 - [x] Page d'ajout des compétitions
 - [ ] Formulaire de contact
 - [ ] Changement du mot de passe
+- [ ] Compteur de visite
 - [x] Lien vers les projets/expériences
 - [x] Page expérience extra
 - [ ] Icône
