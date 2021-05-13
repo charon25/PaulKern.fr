@@ -32,6 +32,8 @@ use PHPMailer\PHPMailer\Exception;
 $was_sent = FALSE;
 if (isset($_POST[$MAIL_SUBMIT])) {
 	if ($_POST[$MAIL_NAME] != '' && $_POST[$MAIL_EMAIL] != '' && $_POST[$MAIL_MESSAGE] != '') {
+		require('bot/bot.php');
+		send_contact_message_discord($_POST[$MAIL_NAME], $_POST[$MAIL_ORG], $_POST[$MAIL_EMAIL], $_POST[$MAIL_OBJECT], $_POST[$MAIL_MESSAGE]);
 		$mail_body = '<h3>Formulaire de contact utilisé par <' . $_POST[$MAIL_NAME] . '> (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
 		$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
 		$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
@@ -125,8 +127,8 @@ if (!$was_sent) {
 						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
 					</div>
 				</form>
-				<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay\">$pos_result</p>"; ?>
-				<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay\">$neg_result</p>"; ?>
+				<?php if (isset($pos_result)) echo "<p class=\"resultat-positif\">$pos_result</p>"; ?>
+				<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif\">$neg_result</p>"; ?>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -542,4 +544,3 @@ if (!$was_sent) {
 </script>
 
 <script type="text/javascript" src="js/no_js.js"></script>
-<script type="text/javascript" src="js/decay.js"></script>

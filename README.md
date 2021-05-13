@@ -7,5 +7,5 @@
 - [x] Compteur de visite
 - [x] Lien vers les projets/expériences
 - [x] Page expérience extra
-- [ ] Icône
+- [x] Icône
 - [ ] Balise *meta* et informations de référencement

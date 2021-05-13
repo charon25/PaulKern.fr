@@ -6,24 +6,30 @@
 
 <?php 
 
-	$connected = FALSE;
-	$bad_password = FALSE;
-	if (isset($_POST['connect'])) {
-		$hashed_password = file_get_contents('password.config');
-		if (password_verify($_POST['password'], $hashed_password)) {
-			$_SESSION['activity_time'] = time();
-			$_SESSION['login'] = 'true';
-			$connected = TRUE;
-		} else {
-			$bad_password = TRUE;
-			$_SESSION['login'] = 'false';
-			$_SESSION['activity_time'] = 0;
-		}
-	}
+require('../utils/bdd.php');
 
-	if (isset($_SESSION['login']) and $_SESSION['login'] == 'true') {
+$connected = FALSE;
+$bad_password = FALSE;
+if (isset($_POST['connect'])) {
+	$hashed_password = file_get_contents('password.config');
+	if (password_verify($_POST['password'], $hashed_password)) {
+		$_SESSION['activity_time'] = time();
+		$_SESSION['login'] = 'true';
 		$connected = TRUE;
+		if (isset($_COOKIE['visited']) && $_COOKIE['visited'] != 'admin') {
+			$delete_request = $bdd->prepare('DELETE FROM `pk_visits` WHERE `value`=?');
+			$delete_request->execute(array($_COOKIE['visited']));
+		}
+	} else {
+		$bad_password = TRUE;
+		$_SESSION['login'] = 'false';
+		$_SESSION['activity_time'] = 0;
 	}
+}
+
+if (isset($_SESSION['login']) and $_SESSION['login'] == 'true') {
+	$connected = TRUE;
+}
 
  ?>
 

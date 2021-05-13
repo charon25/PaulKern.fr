@@ -3,9 +3,10 @@
 require('bdd.php');
 
 if (!isset($_COOKIE['visited'])) {
-	setcookie('visited', 'true', time() + 3600, null, null, false, true);
-	$visit_request = $bdd->prepare('INSERT INTO `pk_visits`(`time`) VALUES (?)');
-	$visit_request->execute(array(time()));
+	$value = rand(-1000000000, 1000000000);
+	setcookie('visited', $value, time() + 3600, null, null, false, true);
+	$visit_request = $bdd->prepare('INSERT INTO `pk_visits`(`time`, `value`) VALUES (?, ?)');
+	$visit_request->execute(array(time(), $value));
 
 
 	$FIRST_ID = 1;
