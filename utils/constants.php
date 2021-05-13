@@ -9,6 +9,8 @@
 	$GEN_LINK_ITCHIO = $GEN_PREFIX . 'itchio';
 	$GEN_PHOTO = $GEN_PREFIX . 'photo';
 	$GEN_CV = $GEN_PREFIX . 'cv';
+	$GEN_TITLE = $GEN_PREFIX . 'title';
+	$GEN_META = $GEN_PREFIX . 'meta_desc';
 	$GEN_SUBMIT = $GEN_PREFIX . 'ok';
 
 // Constantes page "Expériences"

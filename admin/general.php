@@ -18,6 +18,8 @@ require('../utils/functions.php');
 		set_data_post($general_data, $GEN_LINK_LINKEDIN);
 		set_data_post($general_data, $GEN_LINK_GITHUB);
 		set_data_post($general_data, $GEN_LINK_ITCHIO);
+		set_data_post($general_data, $GEN_TITLE);
+		set_data_post($general_data, $GEN_META);
 
 		if (!empty($_FILES) && $_FILES[$GEN_PHOTO]['size'] > 0) {
 			$photo_path = save_file($GEN_PHOTO, "../", "img/general/", "photo");
@@ -64,7 +66,9 @@ require('../utils/functions.php');
 			<div class="row">
 				<div class="col-sm-5 bordure-right-no-padding">
 					<p class="admin-categorie">Texte de présentation</p>
-					<p><textarea name="<?php echo $GEN_PRES_TEXT; ?>" class="form-control" rows="8" spellcheck="false"><?php echo $general_data[$GEN_PRES_TEXT] ?></textarea></p>
+					<p><textarea name="<?php echo $GEN_PRES_TEXT; ?>" class="form-control" spellcheck="false" style="height: 219px;"><?php echo $general_data[$GEN_PRES_TEXT] ?></textarea></p>
+					<p class="admin-categorie">Titre principal</p>
+					<p><input type="text" name="<?php echo $GEN_TITLE; ?>" class="form-control" value="<?php echo $general_data[$GEN_TITLE]; ?>"></p>
 				</div>
 				<div class="col-sm-7">
 					<p class="admin-categorie">Liens</p>
@@ -82,14 +86,16 @@ require('../utils/functions.php');
 							itch.io : <input type="text" name="<?php echo $GEN_LINK_ITCHIO; ?>" value="<?php echo $general_data[$GEN_LINK_ITCHIO] ?>" class="form-control">
 						</div>
 					</div></p>
-					<div class="row">
+					<p><div class="row">
 						<div class="col-sm-6">
 							<p class="admin-categorie">Photo (carrée)</p><input type="file" name="<?php echo $GEN_PHOTO; ?>" class="form-control" accept="image/*">
 						</div>
 						<div class="col-sm-6">
 							<p class="admin-categorie">CV</p><input type="file" name="<?php echo $GEN_CV; ?>" class="form-control" accept="application/pdf">
 						</div>
-					</div>
+					</div></p>
+					<p class="admin-categorie">Meta description</p>
+					<p><input type="text" name="<?php echo $GEN_META; ?>" class="form-control" value="<?php echo $general_data[$GEN_META]; ?>"></p>
 				</div>
 			</div>
 			<p class="text-center margetop15 margebot0"><input type="submit" name="<?php echo $GEN_SUBMIT; ?>" class="btn btn-primary" value="Enregistrer"></p>

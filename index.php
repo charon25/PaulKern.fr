@@ -91,7 +91,7 @@ if (!$was_sent) {
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Paul Kern</h1>
-				<h3 class="titre-principal">Etudiant en Génie Electrique à l'INSA Strasbourg</h3>
+				<h3 class="titre-principal"><?php echo $general_data[$GEN_TITLE]; ?></h3>
 			</div>
 			<div class="col-sm-2"></div>
 			<div class="col-sm-4 txt-droite">
@@ -169,16 +169,20 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-6 text-center bordure-right">
-				<img src="img/logo_insa.svg" class="img-thumbnail-mod-height" alt="Logo INSA Strasbourg" height=60>
-				<p class="margetop25"><span class="bleu-big">2016 - 2021</span><br>
-				<span class="fw-bold">INSA Strasbourg</span><br>
-				Diplôme d'Ingénieur en Génie Electrique</p>
+				<a href="https://www.insa-strasbourg.fr/fr/" class="void">
+					<img src="img/formation/logo_insa.svg" class="img-thumbnail-mod-height" alt="Logo INSA Strasbourg" height=60>
+					<p class="margetop25"><span class="bleu-big">2016 - 2021</span><br>
+					<span class="fw-bold">INSA Strasbourg</span><br>
+					Diplôme d'Ingénieur en Génie Electrique</p>
+				</a>
 			</div><hr class="hr">
 			<div class="col-sm-6 text-center bordure-left">
-				<img src="img/logo_saint_michel.png" class="img-thumbnail-mod-height" alt="Logo Saint-Michel" height=60>
-				<p class="margetop25"><span class="bleu-big">2016</span><br>
-				<span class="fw-bold">Lycée Saint-Michel des Batignolles</span><br>
-				Baccalauréat Général S - Spé Maths - Mention Très Bien</p>
+				<a href="http://es-be.fr/lycee-saint-michel/" class="void">
+					<img src="img/formation/logo_saint_michel.png" class="img-thumbnail-mod-height" alt="Logo Saint-Michel" height=60>
+					<p class="margetop25"><span class="bleu-big">2016</span><br>
+					<span class="fw-bold">Lycée Saint-Michel des Batignolles</span><br>
+					Baccalauréat Général S - Spé Maths - Mention Très Bien</p>
+				</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -393,24 +397,6 @@ if (!$was_sent) {
 					}
 				}
 			 ?>
-			<!--<div class="text-center col-sm-4 bordure-right" style="padding-left: 10px">
-				<img src="img/logo_voxcare.svg" class="img-thumbnail-mod-height" alt="Logo Vox Care" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Février 2021</span><br>
-				<span class="fw-bold">Station météo connectée</span></p>
-				<p class="justif gris">Mesures de grandeurs météos toutes les 10 minutes tous les jours, et récupération de celles-ci par SMS, Internet ou radio.</p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-4 bordure-left bordure-right">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span><br>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
-				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
-			</div><hr class="hr">
-			<div class="text-center col-sm-4 bordure-left">
-				<img src="img/logo_kpu.png" class="img-thumbnail-mod-height" alt="Logo KPU" height=60>
-				<p class="margetop25"><span class="bleu-big">Septembre 2020 - Janvier 2021</span>
-				<span class="fw-bold">Bouée <span class="italique">Men Over Board</span> autonome</span></p>
-				<p class="justif gris">Projet réalisé pour l'entreprise <a href="https://www.phr-yacht-design.com/">PHR Yacht Design</a>, qui consistait à étudier la faisabilité d'une bouée devant récupérer les personnes tombées à la mer de façon autonome.</p>
-			</div>-->
 		</div>
 		<div class="margebot25"></div>
 		<div class="row">
