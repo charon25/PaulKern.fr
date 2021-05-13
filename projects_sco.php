@@ -13,7 +13,7 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', -1);
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Projets scolaires")); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Projets scolaires", "indexing" => TRUE)); ?>
 
 <body>
 

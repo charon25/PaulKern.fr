@@ -13,7 +13,7 @@ $projects_perso_data = get_db_data_from_key($bdd, 'perso', -1);
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Projets personnels")); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Projets personnels", "indexing" => TRUE)); ?>
 
 <body>
 

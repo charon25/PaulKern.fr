@@ -14,7 +14,7 @@ $experiences_pro_data = get_db_data_from_key($bdd, 'pro', -1);
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Expériences professionnelles")); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Expériences professionnelles", "indexing" => TRUE)); ?>
 
 <body>
 

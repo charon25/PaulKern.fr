@@ -2,6 +2,8 @@
 	function print_head($args = array()) { 
 		if (!isset($args['start_dir']))
 			$args['start_dir'] = '';
+		if (!isset($args['indexing']))
+			$args['indexing'] = FALSE;
 ?>
 
 <head>
@@ -21,8 +23,13 @@
 	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
 
 	<!-- Icônes -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<!-- Balises meta -->
+	<?php 	
+		if (!$args['indexing'])
+			echo '<meta name="robots" content="noindex">';
+	 ?>
 
 </head>
 

@@ -14,7 +14,7 @@ $experiences_extra_data = get_db_data_from_key($bdd, 'extra', -1);
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Expériences extra-professionnelles")); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Expériences extra-professionnelles", "indexing" => TRUE)); ?>
 
 <body>
 

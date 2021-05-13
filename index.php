@@ -80,7 +80,7 @@ if (!$was_sent) {
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Page d'accueil")); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Page d'accueil", "indexing" => TRUE)); ?>
 <body>
 
 
