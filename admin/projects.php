@@ -3,7 +3,7 @@
 require('check_connection.php');
 require('../utils/bdd.php');
 require('../utils/constants.php');
-require('../utils/functions.php');
+require_once('../utils/functions.php');
 
  ?>
 

@@ -5,7 +5,7 @@ require('utils/visits.php');
 require('utils/bdd.php');
 require('utils/markdown.php');
 require('utils/constants.php');
-require('utils/functions.php');
+require_once('utils/functions.php');
 
 $projects_sco_data = get_db_data_from_key($bdd, 'sco', -1);
 
