@@ -8,4 +8,4 @@
 - [x] Lien vers les projets/expériences
 - [x] Page expérience extra
 - [x] Icône
-- [ ] Balise *meta* et informations de référencement
+- [x] Balise *meta* et informations de référencement

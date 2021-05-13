@@ -67,6 +67,26 @@ body {
 	color: red;
 }
 
+@media (max-width: 770px) {
+	.big-screen {
+		display: none;
+	}
+}
+
+@media (min-width: 770px) {
+
+	.small-screen {
+		display: none;
+	}
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -25px;
+    visibility: hidden;
+}
+
 /*  ======
 	 MENU
   	====== */

@@ -30,7 +30,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $was_sent = FALSE;
+$clicked_send = FALSE;
 if (isset($_POST[$MAIL_SUBMIT])) {
+	$clicked_send = TRUE;
 	if ($_POST[$MAIL_NAME] != '' && $_POST[$MAIL_EMAIL] != '' && $_POST[$MAIL_MESSAGE] != '') {
 		require('bot/bot.php');
 		send_contact_message_discord($_POST[$MAIL_NAME], $_POST[$MAIL_ORG], $_POST[$MAIL_EMAIL], $_POST[$MAIL_OBJECT], $_POST[$MAIL_MESSAGE]);
@@ -93,6 +95,8 @@ if (!$was_sent) {
 				<h1 class="margetop45 fw-bold titre-principal">Paul Kern</h1>
 				<h3 class="titre-principal"><?php echo $general_data[$GEN_TITLE]; ?></h3>
 			</div>
+		</div>
+		<div class="row big-screen">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-4 txt-droite">
 				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25 width200">Télécharger mon CV</a>
@@ -102,11 +106,22 @@ if (!$was_sent) {
 			</div>
 			<div class="margebot45"></div>
 		</div>
+		<div class="row small-screen text-center">
+			<div class="col-sm-12">
+				<a href="<?php echo $general_data[$GEN_CV]; ?>" class="btn btn-primary bouton margetop25 width200">Télécharger mon CV</a>
+			</div>
+		</div>
+		<div class="row small-screen text-center">
+			<div class="col-sm-12">
+				<a class="btn btn-primary bouton margetop25 width200" onclick="show_hide_contact_form();">Me contacter</a>
+			</div>
+			<div class="margebot45"></div>
+		</div>
 	</div>
 </section>
 
-<section id="contact" class="gray-section">
-	<div class="container">
+<section id="anchor-contact" class="gray-section">
+	<div id="contact" class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h2 class="margetop25">Formulaire de contact</h2>
@@ -135,6 +150,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-presentation" class="anchor"></div>
 <section id="presentation" class="even-section">
 	<div class="container">
 		<div class="row">
@@ -160,6 +176,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-education" class="anchor"></div>
 <section id="education" class="odd-section">
 	<div class="container">
 		<div class="row">
@@ -189,6 +206,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-experiences-pro" class="anchor"></div>
 <section id="experiences-pro" class="even-section">
 	<div class="container">
 		<div class="row">
@@ -215,7 +233,10 @@ if (!$was_sent) {
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '</p>';
 						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
-						echo '</a></div><hr class="hr">';
+						echo '</a></div>';
+						if ($key < $count - 1) {
+							echo '<hr class="hr">';
+						}
 					}
 				}
 			 ?>
@@ -230,6 +251,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-skills" class="anchor"></div>
 <section id="skills" class="odd-section">
 	<div class="container">
 		<div class="row">
@@ -358,6 +380,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-projects" class="anchor"></div>
 <section id="projects" class="even-section">
 	<div class="container">
 		<div class="row">
@@ -384,7 +407,7 @@ if (!$was_sent) {
 							$bordures[] = 'bordure-left';
 						}
 						if ($project[$PRO_URL] != "") {
-							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm">Lien du projet</a>';
+							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm" style="margin-bottom: 1rem;">Lien du projet</a>';
 						} else {
 							$lien = '';
 						}
@@ -393,7 +416,10 @@ if (!$was_sent) {
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
 						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
-						echo '</a></div><hr class="hr">';
+						echo '</a></div>';
+						if ($key < $count - 1) {
+							echo '<hr class="hr">';
+						}
 					}
 				}
 			 ?>
@@ -424,7 +450,7 @@ if (!$was_sent) {
 							$bordures[] = 'bordure-left';
 						}
 						if ($project[$PRO_URL] != "") {
-							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm">Lien du projet</a>';
+							$lien = '<a href="' . $project[$PRO_URL] . '" class="btn btn-primary bouton btn-sm" style="margin-bottom: 1rem;">Lien du projet</a>';
 						} else {
 							$lien = '';
 						}
@@ -433,7 +459,10 @@ if (!$was_sent) {
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
 						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
-						echo '</div><hr class="hr">';
+						echo '</div>';
+						if ($key < $count - 1) {
+							echo '<hr class="hr">';
+						}
 					}
 				}
 			 ?>
@@ -447,6 +476,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 </section>
 
+<div id="anchor-experiences-perso" class="anchor"></div>
 <section id="experiences-perso" class="odd-section">
 	<div class="container">
 		<div class="row">
@@ -474,7 +504,10 @@ if (!$was_sent) {
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '<br>';
 						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
-						echo '</a></div><hr class="hr">';
+						echo '</a></div>';
+						if ($key < $count - 1) {
+							echo '<hr class="hr">';
+						}
 					}
 				}
 			 ?>
@@ -489,6 +522,7 @@ if (!$was_sent) {
 	</div>
 </section>
 
+<div id="anchor-contests" class="anchor"></div>
 <section id="contests" class="even-section">
 	<div class="container">
 		<div class="row">
@@ -526,7 +560,14 @@ if (!$was_sent) {
 		}
 		console.log("ici");
 	}
-	show_hide_contact_form();
+	if (<?php echo (!$clicked_send ? 'true' : 'false'); ?>) {
+		show_hide_contact_form();
+	}
+</script>
+
+<script type="text/javascript">
+	var menuHeight = window.getComputedStyle(document.getElementById('menu-inside')).height;
+	Array.from(document.getElementsByClassName("anchor")).forEach(element => element.style.top = "-" + menuHeight);
 </script>
 
 <script type="text/javascript" src="js/no_js.js"></script>
