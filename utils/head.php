@@ -26,10 +26,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 	<!-- Balises meta -->
-	<?php 	
+	<?php
 		if (!$args['indexing'])
 			echo '<meta name="robots" content="noindex">';
 	 ?>
+
+	<meta content="Paul Kern - Etudiant en Génie Electrique à l'INSA Strasbourg" property="og:title">
+	<meta content="Spécialisé en Systèmes Embarqués & Internet des Objets, je suis à la recherche de mon premier emploi en tant qu'ingénieur après la fin de mon stage de fin d'études en août 2021." property="og:description">
+	<meta content="https://paulkern.fr" property="og:url">
+	<meta content="img/general/photo.jpg" property="og:image">
+	<meta content="#49cde9b" data-react-helmet="true" name="theme-color">
 
 </head>
 

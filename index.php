@@ -80,11 +80,11 @@ if (!$was_sent) {
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Page d'accueil", "indexing" => TRUE)); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Paul Kern", "indexing" => TRUE)); ?>
 <body>
 
 
-<?php //include('utils/header.php'); print_header(); ?>
+<?php include('utils/header.php'); print_header(); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -189,7 +189,7 @@ if (!$was_sent) {
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="titre"><a href="exp_pro">Expériences professionnelles</a></h2>
+				<h2 class="titre"><a href="experiences">Expériences professionnelles</a></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -205,7 +205,7 @@ if (!$was_sent) {
 						if ($key > 0) {
 							$bordures[] = 'bordure-left';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="exp_pro#exp-' . $key . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="experiences#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
@@ -219,7 +219,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="exp_pro">Voir toutes les expériences</a>
+				<a class="btn btn-primary bouton" href="experiences">Voir toutes les expériences</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -363,7 +363,7 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="sous-titre">Scolaires</h3>
+				<h3 class="sous-titre"><a href="scolaire">Scolaires</a></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -384,7 +384,7 @@ if (!$was_sent) {
 						} else {
 							$lien = '';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="projects_sco#pro-' . $key . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="scolaire#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
@@ -415,13 +415,13 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="projects_sco">Voir toutes les projets scolaires</a>
+				<a class="btn btn-primary bouton" href="scolaire">Voir toutes les projets scolaires</a>
 			</div>
 		</div>		
 		<div class="margebot45"></div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="sous-titre">Personnels</h3>
+				<h3 class="sous-titre"><a href="personnel">Personnels</a></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -442,7 +442,7 @@ if (!$was_sent) {
 						} else {
 							$lien = '';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="projects_perso#pro-' . $key . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="personnel#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
@@ -455,7 +455,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="projects_perso">Voir toutes les projets personnels</a>
+				<a class="btn btn-primary bouton" href="personnel">Voir toutes les projets personnels</a>
 			</div>
 		</div>
 		<div class="margebot25"></div>
@@ -465,7 +465,7 @@ if (!$was_sent) {
 	<div class="container">
 		<div class="row">
 			<div class="text-center col-sm-12">
-				<h2 class="titre">Expériences extra-professionnelles</h2>
+				<h2 class="titre"><a href="associations">Expériences extra-professionnelles</a></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -482,7 +482,7 @@ if (!$was_sent) {
 						if ($key > 0) {
 							$bordures[] = 'bordure-left';
 						}
-						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="exp_extra#exp-' . $key . '">';
+						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="associations#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
@@ -496,7 +496,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="exp_extra">Voir toutes les expériences</a>
+				<a class="btn btn-primary bouton" href="associations">Voir toutes les expériences</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>

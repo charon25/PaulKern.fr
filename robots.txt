@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /bot/
+Disallow: /phpmailer/
+Disallow: /utils/
+Allow: /utils/head.php
+Allow: /utils/header.php
+Allow: /utils/footer.php
+
+Sitemap: https://www.paulkern.fr/sitemap.txt

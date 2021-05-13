@@ -210,12 +210,17 @@ body {
 }
 
 .titre > a {
-	color: #222;
-	text-decoration: none;
+	color: inherit;
+	text-decoration: inherit;
 }
 
 .sous-titre {
 	margin-bottom: 25px;
+}
+
+.sous-titre > a {
+	color: inherit;
+	text-decoration: inherit;
 }
 
 /*  ========
