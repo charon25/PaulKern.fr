@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 require('utils/visits.php');
 
 require('utils/bdd.php');
@@ -17,6 +19,15 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', 3);
 $skills_data = get_db_data_from_key($bdd, 'skill', -1);
 
 $contests_data = get_db_data_from_key($bdd, 'contest', -1);
+
+ ?>
+
+<?php 
+
+if (isset($_POST['disconnect'])) {
+	$_SESSION = array();
+	session_destroy();
+}
 
  ?>
 

@@ -11,7 +11,7 @@ require('../utils/bdd.php');
 $connected = FALSE;
 $bad_password = FALSE;
 if (isset($_POST['connect'])) {
-	$hashed_password = file_get_contents('password.config');
+	$hashed_password = file_get_contents('pwd/password.config');
 	if (password_verify($_POST['password'], $hashed_password)) {
 		$_SESSION['activity_time'] = time();
 		$_SESSION['login'] = 'true';

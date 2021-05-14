@@ -29,7 +29,10 @@ $visits_count = $last_id - $FIRST_ID + 1;
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Espace administrateur</h1>
-				<div class="margebot45"></div>
+				<form method="post" action="../index">
+					<input type="submit" name="disconnect" class="btn btn-primary bouton margetop15" value="Déconnexion">
+				</form>
+				<div class="margebot25"></div>
 			</div>
 		</div>
 	</div>

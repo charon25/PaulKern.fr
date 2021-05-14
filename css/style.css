@@ -74,7 +74,6 @@ body {
 }
 
 @media (min-width: 770px) {
-
 	.small-screen {
 		display: none;
 	}

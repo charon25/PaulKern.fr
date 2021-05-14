@@ -2,6 +2,6 @@
 .ovhconfig
 .htaccess_
 .ovhconfig_
-admin/password.config
+admin/pwd/
 utils/bdd.php
 bot/

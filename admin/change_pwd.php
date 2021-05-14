@@ -6,14 +6,14 @@ require('check_connection.php');
 
 <?php 
 
-$COST = 11;
+$COST = 14;
 
 if (isset($_POST['change'])) {
-	$hashed_password = file_get_contents('password.config');
+	$hashed_password = file_get_contents('pwd/password.config');
 	if (password_verify($_POST['old_password'], $hashed_password)) {
 		if ($_POST['new_password'] != '' && $_POST['new_password'] == $_POST['new_password_confirm']) {
 			$new_hash = password_hash($_POST['new_password'], PASSWORD_BCRYPT, ["cost" => $COST]);
-			file_put_contents('password.config', $new_hash);
+			file_put_contents('pwd/password.config', $new_hash);
 			$pos_result = "Mot de passe modifié avec succès !";
 		} else {
 			$neg_result = "Les mots de passe sont invalides ou ne correspondent pas.";
@@ -45,9 +45,9 @@ if (isset($_POST['change'])) {
 	</div>
 </section>
 
-<section id="add-skill">
+<section id="change-pwd">
 	<div class="container admin-element">
-		<form method="post" action="#add-skill" class="form-group">
+		<form method="post" action="#change-pwd" class="form-group">
 			<p class="admin-title bleu-big" id="experience_add_title">Changer le mot de passe</p>
 			<div class="row">
 				<div class="col-sm-3"></div>
@@ -56,7 +56,7 @@ if (isset($_POST['change'])) {
 					<p class="fw-bold">Nouveau mot de passe : <input type="password" name="new_password" class="form-control"></p>
 					<p class="fw-bold">Confirmation : <input type="password" name="new_password_confirm" class="form-control"></p>
 					<div class="margetop25"></div>
-					<input type="submit" class="btn btn-primary bouton" name="change" value="Changer le mot de passe">
+					<div class="text-center"><input type="submit" class="btn btn-primary bouton" name="change" value="Changer le mot de passe"></div>
 					<?php if (isset($pos_result)) echo "<p class=\"resultat-positif decay text-center\">$pos_result</p>"; ?>
 					<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif decay text-center\">$neg_result</p>"; ?>
 				</div>
