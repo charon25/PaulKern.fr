@@ -4,15 +4,12 @@
 			$args['start_dir'] = '';
 		if (!isset($args['indexing']))
 			$args['indexing'] = FALSE;
-		if (!isset($args['meta_description'])) {
-			require('bdd.php');
-			require_once('functions.php');
-			require('constants.php');
-			$args['meta_description'] = get_db_data_from_key($bdd, 'general', 1)[0][$GEN_META];
-		}
+		if (!isset($args['meta'])) 
+			$args['meta'] = FALSE;
 ?>
 
-<head>
+
+<?php if (!$args['meta']) echo '<head>'; ?>
 	<title>Paul Kern | <?php echo $args['title']; ?></title>
 
 	<!-- Bootstrap -->
@@ -37,12 +34,6 @@
 			echo '<meta name="robots" content="noindex">';
 	 ?>
 
-	<meta content="Paul Kern - Etudiant en Génie Electrique à l'INSA Strasbourg" property="og:title">
-	<meta content="<?php echo $args['meta_description']; ?>" property="og:description">
-	<meta content="https://paulkern.fr" property="og:url">
-	<meta content="img/general/photo.jpg" property="og:image">
-	<meta content="#49cde9b" data-react-helmet="true" name="theme-color">
-
-</head>
+<?php if (!$args['meta']) echo '</head>'; ?>
 
 <?php } ?>
