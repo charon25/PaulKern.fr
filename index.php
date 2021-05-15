@@ -96,7 +96,7 @@ if (!$was_sent) {
 <head>
 <?php include('utils/head.php'); print_head(array('title' => "Paul Kern", "indexing" => TRUE, "meta" => TRUE)); ?>
     <meta property="og:site_name" content="Paul Kern" />
-	<meta property="og:image" content="https://charon25.fr/paulkern/<?php echo $general_data[$GEN_PHOTO]; ?>" />
+	<meta property="og:image" content="https://www.paulkern.fr/<?php echo $general_data[$GEN_PHOTO]; ?>" />
 	<meta property="og:url" content="https://www.paulkern.fr/" />
 	<meta property="og:title" content="Paul Kern - Etudiant en Génie Electrique à l'INSA Strasbourg" />
 	<meta property="og:description" content="<?php echo $general_data[$GEN_META]; ?>" />
