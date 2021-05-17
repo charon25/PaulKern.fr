@@ -9,3 +9,5 @@
 - [x] Page expérience extra
 - [x] Icône
 - [x] Balise *meta* et informations de référencement
+- [ ] Ajouter un endroit pour les expériences pro
+- [ ] Réduire la durée avant expiration de la session
