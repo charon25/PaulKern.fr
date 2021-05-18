@@ -15,6 +15,7 @@ if (isset($_POST[$EXP_SUBMIT])) {
 		$EXP_DATE_TXT => $_POST[$EXP_DATE_TXT],
 		$EXP_NAME => $_POST[$EXP_NAME],
 		$EXP_TITLE => $_POST[$EXP_TITLE],
+		$EXP_PLACE => $_POST[$EXP_PLACE],
 		$EXP_SHORT_DESC => $_POST[$EXP_SHORT_DESC],
 		$EXP_DESC => $_POST[$EXP_DESC]
 	);
@@ -43,6 +44,7 @@ if (isset($_POST[$EXP_SUBMIT])) {
 	set_data_post($experience_data, $EXP_DATE_TXT);
 	set_data_post($experience_data, $EXP_NAME);
 	set_data_post($experience_data, $EXP_TITLE);
+	set_data_post($experience_data, $EXP_PLACE);
 	set_data_post($experience_data, $EXP_DESC);
 	set_data_post($experience_data, $EXP_SHORT_DESC);
 
@@ -143,9 +145,10 @@ while ($experience = $experiences_request->fetch()) {
 			<div class="row">
 				<div class="col-sm-6 bordure-right-no-padding">
 					<p class="admin-categorie">Description longue</p>
-					<textarea class="form-control" rows="12" name="<?php echo $EXP_DESC; ?>"></textarea>
+					<textarea class="form-control" rows="15" name="<?php echo $EXP_DESC; ?>"></textarea>
 				</div>
 				<div class="col-sm-6">
+					<p class="fw-bold">Lieu : <input type="text" name="<?php echo $EXP_PLACE; ?>" class="form-control"></p>
 					<p class="admin-categorie">Description courte</p>
 					<p><textarea class="form-control" rows="3" name="<?php echo $EXP_SHORT_DESC; ?>"></textarea></p>
 					<p class="admin-categorie">Type</p>
@@ -191,6 +194,7 @@ while ($experience = $experiences_request->fetch()) {
 		document.getElementsByName('<?php echo $EXP_DATE_TXT; ?>')[0].value = "";
 		document.getElementsByName('<?php echo $EXP_NAME; ?>')[0].value = "";
 		document.getElementsByName('<?php echo $EXP_TITLE; ?>')[0].value = "";
+		document.getElementsByName('<?php echo $EXP_PLACE; ?>')[0].value = "";
 		document.getElementsByName('<?php echo $EXP_DESC; ?>')[0].value = "";
 		document.getElementsByName('<?php echo $EXP_SHORT_DESC; ?>')[0].value = "";
 	}
@@ -200,6 +204,7 @@ while ($experience = $experiences_request->fetch()) {
 		document.getElementsByName('<?php echo $EXP_DATE_TXT; ?>')[0].value = data['<?php echo $EXP_DATE_TXT; ?>'];
 		document.getElementsByName('<?php echo $EXP_NAME; ?>')[0].value = data['<?php echo $EXP_NAME; ?>'];
 		document.getElementsByName('<?php echo $EXP_TITLE; ?>')[0].value = data['<?php echo $EXP_TITLE; ?>'];
+		document.getElementsByName('<?php echo $EXP_PLACE; ?>')[0].value = data['<?php echo $EXP_PLACE; ?>'];
 		document.getElementsByName('<?php echo $EXP_DESC; ?>')[0].value = data['<?php echo $EXP_DESC; ?>'];
 		document.getElementsByName('<?php echo $EXP_SHORT_DESC; ?>')[0].value = data['<?php echo $EXP_SHORT_DESC; ?>'];
 	}

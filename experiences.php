@@ -41,7 +41,7 @@ foreach ($experiences_pro_data as $key => $experience) {
 	echo '<div class="col-sm-3 text-center"><img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height margebot25 miniature" alt="Image ' . $experience[$EXP_NAME] . '"></div>';
 	echo '<div class="col-sm-9">';
 	echo '<p><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
-	echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+	echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
 	echo $experience[$EXP_TITLE] . '</p>';
 	echo '<div class="gris">' . markdown_to_html($experience[$EXP_DESC]) . '</div>';
 	echo '</div><div class="margebot25"></div></div></div></section>';

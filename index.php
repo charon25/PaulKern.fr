@@ -259,7 +259,7 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="experiences#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '</p></a>';
 						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
 						echo '</div>';
@@ -530,7 +530,7 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="associations#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
 						echo $experience[$EXP_TITLE] . '<br></a>';
 						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
 						echo '</div>';

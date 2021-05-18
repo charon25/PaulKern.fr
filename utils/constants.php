@@ -23,6 +23,7 @@
 	$EXP_SHORT_DESC = $EXP_PREFIX . 'short_description';
 	$EXP_DESC = $EXP_PREFIX . 'description';
 	$EXP_TYPE = $EXP_PREFIX . 'type';
+	$EXP_PLACE = $EXP_PREFIX . 'place';
 	$EXP_MAIN_IMG = $EXP_PREFIX . 'main_image';
 	$EXP_SUBMIT = $EXP_PREFIX . 'ok';
 	$EXP_MODIFY = $EXP_PREFIX . 'modify';
