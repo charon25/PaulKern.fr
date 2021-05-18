@@ -11,3 +11,7 @@
 - [x] Balise *meta* et informations de référencement
 - [ ] Ajouter un endroit pour les expériences pro
 - [ ] Réduire la durée avant expiration de la session
+- [ ] Enlever le lien sur le texte des expériences (et autres catégories)
+- [ ] Corriger les petites erreurs et bugs (<C>, <R>, //, ..., lien license)
+- [ ] Visites seulement après un certain temps
+- [ ] Meilleurs messages de confirmation de message
