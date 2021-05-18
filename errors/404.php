@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Erreur 404")); ?>
+<?php include('../utils/head.php'); print_head(array('title' => "Erreur 404", 'start_dir' => '../')); ?>
 <body>
 
-<?php include('utils/header.php'); print_header(); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => '../')); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -16,7 +16,7 @@
 	</div>
 </section>
 
-<?php include('utils/footer.php'); print_footer(); ?>
+<?php include('../utils/footer.php'); print_footer(array('start_dir' => '../')); ?>
 </body>
 </html>
 
