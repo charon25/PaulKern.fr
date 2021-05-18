@@ -1,7 +1,3 @@
-.htaccess
-.ovhconfig
-.htaccess_
-.ovhconfig_
 admin/pwd/
 utils/bdd.php
 bot/

@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{SERVER_PORT} 80
+
+RewriteRule ^(.*)$ https://www.paulkern.fr/$1 [R,L]
+
+ErrorDocument 403 https://www.paulkern.fr/errors/403.php
+ErrorDocument 404 https://www.paulkern.fr/errors/404.php
