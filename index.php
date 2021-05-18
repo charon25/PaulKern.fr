@@ -147,6 +147,19 @@ if (!$was_sent) {
 				<div class="margebot45"></div>
 			</div>
 		</div>
+		<?php 
+			if (isset($pos_result) || isset($neg_result)) {
+				echo '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6">';
+				if (isset($pos_result)) {
+					echo '<div class="alert alert-success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg> ';
+					echo $pos_result;
+				} else {
+					echo '<div class="alert alert-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/></svg> <span class="fw-bold">Erreur ! </span>';
+					echo $neg_result;
+				}
+				echo '</div></div></div>';
+			}
+		 ?>
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
@@ -160,8 +173,6 @@ if (!$was_sent) {
 						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
 					</div>
 				</form>
-				<?php if (isset($pos_result)) echo "<p class=\"resultat-positif\">$pos_result</p>"; ?>
-				<?php if (isset($neg_result)) echo "<p class=\"resultat-negatif\">$neg_result</p>"; ?>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -249,9 +260,9 @@ if (!$was_sent) {
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
-						echo $experience[$EXP_TITLE] . '</p>';
+						echo $experience[$EXP_TITLE] . '</p></a>';
 						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
-						echo '</a></div>';
+						echo '</div>';
 						if ($key < $count - 1) {
 							echo '<hr class="hr">';
 						}
@@ -432,9 +443,9 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="scolaire#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p></a>';
 						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
-						echo '</a></div>';
+						echo '</div>';
 						if ($key < $count - 1) {
 							echo '<hr class="hr">';
 						}
@@ -445,7 +456,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="scolaire">Voir toutes les projets scolaires</a>
+				<a class="btn btn-primary bouton" href="scolaire">Voir tous les projets scolaires</a>
 			</div>
 		</div>		
 		<div class="margebot45"></div>
@@ -475,7 +486,7 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="personnel#pro-' . $key . '">';
 						echo '<img src="' . $project[$PRO_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $project[$PRO_TITLE] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $project[$PRO_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p>';
+						echo '<span class="fw-bold">' . $project[$PRO_TITLE] . '</span><br></p></a>';
 						echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . $lien . '</div>';
 						echo '</div>';
 						if ($key < $count - 1) {
@@ -488,7 +499,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="personnel">Voir toutes les projets personnels</a>
+				<a class="btn btn-primary bouton" href="personnel">Voir tous les projets personnels</a>
 			</div>
 		</div>
 		<div class="margebot25"></div>
@@ -520,9 +531,9 @@ if (!$was_sent) {
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . '</span><br>';
-						echo $experience[$EXP_TITLE] . '<br>';
+						echo $experience[$EXP_TITLE] . '<br></a>';
 						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
-						echo '</a></div>';
+						echo '</div>';
 						if ($key < $count - 1) {
 							echo '<hr class="hr">';
 						}
@@ -570,13 +581,11 @@ if (!$was_sent) {
 <script type="text/javascript">
 	function show_hide_contact_form() {
 		var contact_section = document.getElementById('contact');
-		console.log(contact_section.style.display)
 		if (contact_section.style.display != 'none') {
 			contact_section.style.display = 'none';
 		} else {
 			contact_section.style.display = 'block';
 		}
-		console.log("ici");
 	}
 	if (<?php echo (!$clicked_send ? 'true' : 'false'); ?>) {
 		show_hide_contact_form();
