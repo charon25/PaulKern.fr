@@ -148,6 +148,7 @@ body {
 	/* border: 1px solid #dee2e6; */
 	border-radius: .25rem;
 	max-width: 80%;
+	filter: drop-shadow(5px 5px 4px);
 }
 
 .img-thumbnail-no-bg-mod-height {
@@ -281,6 +282,7 @@ body {
 
 .logo {
 	margin-bottom: 15px;
+	filter: drop-shadow(5px 5px 4px);
 }
 
 /*  ==========
