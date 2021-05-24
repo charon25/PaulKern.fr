@@ -290,6 +290,24 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
+				<h3 class="sous-titre">Générales</h3>
+			</div>
+		</div>
+		<div class="row">
+			<?php 
+				foreach ($skills_data as $key => $skill) {
+					if ($skill[$SKI_TYPE] == 'general') {
+						echo '<div class="text-center col-sm-2">';
+						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						echo '</div>';
+					}
+				}
+				echo '<div class="margebot25"></div>';
+			 ?>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
 				<h3 class="sous-titre">Langues</h3>
 			</div>
 		</div>
@@ -336,13 +354,13 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="sous-titre">Niveau intérmédiaire</h4>
+				<h4 class="sous-titre">Niveau intermédiaire</h4>
 			</div>
 		</div>
 		<div class="row">
 			<?php 
 				foreach ($skills_data as $key => $skill) {
-					if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'inter') {
+					if ($skill[$SKI_TYPE] == 'programming' && ($skill[$SKI_LEVEL] == 'inter' || $skill[$SKI_LEVEL] == 'begin')) {
 						echo '<div class="text-center col-sm-2">';
 						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
 						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
@@ -352,15 +370,38 @@ if (!$was_sent) {
 				echo '<div class="margebot25"></div>';
 			 ?>
 		</div>
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-sm-12">
 				<h4 class="sous-titre">Débutant</h4>
 			</div>
 		</div>
 		<div class="row">
 			<?php 
+				// foreach ($skills_data as $key => $skill) {
+					// if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'begin') {
+						// echo '<div class="text-center col-sm-2">';
+						// echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
+						// echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
+						// echo '</div>';
+					// }
+				// }
+				// echo '<div class="margebot25"></div>';
+			 ?>
+		</div>-->
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="sous-titre">Logiciels, OS & Technologies</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class="sous-titre">Maîtrisés</h4>
+			</div>
+		</div>
+		<div class="row">
+			<?php 
 				foreach ($skills_data as $key => $skill) {
-					if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'begin') {
+					if ($skill[$SKI_TYPE] == 'software' && $skill[$SKI_LEVEL] == 'master') {
 						echo '<div class="text-center col-sm-2">';
 						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
 						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
@@ -372,13 +413,13 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="sous-titre">Logiciels & OS</h3>
+				<h4 class="sous-titre">Niveau intérmédiaire</h4>
 			</div>
 		</div>
 		<div class="row">
 			<?php 
 				foreach ($skills_data as $key => $skill) {
-					if ($skill[$SKI_TYPE] == 'software') {
+					if ($skill[$SKI_TYPE] == 'software' && ($skill[$SKI_LEVEL] == 'inter' || $skill[$SKI_LEVEL] == 'begin')) {
 						echo '<div class="text-center col-sm-2">';
 						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
 						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
@@ -390,13 +431,13 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="sous-titre">Autres compétences</h3>
+				<h3 class="sous-titre">Humaines</h3>
 			</div>
 		</div>
 		<div class="row">
 			<?php 
 				foreach ($skills_data as $key => $skill) {
-					if ($skill[$SKI_TYPE] == 'other') {
+					if ($skill[$SKI_TYPE] == 'human') {
 						echo '<div class="text-center col-sm-2">';
 						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
 						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
