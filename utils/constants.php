@@ -83,5 +83,6 @@
 	$MAIL_DUMMY_FIELD_2 = $MAIL_PREFIX . 'field2';
 	$MAIL_SESSION = $MAIL_PREFIX . 'session';
 	$MAIL_BUTTON_JS = $MAIL_PREFIX . 'button';
+	$MAIL_TIMEOUT = $MAIL_PREFIX . 'timeout';
 
  ?>

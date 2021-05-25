@@ -44,8 +44,9 @@ include('phpmailer/SMTP.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
 function send_mail() {
-	global $MAIL_NAME, $MAIL_ORG, $MAIL_EMAIL, $MAIL_OBJECT, $MAIL_MESSAGE, $MAIL_SUBMIT, $MAIL_HONEYPOT, $MAIL_HONEYPOT_JS, $MAIL_DUMMY_FIELD_1, $MAIL_DUMMY_FIELD_2, $MAIL_SESSION, $MAIL_BUTTON_JS;
+	global $MAIL_NAME, $MAIL_ORG, $MAIL_EMAIL, $MAIL_OBJECT, $MAIL_MESSAGE, $MAIL_SUBMIT, $MAIL_HONEYPOT, $MAIL_HONEYPOT_JS, $MAIL_DUMMY_FIELD_1, $MAIL_DUMMY_FIELD_2, $MAIL_SESSION, $MAIL_BUTTON_JS, $MAIL_TIMEOUT;
 
 	// ===== ANTI BOT
 	// Pot de miel contre les bots
@@ -65,15 +66,21 @@ function send_mail() {
 		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec la session de l'utilisateur
 	}
 	// Variables serveurs
-	if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] != 'http://localhost') { // TODO : mettre la bonne URL
+	if (isset($_SERVER['HTTP_ORIGIN']) && strpos($_SERVER['HTTP_ORIGIN'], 'www.paulkern.fr') === FALSE) {
 		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
 	}
-	if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != 'http://localhost/paulkern/') { // TODO : mettre la bonne URL
+	if (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'www.paulkern.fr') === FALSE) {
+		echo $_SERVER['HTTP_REFERER'] . '/' . $_SERVER['HTTP_REFERER'];
 		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
 	}
 	// Clic sur le bouton
 	if ($_POST[$MAIL_BUTTON_JS] != 'amF2YXNjcmlwdA==') {
 		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
+	}
+
+	// ===== CHECK SPAMMING
+	if ($_POST[$MAIL_TIMEOUT] == 'X') {
+		return 3;
 	}
 
 	// =====
@@ -127,10 +134,12 @@ if ($result == 0) {
 	$neg_result = "Vous n'avez pas rempli un des champs obligatoires.";
 } elseif ($result == 2) {
 	$neg_result = "Une erreur est survenue pendant l'envoi du message, veuillez réessayer s'il vous plait. Si cette erreur persiste, envoyez directement votre message à l'adresse 'paul.kern.fr[at]gmail.com'.";
+} elseif ($result == 3) {
+	$neg_result = "Vous tentez d'envoyer plusieurs messages trop rapidement. Attendez quelques secondes avant de retenter, et si l'erreur persiste, <a href=\".?btn\">actualisez la page</a>.";
 }
 
-if ($result == -2) {
-	echo "BOT";
+if (isset($_GET['btn'])) {
+	$clicked_send = TRUE;
 }
 
 if (!$was_sent) {
@@ -236,7 +245,8 @@ if (!$was_sent) {
 						<input type="text" name="<?php echo $MAIL_DUMMY_FIELD_1; ?>" value="amUgbSdhcHBlbGxlIHBhdWw=" style="display: none;">
 						<input type="text" name="<?php echo $MAIL_DUMMY_FIELD_2; ?>" style="display: none;">
 						<input type="text" name="<?php echo $MAIL_SESSION; ?>" value="<?php echo $_SESSION['antibot']; ?>" style="display: none;">
-						<input type="text" name="<?php echo $MAIL_BUTTON_JS; ?>" id="<?php echo $MAIL_BUTTON_JS; ?>" style="display: none;">
+						<input type="text" name="<?php echo $MAIL_BUTTON_JS; ?>" id="<?php echo $MAIL_BUTTON_JS; ?>" style="display: none;" value="<?php echo ($clicked_send ? "amF2YXNjcmlwdA==" : "") ?>">
+						<input type="text" name="<?php echo $MAIL_TIMEOUT; ?>" id="<?php echo $MAIL_TIMEOUT; ?>" value="<?php echo ($result == -1 ? 'O' : 'X'); ?>">
 					</p>
 					<div class="text-center">
 						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
@@ -439,24 +449,6 @@ if (!$was_sent) {
 				echo '<div class="margebot25"></div>';
 			 ?>
 		</div>
-		<!-- <div class="row">
-			<div class="col-sm-12">
-				<h4 class="sous-titre">Débutant</h4>
-			</div>
-		</div>
-		<div class="row">
-			<?php 
-				// foreach ($skills_data as $key => $skill) {
-					// if ($skill[$SKI_TYPE] == 'programming' && $skill[$SKI_LEVEL] == 'begin') {
-						// echo '<div class="text-center col-sm-2">';
-						// echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
-						// echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
-						// echo '</div>';
-					// }
-				// }
-				// echo '<div class="margebot25"></div>';
-			 ?>
-		</div>-->
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Logiciels, OS & Technologies</h3>
@@ -728,6 +720,12 @@ if (!$was_sent) {
 	var form_field1 = document.getElementsByName('<?php echo $MAIL_DUMMY_FIELD_1; ?>')[0];
 	var form_field2 = document.getElementsByName('<?php echo $MAIL_DUMMY_FIELD_2; ?>')[0];
 	form_field2.value = form_field1.value;
+	// Timeout
+	function timeout_end() {
+		console.log('ici');
+		document.getElementById('<?php echo $MAIL_TIMEOUT; ?>').value = "O";
+	}
+	setTimeout(timeout_end, 4000);
 </script>
 
 <script type="text/javascript" src="js/no_js.js"></script>
