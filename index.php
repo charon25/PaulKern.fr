@@ -98,7 +98,7 @@ function send_mail() {
 		return 2;
 	}
 
-	$mail_body = '<h3>Formulaire de contact utilisé par <' . $_POST[$MAIL_NAME] . '> (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
+	$mail_body = '<h3>Formulaire de contact utilisé par \'' . $_POST[$MAIL_NAME] . '\' (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
 	$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
 	$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
 
