@@ -89,4 +89,3 @@ $visits_count = $last_id - $FIRST_ID + 1;
 
 
 <script type="text/javascript" src="../js/no_js.js"></script>
-<script type="text/javascript" src="../js/footer.js"></script>

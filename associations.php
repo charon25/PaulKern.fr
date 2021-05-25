@@ -43,6 +43,9 @@ foreach ($experiences_extra_data as $key => $experience) {
 	echo '<p><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
 	echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
 	echo $experience[$EXP_TITLE] . '</p>';
+	if ($experience[$EXP_INC_DESC] == 1) {
+		echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
+	}
 	echo '<div class="gris">' . markdown_to_html($experience[$EXP_DESC]) . '</div>';
 	echo '</div><div class="margebot25"></div></div></div></section>';
 

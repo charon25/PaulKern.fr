@@ -29,6 +29,7 @@
 	$EXP_MODIFY = $EXP_PREFIX . 'modify';
 	$EXP_DELETE = $EXP_PREFIX . 'delete';
 	$EXP_DATA = $EXP_PREFIX . 'data';
+	$EXP_INC_DESC = $EXP_PREFIX . 'include_desc';
 
 // Constantes page "Projets"
 	$PRO_PREFIX = 'projects_';
@@ -45,6 +46,7 @@
 	$PRO_MODIFY = $PRO_PREFIX . 'modify';
 	$PRO_DELETE = $PRO_PREFIX . 'delete';
 	$PRO_DATA = $PRO_PREFIX . 'data';
+	$PRO_INC_DESC = $PRO_PREFIX . 'include_desc';
 
 // Constantes page "Compétences"
 	$SKI_PREFIX = 'skills_';

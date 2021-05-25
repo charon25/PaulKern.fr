@@ -16,7 +16,8 @@ if (isset($_POST[$PRO_SUBMIT])) {
 		$PRO_URL => $_POST[$PRO_URL],
 		$PRO_TITLE => $_POST[$PRO_TITLE],
 		$PRO_SHORT_DESC => $_POST[$PRO_SHORT_DESC],
-		$PRO_DESC => $_POST[$PRO_DESC]
+		$PRO_DESC => $_POST[$PRO_DESC],
+		$PRO_INC_DESC => (isset($_POST[$PRO_INC_DESC]) ? 1 : 0)
 	);
 
 	if (!empty($_FILES) && $_FILES[$PRO_MAIN_IMG]['size'] > 0) {
@@ -138,7 +139,8 @@ while ($project = $projects_request->fetch()) {
 			<div class="row">
 				<div class="col-sm-6 bordure-right-no-padding">
 					<p class="admin-categorie">Description longue</p>
-					<textarea class="form-control" rows="12" name="<?php echo $PRO_DESC; ?>"></textarea>
+					<textarea class="form-control margebot15" rows="10" name="<?php echo $PRO_DESC; ?>"></textarea>
+					<p><input type="checkbox" name="<?php echo $PRO_INC_DESC; ?>" id="<?php echo $PRO_INC_DESC; ?>" style="margin-right: 10px;" checked><label for="<?php echo $PRO_INC_DESC; ?>">Inclure la description courte dans la longue</label></p>
 				</div>
 				<div class="col-sm-6">
 					<p class="admin-categorie">Description courte</p>

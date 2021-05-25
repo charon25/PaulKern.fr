@@ -110,16 +110,16 @@ while ($skill = $skills_request->fetch()) {
 					<p class="fw-bold">Type :
 						<select name="<?php echo $SKI_TYPE; ?>" id="<?php echo $SKI_TYPE; ?>" class="form-control" onchange="on_change();">
 						<option selected="True">---</option>
+						<option value="general">Générales</option>
 						<option value="programming">Langage de programmation</option>
 						<option value="software">Logiciels & OS</option>
-						<option value="other">Autres</option>
+						<option value="human">Humaines</option>
 					</select></p>
 					<p class="fw-bold">Niveau :
 					<select name="<?php echo $SKI_LEVEL; ?>" id="<?php echo $SKI_LEVEL; ?>" class="form-control" onchange="on_change();">
 						<option selected="True">---</option>
 						<option value="master">Maîtrisé</option>
 						<option value="inter">Niveau intermédiaire</option>
-						<option value="begin">Bases</option>
 					</select></p>
 				</div>
 			</div>

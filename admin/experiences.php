@@ -17,7 +17,8 @@ if (isset($_POST[$EXP_SUBMIT])) {
 		$EXP_TITLE => $_POST[$EXP_TITLE],
 		$EXP_PLACE => $_POST[$EXP_PLACE],
 		$EXP_SHORT_DESC => $_POST[$EXP_SHORT_DESC],
-		$EXP_DESC => $_POST[$EXP_DESC]
+		$EXP_DESC => $_POST[$EXP_DESC],
+		$EXP_INC_DESC => (isset($_POST[$EXP_INC_DESC]) ? 1 : 0)
 	);
 
 	if (!empty($_FILES) && $_FILES[$EXP_MAIN_IMG]['size'] > 0) {
@@ -92,7 +93,7 @@ while ($experience = $experiences_request->fetch()) {
 <body>
 
 
-<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -145,7 +146,8 @@ while ($experience = $experiences_request->fetch()) {
 			<div class="row">
 				<div class="col-sm-6 bordure-right-no-padding">
 					<p class="admin-categorie">Description longue</p>
-					<textarea class="form-control" rows="15" name="<?php echo $EXP_DESC; ?>"></textarea>
+					<textarea class="form-control margebot15" rows="13" name="<?php echo $EXP_DESC; ?>"></textarea>
+					<p><input type="checkbox" name="<?php echo $EXP_INC_DESC; ?>" id="<?php echo $EXP_INC_DESC; ?>" style="margin-right: 10px;" checked><label for="<?php echo $EXP_INC_DESC; ?>">Inclure la description courte dans la longue</label></p>
 				</div>
 				<div class="col-sm-6">
 					<p class="fw-bold">Lieu : <input type="text" name="<?php echo $EXP_PLACE; ?>" class="form-control"></p>
