@@ -166,7 +166,7 @@ if (!$was_sent) {
 <body>
 
 
-<?php //include('utils/header.php'); print_header(); ?>
+<?php include('utils/header.php'); print_header(); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">

@@ -93,7 +93,7 @@ while ($experience = $experiences_request->fetch()) {
 <body>
 
 
-<?php //include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
+<?php include('../utils/header.php'); print_header(array('start_dir' => "../")); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
