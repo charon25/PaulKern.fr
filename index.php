@@ -2,11 +2,15 @@
 
 session_start();
 
-require('utils/visits.php');
+if (!isset($_SESSION['antibot'])) {
+	$_SESSION['antibot'] = bin2hex(random_bytes(10));
+}
 
-require('utils/bdd.php');
-require('utils/markdown.php');
-require('utils/constants.php');
+require_once('utils/visits.php');
+
+require_once('utils/bdd.php');
+require_once('utils/markdown.php');
+require_once('utils/constants.php');
 require_once('utils/functions.php');
 
 $general_data = get_db_data_from_key($bdd, 'general', 1)[0];
@@ -40,35 +44,93 @@ include('phpmailer/SMTP.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$was_sent = FALSE;
-$clicked_send = FALSE;
-if (isset($_POST[$MAIL_SUBMIT])) {
-	$clicked_send = TRUE;
-	if ($_POST[$MAIL_NAME] != '' && $_POST[$MAIL_EMAIL] != '' && $_POST[$MAIL_MESSAGE] != '') {
+function send_mail() {
+	global $MAIL_NAME, $MAIL_ORG, $MAIL_EMAIL, $MAIL_OBJECT, $MAIL_MESSAGE, $MAIL_SUBMIT, $MAIL_HONEYPOT, $MAIL_HONEYPOT_JS, $MAIL_DUMMY_FIELD_1, $MAIL_DUMMY_FIELD_2, $MAIL_SESSION, $MAIL_BUTTON_JS;
+
+	// ===== ANTI BOT
+	// Pot de miel contre les bots
+	if (!empty($_POST[$MAIL_HONEYPOT])) {
+		return -2;
+	}
+	// Second pot de miel (vérifie le JS)
+	if (!isset($_POST[$MAIL_HONEYPOT_JS]) || !empty($_POST[$MAIL_HONEYPOT_JS])) {
+		return -2;
+	}
+	// Vérifie le JS
+	if ($_POST[$MAIL_DUMMY_FIELD_1] != $_POST[$MAIL_DUMMY_FIELD_2]) {
+		return -2;
+	}
+	// Session
+	if ($_SESSION['antibot'] != $_POST[$MAIL_SESSION]) {
+		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec la session de l'utilisateur
+	}
+	// Variables serveurs
+	if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] != 'http://localhost') { // TODO : mettre la bonne URL
+		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
+	}
+	if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != 'http://localhost/paulkern/') { // TODO : mettre la bonne URL
+		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
+	}
+	// Clic sur le bouton
+	if ($_POST[$MAIL_BUTTON_JS] != 'amF2YXNjcmlwdA==') {
+		return 2; // On renvoie 2 et pas -2 au cas où c'est une erreur avec l'utilisateur
+	}
+
+	// =====
+
+	// Manque une info obligatoire
+	if ($_POST[$MAIL_NAME] == '' || $_POST[$MAIL_EMAIL] == '' || $_POST[$MAIL_MESSAGE] == '') {
+		return 1;
+	}
+
+	// Envoi bot discord
+	try {
 		require('bot/bot.php');
 		send_contact_message_discord($_POST[$MAIL_NAME], $_POST[$MAIL_ORG], $_POST[$MAIL_EMAIL], $_POST[$MAIL_OBJECT], $_POST[$MAIL_MESSAGE]);
-		$mail_body = '<h3>Formulaire de contact utilisé par <' . $_POST[$MAIL_NAME] . '> (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
-		$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
-		$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
-
-		$mail = new PhpMailer(TRUE);
-		$mail->CharSet = 'UTF-8';
-    	$mail->setFrom('contact@paulkern.fr', 'paulkern.fr');
-    	$mail->addAddress('paul.kern.fr@gmail.com');
-    	$mail->isHTML(true);
-    	$mail->Subject = '[paulkern.fr] <' . $_POST[$MAIL_OBJECT] . '>';
-    	$mail->Body = $mail_body;
-    	if ($mail->send()) {
-			$pos_result = "Message correctement envoyé !";
-			$was_sent = TRUE;
-    	} else {
-			$neg_result = "Une erreur est survenue pendant l'envoi du message, veuillez réessayer s'il vous plait. Si cette erreur persiste, envoyez directement votre message à l'adresse 'paul.kern.fr@gmail.com'.";
-			$was_sent = FALSE;
-    	}
-	} else {
-		$was_sent = FALSE;
-		$neg_result = "Vous n'avez pas rempli un des champs obligatoires.";
+	} catch (Exception $e) {
+		return 2;
 	}
+
+	$mail_body = '<h3>Formulaire de contact utilisé par <' . $_POST[$MAIL_NAME] . '> (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
+	$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
+	$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
+
+	$mail = new PhpMailer(TRUE);
+	$mail->CharSet = 'UTF-8';
+	$mail->setFrom('contact@paulkern.fr', 'paulkern.fr');
+	$mail->addAddress('paul.kern.fr@gmail.com');
+	$mail->isHTML(true);
+	$mail->Subject = '[paulkern.fr] <' . $_POST[$MAIL_OBJECT] . '>';
+	$mail->Body = $mail_body;
+
+	try {
+		$send_result = $mail->send();
+	} catch (Exception $e) {
+		return 2;
+	}
+
+	return ($send_result ? 0 : 2);
+}
+
+
+$result = -1;
+if (isset($_POST[$MAIL_SUBMIT])) {
+	$result = send_mail();
+}
+
+$was_sent = ($result == 0);
+$clicked_send = ($result >= 0);
+
+if ($result == 0) {
+	$pos_result = "Message correctement envoyé !";
+} elseif ($result == 1) {
+	$neg_result = "Vous n'avez pas rempli un des champs obligatoires.";
+} elseif ($result == 2) {
+	$neg_result = "Une erreur est survenue pendant l'envoi du message, veuillez réessayer s'il vous plait. Si cette erreur persiste, envoyez directement votre message à l'adresse 'paul.kern.fr[at]gmail.com'.";
+}
+
+if ($result == -2) {
+	echo "BOT";
 }
 
 if (!$was_sent) {
@@ -104,7 +166,7 @@ if (!$was_sent) {
 <body>
 
 
-<?php include('utils/header.php'); print_header(); ?>
+<?php //include('utils/header.php'); print_header(); ?>
 
 <section id="presentation-first" class="first-section">
 	<div class="container">
@@ -143,7 +205,7 @@ if (!$was_sent) {
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h2 class="margetop25">Formulaire de contact</h2>
-				<p class="gris">Aucune information entrée ici ne sera stockée sur le site.</p>
+				<p class="gris">Aucune information entrée ici ne sera enregistrée sur le site.</p>
 				<div class="margebot45"></div>
 			</div>
 		</div>
@@ -163,12 +225,19 @@ if (!$was_sent) {
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<form method="post" action="#contact">
+				<form method="post" action="#contact" id="contact-form">
 					<p class="fw-bold">Nom <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_NAME ?>" class="form-control" value="<?php echo $mail_values[$MAIL_NAME]; ?>"></p>
+					<p class="contact-first-name fw-bold">Prénom : <input type="text" name="<?php echo $MAIL_HONEYPOT ?>" class="form-control"></p>
 					<p class="fw-bold">Organisme : <input type="text" name="<?php echo $MAIL_ORG ?>" class="form-control" value="<?php echo $mail_values[$MAIL_ORG]; ?>"></p>
 					<p class="fw-bold">Adresse e-mail <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control" value="<?php echo $mail_values[$MAIL_EMAIL]; ?>"></p>
 					<p class="fw-bold">Objet : <input type="text" name="<?php echo $MAIL_OBJECT ?>" class="form-control" value="<?php echo $mail_values[$MAIL_OBJECT]; ?>"></p>
 					<p class="fw-bold">Message <span class="asterisque">*</span> : <textarea name="<?php echo $MAIL_MESSAGE; ?>" class="form-control" rows=10><?php echo $mail_values[$MAIL_MESSAGE]; ?></textarea></p>
+					<p style="display: none;">
+						<input type="text" name="<?php echo $MAIL_DUMMY_FIELD_1; ?>" value="amUgbSdhcHBlbGxlIHBhdWw=" style="display: none;">
+						<input type="text" name="<?php echo $MAIL_DUMMY_FIELD_2; ?>" style="display: none;">
+						<input type="text" name="<?php echo $MAIL_SESSION; ?>" value="<?php echo $_SESSION['antibot']; ?>" style="display: none;">
+						<input type="text" name="<?php echo $MAIL_BUTTON_JS; ?>" id="<?php echo $MAIL_BUTTON_JS; ?>" style="display: none;">
+					</p>
 					<div class="text-center">
 						<input type="submit" name="<?php echo $MAIL_SUBMIT; ?>" class="btn btn-primary bouton" value="Envoyer">
 					</div>
@@ -627,6 +696,9 @@ if (!$was_sent) {
 		} else {
 			contact_section.style.display = 'block';
 		}
+
+		// Vérifie que l'utilisateur a bien cliqué sur le bouton
+		document.getElementById('<?php echo $MAIL_BUTTON_JS; ?>').value = "amF2YXNjcmlwdA==";
 	}
 	if (<?php echo (!$clicked_send ? 'true' : 'false'); ?>) {
 		show_hide_contact_form();
@@ -636,6 +708,26 @@ if (!$was_sent) {
 <script type="text/javascript">
 	var menuHeight = window.getComputedStyle(document.getElementById('menu-inside')).height;
 	Array.from(document.getElementsByClassName("anchor")).forEach(element => element.style.top = "-" + menuHeight);
+</script>
+
+<script type="text/javascript">
+	var contact_form = document.getElementById('contact-form');
+	// Create p
+	var title_form_p = document.createElement('p');
+	title_form_p.className += 'fw-bold ';
+	title_form_p.className += 'contact-title';
+	title_form_p.innerText = "Titre : ";
+	// Create input
+	var title_form_input = document.createElement('input');
+	title_form_input.setAttribute('type', 'text');
+	title_form_input.setAttribute('name', '<?php echo $MAIL_HONEYPOT_JS; ?>');
+	title_form_input.className += 'form-control';
+	title_form_p.appendChild(title_form_input);
+	contact_form.appendChild(title_form_p);
+	// =====
+	var form_field1 = document.getElementsByName('<?php echo $MAIL_DUMMY_FIELD_1; ?>')[0];
+	var form_field2 = document.getElementsByName('<?php echo $MAIL_DUMMY_FIELD_2; ?>')[0];
+	form_field2.value = form_field1.value;
 </script>
 
 <script type="text/javascript" src="js/no_js.js"></script>

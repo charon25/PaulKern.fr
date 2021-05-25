@@ -86,6 +86,10 @@ body {
     visibility: hidden;
 }
 
+.contact-first-name, .contact-title {
+	display: none;
+}
+
 /*  ======
 	 MENU
   	====== */

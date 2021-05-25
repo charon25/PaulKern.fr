@@ -15,3 +15,8 @@
 - [x] Corriger les petites erreurs et bugs (<C>, <R>, //, ..., lien license)
 - [x] Meilleurs messages de confirmation de message
 - [x] Page erreur 403
+- [ ] Anti spam du formulaire de contact
+- [ ] Changer la vérification de l'origin pour la bonne url
+- [ ] Case pour ajouter la petite description dans la grande
+- [ ] Nouvelles catégories de compétences
+- [ ] Tester http_response_code ou headers pour les pages admins

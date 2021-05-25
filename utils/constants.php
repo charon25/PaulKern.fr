@@ -75,5 +75,11 @@
 	$MAIL_OBJECT = $MAIL_PREFIX . 'object';
 	$MAIL_MESSAGE = $MAIL_PREFIX . 'message';
 	$MAIL_SUBMIT = $MAIL_PREFIX . 'ok';
+	$MAIL_HONEYPOT = $MAIL_PREFIX . 'first_name';
+	$MAIL_HONEYPOT_JS = $MAIL_PREFIX . 'title';
+	$MAIL_DUMMY_FIELD_1 = $MAIL_PREFIX . 'field1';
+	$MAIL_DUMMY_FIELD_2 = $MAIL_PREFIX . 'field2';
+	$MAIL_SESSION = $MAIL_PREFIX . 'session';
+	$MAIL_BUTTON_JS = $MAIL_PREFIX . 'button';
 
  ?>
