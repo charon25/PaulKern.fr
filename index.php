@@ -298,7 +298,7 @@ if (!$was_sent) {
 					<img src="img/formation/logo_insa.svg" class="img-thumbnail-mod-height" alt="Logo INSA Strasbourg" height=60>
 					<p class="margetop25"><span class="bleu-big">2016 - 2021</span><br>
 					<span class="fw-bold">INSA Strasbourg</span><br>
-					Diplôme d'Ingénieur en Génie Electrique</p>
+					Diplôme d'Ingénieur en Génie Electrique<br>Spécialité Systèmes Embarqués & IoT</p>
 				</a>
 			</div><hr class="hr">
 			<div class="col-sm-6 text-center bordure-left">
@@ -521,7 +521,7 @@ if (!$was_sent) {
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="sous-titre"><a href="scolaire">Scolaires</a></h3>
+				<h3 class="sous-titre"><a href="scolaire">Étudiants</a></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -722,7 +722,6 @@ if (!$was_sent) {
 	form_field2.value = form_field1.value;
 	// Timeout
 	function timeout_end() {
-		console.log('ici');
 		document.getElementById('<?php echo $MAIL_TIMEOUT; ?>').value = "O";
 	}
 	setTimeout(timeout_end, 4000);
