@@ -203,6 +203,11 @@ body {
 		padding-top: 10px;
 	}
 
+	.bordure-right-no-padding-right {
+		border-right: #bbbbbb 1px solid;
+		padding-top: 10px;
+	}
+
 	.bordure-right-no-padding {
 		border-right: #bbbbbb 1px solid;
 	}
@@ -288,6 +293,10 @@ body {
 	margin-bottom: 15px;
 	filter: drop-shadow(5px 5px 4px);
 	max-width: 150px;
+}
+
+.paddingtop10 {
+	padding-top: 10px;
 }
 
 /*  ==========

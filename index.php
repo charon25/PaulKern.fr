@@ -338,7 +338,7 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="experiences#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="100">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ($experience[$EXP_PLACE] != '' ? ' — ' . $experience[$EXP_PLACE] : '') . '</span><br>';
 						echo $experience[$EXP_TITLE] . '</p></a>';
 						echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
 						echo '</div>';
@@ -632,7 +632,7 @@ if (!$was_sent) {
 						echo '<div class="text-center col-sm-' . $col_width . ' ' . implode(' ', $bordures) . '"><a class="void" href="associations#exp-' . $key . '">';
 						echo '<img src="' . $experience[$EXP_MAIN_IMG] . '" class="img-thumbnail-mod-height" alt="Logo ' . $experience[$EXP_NAME] . '" height="150">';
 						echo '<p class="margetop25"><span class="bleu-big">' . $experience[$EXP_DATE_TXT] . '</span><br>';
-						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ' — ' . $experience[$EXP_PLACE] . '</span><br>';
+						echo '<span class="fw-bold">' . $experience[$EXP_NAME] . ($experience[$EXP_PLACE] != '' ? ' — ' . $experience[$EXP_PLACE] : '') . '</span><br>';
 						echo $experience[$EXP_TITLE] . '<br></a>';
 						echo '<span class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</span></p>';
 						echo '</div>';
@@ -661,17 +661,23 @@ if (!$was_sent) {
 				<h2 class="titre">Compétitions</h2>
 			</div>
 		</div>
-		<div class="row text-center">
+		<!--<div class="row text-center">-->
 			<?php 
 				foreach ($contests_data as $key => $contest) {
-					echo '<div class="col-sm-2 bordure-right">';
+					if ($key % 6 == 0) {
+						echo '<div class="row text-center' . ($key > 0 ? ' margetop45' : '') . '">';
+					}
+					echo '<div class="col-sm-2 ' . ($key % 6 == 5 ? 'paddingtop10' : 'bordure-right-no-padding-right') . '">';
 					echo '<p class="bleu-big">' . $contest[$CON_DATE_TXT] . '</p>';
 					echo '<p class="fw-bold">' . $contest[$CON_NAME] . '</p>';
 					echo '<p>' . markdown_to_html($contest[$CON_DESC]) . '</p>';
 					echo '</div>';
+					if ($key % 6 == 5) {
+						echo '</div>';
+					}
 				}
 			 ?>
-		</div>
+		<!--</div>-->
 	</div>
 </section>
 

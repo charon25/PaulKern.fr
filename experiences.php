@@ -25,6 +25,7 @@ $experiences_pro_data = get_db_data_from_key($bdd, 'pro', -1);
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="margetop45 fw-bold titre-principal">Expériences professionnelles</h1>
+				<a href="index" class="btn btn-primary margetop15 back-button">← Retour</a>
 				<div class="margebot45"></div>
 			</div>
 		</div>
