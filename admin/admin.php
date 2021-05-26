@@ -71,7 +71,7 @@ $visits_count = $last_id - $FIRST_ID + 1;
 				<a href="projects?type=perso" class="admin-menu-item"><i class="fas fa-tasks fa-3x"></i><p class="admin-menu-item-text">Projets persos</p></a>
 			</div>
 			<div class="col-sm-3">
-				<a href="projects?type=sco" class="admin-menu-item"><i class="fas fa-graduation-cap fa-3x"></i><p class="admin-menu-item-text">Projets scolaires</p></a>
+				<a href="projects?type=sco" class="admin-menu-item"><i class="fas fa-graduation-cap fa-3x"></i><p class="admin-menu-item-text">Projets étudiants</p></a>
 			</div>
 			<div class="col-sm-3">
 				<a href="contests" class="admin-menu-item"><i class="fas fa-trophy fa-3x"></i><p class="admin-menu-item-text">Compétitions</p></a>

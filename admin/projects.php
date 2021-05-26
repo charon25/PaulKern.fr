@@ -149,7 +149,7 @@ while ($project = $projects_request->fetch()) {
 					<p><select class="form-control" id="<?php echo $PRO_TYPE; ?>" name="<?php echo $PRO_TYPE; ?>" onchange="on_change();">
 						<option>---</option>
 						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'perso') echo 'selected="true"'; ?> value="perso">Projet personnel</option>
-						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'sco') echo 'selected="true"'; ?> value="sco">Projet scolaire</option>
+						<option <?php if (isset($_GET['type']) && $_GET['type'] == 'sco') echo 'selected="true"'; ?> value="sco">Projet étudiant</option>
 					</select></p>
 					<p class="admin-categorie">Images</p>
 					<p class="fw-bold">Image principale : <input type="file" name="<?php echo $PRO_MAIN_IMG; ?>" class="form-control" accept="image/*"></p>

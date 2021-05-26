@@ -352,7 +352,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="experiences">Voir toutes les expériences</a>
+				<a class="btn btn-primary bouton" href="experiences">Voir la liste complète</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>
@@ -558,7 +558,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="scolaire">Voir tous les projets scolaires</a>
+				<a class="btn btn-primary bouton" href="scolaire">Voir la liste complète</a>
 			</div>
 		</div>		
 		<div class="margebot45"></div>
@@ -601,7 +601,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="personnel">Voir tous les projets personnels</a>
+				<a class="btn btn-primary bouton" href="personnel">Voir la liste complète</a>
 			</div>
 		</div>
 		<div class="margebot25"></div>
@@ -646,7 +646,7 @@ if (!$was_sent) {
 		<div class="margebot25"></div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<a class="btn btn-primary bouton" href="associations">Voir toutes les expériences</a>
+				<a class="btn btn-primary bouton" href="associations">Voir la liste complète</a>
 			</div>
 			<div class="margebot25"></div>
 		</div>

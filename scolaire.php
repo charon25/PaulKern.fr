@@ -13,7 +13,7 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', -1);
 
 <!DOCTYPE html>
 <html>
-<?php include('utils/head.php'); print_head(array('title' => "Projets scolaires", "indexing" => TRUE)); ?>
+<?php include('utils/head.php'); print_head(array('title' => "Projets étudiants", "indexing" => TRUE)); ?>
 
 <body>
 
@@ -23,7 +23,7 @@ $projects_sco_data = get_db_data_from_key($bdd, 'sco', -1);
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h1 class="margetop45 fw-bold titre-principal">Projets scolaires</h1>
+				<h1 class="margetop45 fw-bold titre-principal">Projets étudiants</h1>
 				<div class="margebot45"></div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@ foreach ($projects_sco_data as $key => $project) {
 	echo '<p class="bleu-big">' . $project[$PRO_DATE_TXT] . '</p>';
 	echo '<p class="fw-bold">' . $project[$PRO_TITLE] . '</p>';
 	if ($project[$PRO_INC_DESC] == 1) {
-		echo '<div class="gris">' . markdown_to_html($projet[$PRO_SHORT_DESC]) . '</div>';
+		echo '<div class="gris">' . markdown_to_html($project[$PRO_SHORT_DESC]) . '</div>';
 	}
 	echo '<div class="gris">' . markdown_to_html($project[$PRO_DESC]);
 	if ($project[$PRO_URL] != '') {
