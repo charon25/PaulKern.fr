@@ -2,8 +2,8 @@
 
 require_once('bdd.php');
 
-$is_bot = !empty($_SERVER['HTTP_USER_AGENT']) and preg_match('~(bot|crawl)~i', $_SERVER['HTTP_USER_AGENT']);
-// Si c'est un bot
+$is_bot = !empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl)~i', $_SERVER['HTTP_USER_AGENT']);
+
 if (!$is_bot) {
 	if (!isset($_COOKIE['visited'])) {
 		$value = rand(-1000000000, 1000000000);
