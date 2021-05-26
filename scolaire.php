@@ -41,8 +41,8 @@ foreach ($projects_sco_data as $key => $project) {
 	echo '<div class="col-sm-9">';
 	echo '<p class="bleu-big">' . $project[$PRO_DATE_TXT] . '</p>';
 	echo '<p class="fw-bold">' . $project[$PRO_TITLE] . '</p>';
-	if ($experience[$EXP_INC_DESC] == 1) {
-		echo '<div class="gris">' . markdown_to_html($experience[$EXP_SHORT_DESC]) . '</div>';
+	if ($project[$PRO_INC_DESC] == 1) {
+		echo '<div class="gris">' . markdown_to_html($projet[$PRO_SHORT_DESC]) . '</div>';
 	}
 	echo '<div class="gris">' . markdown_to_html($project[$PRO_DESC]);
 	if ($project[$PRO_URL] != '') {

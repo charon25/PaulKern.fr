@@ -109,11 +109,11 @@ while ($skill = $skills_request->fetch()) {
 				<div class="col-sm-6">
 					<p class="fw-bold">Type :
 						<select name="<?php echo $SKI_TYPE; ?>" id="<?php echo $SKI_TYPE; ?>" class="form-control" onchange="on_change();">
-						<option selected="True">---</option>
-						<option value="general">Générales</option>
-						<option value="programming">Langage de programmation</option>
-						<option value="software">Logiciels & OS</option>
-						<option value="human">Humaines</option>
+						<option <?php if (!isset($_POST[$SKI_TYPE])) echo 'selected="True"' ?>>---</option>
+						<option <?php if (isset($_POST[$SKI_TYPE]) && $_POST[$SKI_TYPE] == 'general') echo 'selected="True"' ?>value="general">Générales</option>
+						<option <?php if (isset($_POST[$SKI_TYPE]) && $_POST[$SKI_TYPE] == 'programming') echo 'selected="True"' ?> value="programming">Langage de programmation</option>
+						<option <?php if (isset($_POST[$SKI_TYPE]) && $_POST[$SKI_TYPE] == 'software') echo 'selected="True"' ?> value="software">Logiciels, OS & Technologies</option>
+						<option <?php if (isset($_POST[$SKI_TYPE]) && $_POST[$SKI_TYPE] == 'human') echo 'selected="True"' ?> value="human">Humaines</option>
 					</select></p>
 					<p class="fw-bold">Niveau :
 					<select name="<?php echo $SKI_LEVEL; ?>" id="<?php echo $SKI_LEVEL; ?>" class="form-control" onchange="on_change();">

@@ -169,7 +169,7 @@ if (!$was_sent) {
     <meta property="og:site_name" content="Paul Kern" />
 	<meta property="og:image" content="https://www.paulkern.fr/<?php echo $general_data[$GEN_PHOTO]; ?>" />
 	<meta property="og:url" content="https://www.paulkern.fr/" />
-	<meta property="og:title" content="Paul Kern - Etudiant en Génie Electrique à l'INSA Strasbourg" />
+	<meta property="og:title" content="Paul Kern - <?php echo $general_data[$GEN_TITLE]; ?>" />
 	<meta property="og:description" content="<?php echo $general_data[$GEN_META]; ?>" />
 </head>
 <body>
@@ -376,7 +376,7 @@ if (!$was_sent) {
 			<?php 
 				foreach ($skills_data as $key => $skill) {
 					if ($skill[$SKI_TYPE] == 'general') {
-						echo '<div class="text-center col-sm-2">';
+						echo '<div class="text-center col-sm-3">';
 						echo '<img src="' . $skill[$SKI_IMG] . '" alt="' . $skill[$SKI_NAME] . '" height="65" class="logo">';
 						echo '<p class="bleu">' . $skill[$SKI_NAME] . '</p>';
 						echo '</div>';

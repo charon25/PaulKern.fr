@@ -287,6 +287,7 @@ body {
 .logo {
 	margin-bottom: 15px;
 	filter: drop-shadow(5px 5px 4px);
+	max-width: 150px;
 }
 
 /*  ==========

@@ -10,7 +10,7 @@ function markdown_to_html($string) {
 	// Exposant
 	$string = preg_replace('/\^(\w+)/', '<sup>\1</sup>', $string);
 	// Hyperlink
-	$string = preg_replace('/\[(.+)\]\((.+)\)/s', '<a href="\1">\2</a>', $string);
+	$string = preg_replace('/\[(.*?)\]\((.*?)\)/s', '<a href="\1">\2</a>', $string);
 	// Paragraphs
 	$string = preg_replace('/\+\+J (.+)/', '<p class="justif">\1</p>', $string);
 	$string = preg_replace('/\+\+G (.+)/', '<p class="txt-gauche">\1</p>', $string);
