@@ -121,6 +121,8 @@ body {
 
 .menu-lien:hover {
 	color: #022754;
+	text-decoration: underline;
+	text-underline-offset: 2px;
 }
 
 .menu-lien-vert:hover {

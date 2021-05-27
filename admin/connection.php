@@ -19,7 +19,7 @@ if (isset($_POST['connect'])) {
 		if (isset($_COOKIE['visited']) && $_COOKIE['visited'] != 'admin') {
 			$delete_request = $bdd->prepare('DELETE FROM `pk_visits` WHERE `value`=?');
 			$delete_request->execute(array($_COOKIE['visited']));
-			setcookie('visited', 'admin', time() + 3600, null, null, false, true);
+			setcookie('visited', 'admin', time() + 3600, '/', null, false, true);
 		}
 	} else {
 		$bad_password = TRUE;

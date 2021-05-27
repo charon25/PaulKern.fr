@@ -17,7 +17,7 @@
 						<li class="list-inline-item menu-item"><a href="<?php echo $args['start_dir']; ?>index#anchor-skills" class="menu-lien">Compétences</a></li>
 						<li class="list-inline-item menu-item"><a href="<?php echo $args['start_dir']; ?>index#anchor-projects" class="menu-lien">Projets</a></li>
 						<li class="list-inline-item menu-item"><a href="<?php echo $args['start_dir']; ?>index#anchor-experiences-perso" class="menu-lien">Expériences extra-pro.</a></li>
-						<li class="list-inline-item menu-item"><a href="<?php echo $args['start_dir']; ?>index#anchor-contests" class="menu-lien-vert">Compétitions</a></li>
+						<li class="list-inline-item menu-item"><a href="<?php echo $args['start_dir']; ?>index#anchor-contests" class="menu-lien">Compétitions</a></li>
 					</ul>
 				</div>
 			</div>
