@@ -90,6 +90,10 @@ body {
 	display: none;
 }
 
+.hr-projets {
+	height: 2px !important;
+}
+
 /*  ======
 	 MENU
   	====== */
@@ -110,8 +114,17 @@ body {
 	text-decoration: none;
 }
 
+.menu-lien-vert {
+	color: #81de7f;
+	text-decoration: none;
+}
+
 .menu-lien:hover {
 	color: #022754;
+}
+
+.menu-lien-vert:hover {
+	color: #5c9b5a;
 }
 
 @media (max-width: 770px) {
@@ -236,6 +249,8 @@ body {
 .titre {
 	margin-bottom: 45px;
 	margin-top: 25px;
+	font-family: "Roboto Mono";
+	font-weight: bold;
 }
 
 .titre > a {
