@@ -1,21 +1,10 @@
+# paulkern.fr
+
+This repo contains the source code of my [personnel website](https://www.paulkern.fr). It is made entirely in raw PHP and uses Bootstrap for the CSS.
+
+This website is like an "online CV" which summarises all my experiences and personnal projects. Unfortunately it is only in French for now.
+
+
 # TODO
 
-- [x] Page d'ajout des compétences
-- [x] Page d'ajout des compétitions
-- [x] Formulaire de contact
-- [x] Changement du mot de passe
-- [x] Compteur de visite
-- [x] Lien vers les projets/expériences
-- [x] Page expérience extra
-- [x] Icône
-- [x] Balise *meta* et informations de référencement
-- [x] Ajouter un endroit pour les expériences pro
-- [x] Enlever le lien sur le texte des expériences (et autres catégories)
-- [x] Corriger les petites erreurs et bugs (<C>, <R>, //, ..., lien license)
-- [x] Meilleurs messages de confirmation de message
-- [x] Page erreur 403
-- [x] Anti spam du formulaire de contact
-- [x] Changer la vérification de l'origin pour la bonne url
-- [x] Case pour ajouter la petite description dans la grande
-- [x] Nouvelles catégories de compétences
-- [x] Tester http_response_code ou headers pour les pages admins
+- [ ] Create an English version

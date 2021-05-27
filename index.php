@@ -99,15 +99,23 @@ function send_mail() {
 	}
 
 	$mail_body = '<h3>Formulaire de contact utilisé par \'' . $_POST[$MAIL_NAME] . '\' (' . $_POST[$MAIL_ORG] . ') le ' . date('d/m/Y') . ' à ' . date('H:i') . '</h3>';
-	$mail_body = $mail_body . '<h3>Adresse mail entrée : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
-	$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $_POST[$MAIL_MESSAGE]) . '</p>';
+	$mail_body = $mail_body . '<h3>Contact entré : \'' . $_POST[$MAIL_EMAIL] . '\'</h3><br>';
+	$mail_message = htmlspecialchars($_POST[$MAIL_MESSAGE]);
+	if (strlen($mail_message) > 5000) {
+		$mail_message = substr($mail_message, 0, 5000);
+	}
+	$mail_body = $mail_body . '<p>' . str_replace("\n", "<br>", $mail_message) . '</p>';
 
 	$mail = new PhpMailer(TRUE);
 	$mail->CharSet = 'UTF-8';
 	$mail->setFrom('contact@paulkern.fr', 'paulkern.fr');
 	$mail->addAddress('paul.kern.fr@gmail.com');
 	$mail->isHTML(true);
-	$mail->Subject = '[paulkern.fr] <' . $_POST[$MAIL_OBJECT] . '>';
+	$mail_object = htmlspecialchars($_POST[$MAIL_OBJECT]);
+	if (strlen($mail_object) > 100) {
+		$mail_object = substr($mail_object, 0, 100);
+	}
+	$mail->Subject = '[paulkern.fr] <' . $mail_object . '>';
 	$mail->Body = $mail_body;
 
 	try {
@@ -238,7 +246,7 @@ if (!$was_sent) {
 					<p class="fw-bold">Nom <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_NAME ?>" class="form-control" value="<?php echo $mail_values[$MAIL_NAME]; ?>"></p>
 					<p class="contact-first-name fw-bold">Prénom : <input type="text" name="<?php echo $MAIL_HONEYPOT ?>" class="form-control"></p>
 					<p class="fw-bold">Organisme : <input type="text" name="<?php echo $MAIL_ORG ?>" class="form-control" value="<?php echo $mail_values[$MAIL_ORG]; ?>"></p>
-					<p class="fw-bold">Adresse e-mail <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control" value="<?php echo $mail_values[$MAIL_EMAIL]; ?>"></p>
+					<p class="fw-bold">Contact (adresse mail/numéro de téléphone/...) <span class="asterisque">*</span> : <input type="text" name="<?php echo $MAIL_EMAIL ?>" class="form-control" value="<?php echo $mail_values[$MAIL_EMAIL]; ?>"></p>
 					<p class="fw-bold">Objet : <input type="text" name="<?php echo $MAIL_OBJECT ?>" class="form-control" value="<?php echo $mail_values[$MAIL_OBJECT]; ?>"></p>
 					<p class="fw-bold">Message <span class="asterisque">*</span> : <textarea name="<?php echo $MAIL_MESSAGE; ?>" class="form-control" rows=10><?php echo $mail_values[$MAIL_MESSAGE]; ?></textarea></p>
 					<p style="display: none;">
@@ -385,6 +393,7 @@ if (!$was_sent) {
 				echo '<div class="margebot25"></div>';
 			 ?>
 		</div>
+		<hr class="hr-projets">
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Langues</h3>
@@ -408,6 +417,7 @@ if (!$was_sent) {
 				<p class="bleu">Notions - A1</p>
 			</div>
 		</div>
+		<hr class="hr-projets">
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Langages de programmation</h3>
@@ -449,6 +459,7 @@ if (!$was_sent) {
 				echo '<div class="margebot25"></div>';
 			 ?>
 		</div>
+		<hr class="hr-projets">
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Logiciels, OS & Technologies</h3>
@@ -490,6 +501,7 @@ if (!$was_sent) {
 				echo '<div class="margebot25"></div>';
 			 ?>
 		</div>
+		<hr class="hr-projets">
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre">Humaines</h3>
@@ -562,6 +574,7 @@ if (!$was_sent) {
 			</div>
 		</div>		
 		<div class="margebot45"></div>
+		<hr class="hr-projets">
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 class="sous-titre"><a href="personnel">Personnels</a></h3>
@@ -661,23 +674,21 @@ if (!$was_sent) {
 				<h2 class="titre">Compétitions</h2>
 			</div>
 		</div>
-		<!--<div class="row text-center">-->
-			<?php 
-				foreach ($contests_data as $key => $contest) {
-					if ($key % 6 == 0) {
-						echo '<div class="row text-center' . ($key > 0 ? ' margetop45' : '') . '">';
-					}
-					echo '<div class="col-sm-2 ' . ($key % 6 == 5 ? 'paddingtop10' : 'bordure-right-no-padding-right') . '">';
-					echo '<p class="bleu-big">' . $contest[$CON_DATE_TXT] . '</p>';
-					echo '<p class="fw-bold">' . $contest[$CON_NAME] . '</p>';
-					echo '<p>' . markdown_to_html($contest[$CON_DESC]) . '</p>';
-					echo '</div>';
-					if ($key % 6 == 5) {
-						echo '</div>';
-					}
+		<?php 
+			foreach ($contests_data as $key => $contest) {
+				if ($key % 6 == 0) {
+					echo '<div class="row text-center' . ($key > 0 ? ' margetop45' : '') . '">';
 				}
-			 ?>
-		<!--</div>-->
+				echo '<div class="col-sm-2 ' . ($key % 6 == 5 ? 'paddingtop10' : 'bordure-right-no-padding-right') . '">';
+				echo '<p class="bleu-big">' . $contest[$CON_DATE_TXT] . '</p>';
+				echo '<p class="fw-bold">' . $contest[$CON_NAME] . '</p>';
+				echo '<p>' . markdown_to_html($contest[$CON_DESC]) . '</p>';
+				echo '</div>';
+				if ($key % 6 == 5) {
+					echo '</div>';
+				}
+			}
+		 ?>
 	</div>
 </section>
 
