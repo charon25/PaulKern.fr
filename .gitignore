@@ -1,3 +1,4 @@
 admin/pwd/
 utils/bdd.php
 bot/
+.~lock*

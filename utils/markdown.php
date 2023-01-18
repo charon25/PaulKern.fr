@@ -18,7 +18,7 @@ function markdown_to_html($string) {
 	$string = preg_replace('/\+\+ (.+)/', '<p>\1</p>', $string);
 	// Line break
 	$string = preg_replace('/ ?%% ?/', '<br>', $string);
-	$string = preg_replace('/(\r?\n){2}/', '<br>', $string);
+	$string = preg_replace('/(\\n)/', '<br>', $string);
 	// Rows and columns
 	$string = preg_replace('/{R}/s', '<div class="row">', $string);
 	$string = preg_replace('/{\/R}/s', '</div>', $string);
