@@ -2,3 +2,13 @@ admin/pwd/
 utils/bdd.php
 bot/
 .~lock*
+.ovhconfig
+utils/human.php
+
+files/
+!index.php
+
+img/
+!index.php
+!icon.ico
+!*.svg

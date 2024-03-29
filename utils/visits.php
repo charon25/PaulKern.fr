@@ -16,7 +16,7 @@ if (!$is_bot) {
 		$visits_request = $bdd->query('SELECT `id` FROM `pk_visits` ORDER BY `id` DESC LIMIT 1');
 		$last_id = $visits_request->fetch()['id'];
 		$visits_count = $last_id - $FIRST_ID + 1;
-		if ($visits_count > 0 && $visits_count % 10 == 0) {
+		if ($visits_count > 0 && $visits_count % 1000 == 0) {
 			require_once('bot/bot.php');
 			send_visits_count_discord($visits_count);
 		}
